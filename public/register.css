@@ -1,0 +1,20 @@
+.modal-header{
+    background-image: url("registerbg.jpeg");
+    height: 150px;
+}
+
+.modal-header > div {
+    color: white;
+    justify-content: center;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+}
+
+.formBtn {
+    width: 100%;
+}
+
+.modal-header > .btn-close{
+    background-color: aqua;
+}
