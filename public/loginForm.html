@@ -1,27 +1,30 @@
-
+<div class="modal-header">
+  <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+  <button type="button" id="modalDismiss" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
 <form id="loginForm" class="form">
-    <div class="row" style="margin-bottom:20px">
-        <div class="form-floating col-md-12">
-            <input name="username" type="text" class="form-control" id="floatingInput"
-                placeholder="username">
-            <label class="floatText" for="floatingInput">username</label>
-        </div>
-    </div>    
-    <div class="row">
-        <div class="form-floating col-md-12">
-            <input name="password"type="password" class="form-control"
-                placeholder="password">
-            <label class="floatText" for="floatingInput">password</label>
-        </div>
-    </div>
+  <div class="row" style="margin-bottom:20px">
+      <div class="form-floating col-md-12">
+          <input name="username" type="text" class="form-control" id="floatingInput"
+              placeholder="username">
+          <label class="floatText" for="floatingInput">Email</label>
+      </div>
+  </div>    
+  <div class="row">
+      <div class="form-floating col-md-12">
+          <input name="password"type="password" class="form-control"
+              placeholder="password">
+          <label class="floatText" for="floatingInput">Password</label>
+      </div>
+  </div>
 
-    <div class="row">
-        <div class="col-md-6 button-flexBox">
-            <button type="button" class="btn btn-secondary floatText" id="close" data-bs-dismiss="modal">Close</button>
-        </div>
-        <div class="col-md-6 button-flexBox">
-            <button type="submit" class="btn btn-primary floatText">Login</button>
-        </div>
-    </div>
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 button-flexBox">
+          <button type="submit" class="button-5" role="button">Login</button>
+      </div>
+      <div class="col-md-2"></div>
+  </div>
+  <span>New to Game Center?</span> <a onclick="fetchTemplate('registerForm.html',renderRegisterFormModal)" href="#">Sign Up</a>
 </form>
-
+</div>

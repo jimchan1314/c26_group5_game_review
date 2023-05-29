@@ -36,7 +36,7 @@
                   <a class="nav-link" href="#">Board Game Ranking</a>
 
                   
-                  <button type="button" class="loginButton" data-bs-toggle="modal" data-bs-target="#FormModal">Login</button>
+                  <button onclick="fetchTemplate('loginForm.html',renderLoginFormModal)" type="button" class="loginButton" data-bs-toggle="modal" data-bs-target="#FormModal">Login</button>
                   
 
                 </div>
@@ -47,39 +47,10 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="form-modal-body">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <form id="loginForm" class="form">
-                        <div class="row" style="margin-bottom:20px">
-                            <div class="form-floating col-md-12">
-                                <input name="username" type="text" class="form-control" id="floatingInput"
-                                    placeholder="username">
-                                <label class="floatText" for="floatingInput">Email</label>
-                            </div>
-                        </div>    
-                        <div class="row">
-                            <div class="form-floating col-md-12">
-                                <input name="password"type="password" class="form-control"
-                                    placeholder="password">
-                                <label class="floatText" for="floatingInput">Password</label>
-                            </div>
-                        </div>
-                    
-                        <div class="row">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-8 button-flexBox">
-                                <button type="submit" class="button-5" role="button">Login</button>
-                            </div>
-                            <div class="col-md-2"></div>
-                        </div>
-                        <a>New to Game Center? Sign Up</a>
-                      </form>
+                      
                     </div>
                 </div>
             </div>
-        </div>
 
 
     </main>
@@ -93,6 +64,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="index.js"></script>
+    <script src="login.js"></script>
     
 </body>
 
