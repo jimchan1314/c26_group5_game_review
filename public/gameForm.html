@@ -23,28 +23,28 @@
                 <label class="input-group-text" for="gameTypeSelect">Game Type</label>
                 <select class="form-select" id="gameTypeSelect" name="gameType">
                 <option selected="">Choose Game Type</option>
-                <option value="1">Video Game</option>
-                <option value="2">Board Game</option>
-                <option value="3">RPG Game</option>
+                <option value="boardGame">Board Game</option>
+                <option value="videoGame">Video Game</option>
+                <!-- <option value="3">RPG Game</option> -->
                 </select>
             </div>
 
             <div class="col col-md-12">
-                <label for="exampleFormControlTextarea1" class="form-label">Game Description/Summary</label>
+                <label for="description" class="form-label">Game Description</label>
             </div>
             <div class="col col-md-12 mb-3">
-                <textarea class="form-control" id="gameSummary" name="gameSummary" rows="5"></textarea>
+                <textarea class="form-control" id="description" name="description" rows="5"></textarea>
             </div>
 
             <div class="col col-md-12 mb-3">
-                <label for="gameImage" class="form-label">Upload Game Image</label>
-                <input class="form-control" type="file" name="gameImage" id="gameImage">
+                <label for="gameCover" class="form-label">Upload Game Cover</label>
+                <input class="form-control" type="file" name="gameCover" id="gameCover">
             </div>
 
             <div class="gameBtns col-md-12">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary" value="submit">Post</button>
-              </div>
+            </div>
         <!-- </div> -->
     </form>
     

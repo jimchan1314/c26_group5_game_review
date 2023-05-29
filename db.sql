@@ -16,7 +16,7 @@ CREATE TABLE "game"(
         "update_at" TIMESTAMP default CURRENT_TIMESTAMP,
         "description" TEXT NOT NULL,
         "create_users_id" INTEGER references "users"(id) not null
-        "cover" VARCHAR(255)
+        "game_cover" VARCHAR(255)
 );
 CREATE TABLE "like_ref_game_users"(
     "users_id" BIGINT references "users"(id) not null,

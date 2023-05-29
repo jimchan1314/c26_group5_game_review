@@ -75,3 +75,14 @@ form > div > .button-flexBox > button{
 }
 
 
+/* game section */
+.gameSection{
+  padding: 10px;
+}
+
+.gBoxCount{
+  display: flex;
+  justify-content: space-between;
+}
+
+

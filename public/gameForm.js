@@ -1,4 +1,4 @@
-
+// working...
 
 document.querySelector("#gameForm").addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -14,6 +14,6 @@ document.querySelector("#gameForm").addEventListener("submit", async function (e
     });
 
     const result = await res.json(); // { success: true }
-    console.log(`game form result ${result}`)
+    console.log(result)
     // document.querySelector("#contact-result").textContent = result;
 });
