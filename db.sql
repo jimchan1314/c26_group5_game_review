@@ -7,17 +7,17 @@ CREATE TABLE "game_message"(
 );
 
 CREATE TABLE "game"(
-    "id" VARCHAR(200) primary key
+    "id" SERIAL primary key,
     "name" VARCHAR(100) NOT NULL,
-    "type" VARCHAR(100) CHECK
-        ("type" IN('')) NOT NULL,
-        "like_count" INTEGER NOT NULL,
-        "create_at" TIMESTAMP default CURRENT_TIMESTAMP,
-        "update_at" TIMESTAMP default CURRENT_TIMESTAMP,
-        "description" TEXT NOT NULL,
-        "create_users_id" INTEGER references "users"(id) not null
-        "game_cover" VARCHAR(255)
+    "game_type" VARCHAR(20) NOT NULL,
+    "like_count" INTEGER NOT NULL,
+    "create_at" TIMESTAMP default CURRENT_TIMESTAMP,
+    "update_at" TIMESTAMP default CURRENT_TIMESTAMP,
+    "description" TEXT NOT NULL,
+    "create_users_id" INTEGER references "users"(id) not null,
+    "game_cover" VARCHAR(255)
 );
+
 CREATE TABLE "like_ref_game_users"(
     "users_id" BIGINT references "users"(id) not null,
     "game_id" BIGINT references "game"(id) not null,

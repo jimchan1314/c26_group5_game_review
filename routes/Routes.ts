@@ -1,5 +1,6 @@
 import express from "express"
 import { Request, Response } from "express";
+import { GameController } from "../controller/GameController";
 import { UserController } from "../controller/UserController";
 import { isLoggedInAPI } from "../guard";
 
@@ -23,6 +24,16 @@ export class UserRoute extends Routes{
         this.routes.post('/logout',controller.logout)
         this.routes.get('/getCurrentUser',isLoggedInAPI,controller.getCurrentUser)
         this.routes.put('/editProfile',isLoggedInAPI,controller.editProfile)
+    }
+
+}
+
+export class GameRoute  extends Routes{
+    constructor(controller:GameController){
+        super()
+        this.routes.post('/gameList',controller.addGameList)
+        
+        
     }
 
 }
