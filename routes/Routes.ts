@@ -1,8 +1,9 @@
 import express from "express"
 import { Request, Response } from "express";
+import { GameController } from "../controller/GameController";
 import { UserController } from "../controller/UserController";
 
-class Route{
+class Routes{
     routes:express.Router = express.Router();
 }
 
@@ -18,6 +19,16 @@ export class UserRoute extends Routes{
         this.routes.post('/register',controller.register)
         
         this.routes.post('/login',controller.login)
+        
+    }
+
+}
+
+export class GameRoute  extends Routes{
+    constructor(controller:GameController){
+        super()
+        this.routes.post('/gameList',controller.addGameList)
+        
         
     }
 

@@ -1,0 +1,30 @@
+{
+  "route": "/gameList",
+  "errMess": "column \"gametype\" of relation \"game\" does not exist",
+  "dateTime": "2023-05-30T09:04:06.333Z"
+}
+{
+  "route": "/gameList",
+  "errMess": "column \"gametype\" of relation \"game\" does not exist",
+  "dateTime": "2023-05-30T09:12:05.401Z"
+}
+{
+  "route": "/gameList",
+  "errMess": "column \"gametype\" of relation \"game\" does not exist",
+  "dateTime": "2023-05-30T09:14:28.802Z"
+}
+{
+  "route": "/gameList",
+  "errMess": "column \"gametype\" of relation \"game\" does not exist",
+  "dateTime": "2023-05-30T09:19:59.605Z"
+}
+{
+  "route": "/gameList",
+  "errMess": "column \"gametype\" of relation \"game\" does not exist",
+  "dateTime": "2023-05-30T09:26:40.310Z"
+}
+{
+  "route": "/gameList",
+  "errMess": "null value in column \"create_users_id\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-05-30T09:29:13.036Z"
+}

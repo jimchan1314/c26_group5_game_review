@@ -9,23 +9,21 @@
 <body>
     
     <form id="gameForm">
-        <!-- <div class="row"> -->
             <div class="col-md-12">
                 <h1>Create New Game</h1>
             </div>
 
             <div class="col-md-12 mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Game Name</label>
+                <label for="gameName" class="form-label">Game Name</label>
                 <input type="text" class="form-control" id="gameName" name="gameName" placeholder="Game Name">
             </div>
 
             <div class="input-group col-md-6 mb-3">
-                <label class="input-group-text" for="gameTypeSelect">Game Type</label>
-                <select class="form-select" id="gameTypeSelect" name="gameType">
+                <label class="input-group-text" for="gameType">Game Type</label>
+                <select class="form-select" id="gameType" name="game_type">
                 <option selected="">Choose Game Type</option>
                 <option value="boardGame">Board Game</option>
                 <option value="videoGame">Video Game</option>
-                <!-- <option value="3">RPG Game</option> -->
                 </select>
             </div>
 
@@ -45,7 +43,7 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary" value="submit">Post</button>
             </div>
-        <!-- </div> -->
+
     </form>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
