@@ -10,23 +10,23 @@ const form = formidable({
     maxFiles: 1,
     maxFileSize: (1024 ** 2) * 200, // the default limit is 1KB * 200
     filter: (part) => part.mimetype?.startsWith("image/") || false,
-  });
+});
 
 export function parseFormData(req: Request) {
-    return new Promise<unknown>((resolve, reject:(reason?: unknown) => void) => {
-      
+  return new Promise<unknown>((resolve, reject:(reason?: unknown) => void) => {
+    
 
 
-      form.parse(req, (err, fields, files) => {
-            
-        if({err}.err !== null){
-            reject({err})
-        }
-        resolve(formatIntoSingleObj({fields, files }));    
+    form.parse(req, (err, fields, files) => {
+          
+      if({err}.err !== null){
+          reject({err})
+      }
+      resolve(formatIntoSingleObj({fields, files }));    
 
-      });
     });
-  }
+  });
+}
 
 
 

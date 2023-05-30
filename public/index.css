@@ -90,3 +90,14 @@ img {
 }
 
 
+/* game section */
+.gameSection{
+  padding: 10px;
+}
+
+.gBoxCount{
+  display: flex;
+  justify-content: space-between;
+}
+
+
