@@ -24,10 +24,10 @@ CREATE TABLE "like_ref_game_users"(
 );
 
 CREATE TABLE "users"(
-    "id" INTEGER primary key,
-    "email" TEXT NOT NULL,
-    "password" VARCHAR(255) NOT NULL,
-    "users_icon" VARCHAR(255),
-    "users_name" VARCHAR(255) NOT NULL,
-    "create_at" TIMESTAMP default CURRENT_TIMESTAMP 
+    id text primary key,
+    "email" VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    users_icon VARCHAR(255),
+    users_name VARCHAR(255) NOT NULL,
+    create_at TIMESTAMP default CURRENT_TIMESTAMP 
 );

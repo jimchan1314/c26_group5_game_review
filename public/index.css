@@ -24,7 +24,22 @@ form > div > .button-flexBox > button{
     left: 10px!important;
 }
 
-
+img {
+  width: 30px;
+  height: 30px;
+}
+.dropdown {
+  margin-left: auto;
+}
+.userIcon{
+  margin-left: auto;
+  display:flex;
+  align-items: center;
+  
+}
+.userIcon::after{
+  content: attr(username);
+}
 
 
 /* CSS */
