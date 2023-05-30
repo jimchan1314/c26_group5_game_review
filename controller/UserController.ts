@@ -28,11 +28,10 @@ export class UserController implements IUserController{
 
             
             
-            db.query(`INSERT INTO users (id,username,password,role,user_icon) VALUES ($1,$2,$3,$4,$5)`,
-            [req.session.userId,userData.username,userData.password,"member",userData.userIcon ? userData.userIcon : ""])
+            await db.query(`INSERT INTO users (id,email,users_name,password) VALUES ($1,$2,$3,$4)`,
+            [req.session.userId,userData.email,userData.username,userData.password])
             
-            // set_onlineUsers(req.session.userId,userData.username)
-            // userDb.set(req.session.userId,JSON.stringify(userData))
+            
             res.json({isError:false,errMess:null,data:userData});    
         } catch (error) {
             
@@ -45,10 +44,10 @@ export class UserController implements IUserController{
         try {
             let form = await parseFormData(req) as User;
             await loginUserSchema.validate(form);
-            let {rows} = await db.query(`SELECT id,username,password,role,user_icon FROM users WHERE username = $1`,[form.username]);
+            let {rows} = await db.query(`SELECT id,users_name,email,password,users_icon FROM users WHERE email = $1`,[form.email]);
             
             if(rows.length === 0){
-                throw new Error('username does not exist')
+                throw new Error('email does not exist')
             }
             let boo = await checkPassword(form.password,rows[0].password)
             if(!boo){
@@ -56,9 +55,31 @@ export class UserController implements IUserController{
             }
             req.session.userId = rows[0].id as string
             req.session.isLogin = true
-            // set_onlineUsers(req.session.userId,form.username)
+            
             res.json({isError:false,errMess:null,data:rows[0]});
       
+        } catch (error) {
+            errorHandler({status:error.status,route:req.path,errMess:error.message})
+            res.json({isError:true,errMess:error.message})
+        }
+    }
+
+    async logout(req:Request,res:Response):Promise<void>{ 
+        try {
+            req.session.userId = ""
+            req.session.isLogin = false
+            res.json({isError:false,errMess:null,data:null});    
+        } catch (error) {
+            errorHandler({status:error.status,route:req.path,errMess:error.message})
+            res.json({isError:true,errMess:error.message})
+        }
+    }
+
+    async getCurrentUser(req:Request,res:Response):Promise<void>{
+        try {
+            let {rows} = await db.query(`SELECT id,email,users_name,users_icon FROM users WHERE id = $1`,[req.session.userId]);
+            
+            res.json({isError:false,errMess:"",data:rows[0]})    
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
             res.json({isError:true,errMess:error.message})
