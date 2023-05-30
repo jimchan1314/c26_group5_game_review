@@ -100,4 +100,9 @@ img {
   justify-content: space-between;
 }
 
+/* profile section */
+.profileForm{
+  width: 400px
+}
+
 
