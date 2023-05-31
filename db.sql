@@ -1,8 +1,8 @@
 CREATE TABLE "game_message"(
-    "id" VARCHAR(200) primary key
+    "id" VARCHAR(200) primary key,
     "text" TEXT NOT NULL,
     "game_id" VARCHAR (40) references "game"(id) not null,
-    "users_id" VARCHAR (40) references "users"(id) not null
+    "users_id" VARCHAR (40) references "users"(id) not null,
     "create_at" TIMESTAMP default CURRENT_TIMESTAMP 
 );
 
