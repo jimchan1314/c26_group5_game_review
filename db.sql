@@ -25,7 +25,7 @@ CREATE TABLE "like_ref_game_users"(
 
 CREATE TABLE "users"(
     id text primary key,
-    "email" VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     users_icon VARCHAR(255),
     users_name VARCHAR(255) NOT NULL,

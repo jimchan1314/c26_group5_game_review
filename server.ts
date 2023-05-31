@@ -46,9 +46,8 @@ export type Profile = {
   profileConfirmPassword: any;
   profileUsername:string,
   profilePassword:string,
-  profileIcon?:string
+  profileIcon?:any
 }
-
 export let registerUserSchema = yup.object().shape({
     username:yup.string().required(),
     email:yup.string().email(),
