@@ -71,7 +71,7 @@ async function renderRegisterFormModal(html) {
                 timer: 1500
             })
             document.querySelector('#modalDismiss').click()
-            
+
 
 
 
@@ -133,16 +133,26 @@ async function renderProfile(html) {
     user = JSON.parse(user)
     document.querySelector('.profilePage').innerHTML = html
     document.querySelector('#username').value = user.users_name
-    
-    
-    
-    
+    document.querySelector('.changeIcon').src = user.users_icon
+    let profileIcon = document.querySelector('#icon')
+    let inputImg = document.querySelector('#userIcon')
+
+
+    profileIcon.addEventListener('click', async (e) => {
+        e.target = inputImg.click()
+
+    })
+    inputImg.addEventListener('change', async (e) => {
+        if(e.target.files){
+            document.querySelector('.changeIcon').src = URL.createObjectURL(e.target.files[0])
+        }
+    })
     let form = document.querySelector('.profileForm')
     form.addEventListener('submit', async (e) => {
         e.preventDefault()
         let formData = new FormData(form)
-      
-    
+
+
 
         let result = await sweetAlert.fire({
             title: 'Do you want to save the changes?',
@@ -152,39 +162,39 @@ async function renderProfile(html) {
             denyButtonText: `Don't save`,
         })
         if (result.isConfirmed) {
-            let res = await fetch ('user/editProfile',{
+            let res = await fetch('user/editProfile', {
                 method: 'PUT',
-                body:formData
+                body: formData
             })
             let json = await res.json()
             console.log(json)
-            if(json.isError){
+            if (json.isError) {
                 await sweetAlert.fire({
                     icon: 'info',
                     title: json.errMess,
                     showConfirmButton: false,
                     timer: 1500
                 })
-            }else{
+            } else {
                 await sweetAlert.fire({
                     icon: 'success',
                     title: 'Your information has been saved',
                     showConfirmButton: false,
                     timer: 1500
-                  })
+                })
                 await localStorage.setItem('user', JSON.stringify(json.data))
-                
+
                 await fetchTemplate('loginNavbar.html', displayLogin)
             }
         } else if (result.isDenied) {
             sweetAlert.fire('Changes are not saved', '', 'info')
         }
     })
-    
+
 }
 
 
-    
+
 
 
 

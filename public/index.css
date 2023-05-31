@@ -24,10 +24,11 @@ form > div > .button-flexBox > button{
     left: 10px!important;
 }
 
-img {
+.navIcon {
   width: 30px;
   height: 30px;
   margin-right: 4px;
+  border-radius: 50%;
 }
 .dropdown {
   margin-left: auto;
@@ -103,7 +104,72 @@ img {
 
 /* profile section */
 .profileForm{
-  width: 400px
+  width: 500px
+}
+
+.list-group{
+  width: 200px;
+}
+
+.profile-container{
+  width: 250px;
+  position: relative;
+  margin: 0px auto;
+  text-align: center;
+}
+
+#userIcon{
+  display:none;
 }
 
 
+.changeIcon {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  
+}
+
+.input-group{
+  margin-top: 10px;
+}
+
+.profile-container::after{
+  content:" ";
+  display: block;
+  background-image: url(239220.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right:0px;
+  background-size: 50px 50px;
+  transition: all 0.5s;
+  opacity: 0;
+ 
+}
+
+.profile-container::before{
+  content: '';
+  background: repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(255,255,255,0.1) 10px,rgba(255,255,255,0.1) 20px);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: all 0.3s;
+    border-radius: 50%;
+}
+.profile-container:hover:before{ opacity: 1; }
+
+.profile-container:hover{
+  cursor: pointer;
+  
+}
+.profile-container:hover::after{
+  opacity: 1;
+}
