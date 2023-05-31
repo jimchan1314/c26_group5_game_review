@@ -1,5 +1,6 @@
 import express from "express"
 import { Request, Response } from "express";
+import { GameController } from "../controller/GameController";
 import { UserController } from "../controller/UserController";
 import { isLoggedInAPI } from "../guard";
 
@@ -13,7 +14,7 @@ export interface IUserController{
     login(req:Request,res:Response):Promise<void>
     logout(req:Request,res:Response):Promise<void>
     getCurrentUser(req:Request,res:Response):Promise<void>
-    
+    editProfile(req:Request,res:Response):Promise<void>
 }
 export class UserRoute extends Routes{
     constructor(controller:UserController){
@@ -22,6 +23,17 @@ export class UserRoute extends Routes{
         this.routes.post('/login',controller.login)
         this.routes.post('/logout',controller.logout)
         this.routes.get('/getCurrentUser',isLoggedInAPI,controller.getCurrentUser)
+        this.routes.put('/editProfile',isLoggedInAPI,controller.editProfile)
+    }
+
+}
+
+export class GameRoute  extends Routes{
+    constructor(controller:GameController){
+        super()
+        this.routes.post('/gameList',controller.addGameList)
+        
+        
     }
 
 }

@@ -3,8 +3,9 @@ import express from "express"
 import path from 'path'
 import expressSession from "express-session";
 import { UserController } from "./controller/UserController";
-import { UserRoute } from "./routes/Routes";
+import { GameRoute, UserRoute } from "./routes/Routes";
 import * as yup from 'yup';
+import { GameController } from "./controller/GameController";
 
 
 const app = express();
@@ -41,6 +42,12 @@ export type User = {
     userIcon?:string
 }
 
+export type Profile = {
+  profileConfirmPassword: any;
+  profileUsername:string,
+  profilePassword:string,
+  profileIcon?:any
+}
 export let registerUserSchema = yup.object().shape({
     username:yup.string().required(),
     email:yup.string().email(),
@@ -58,6 +65,11 @@ export let loginUserSchema = yup.object().shape({
 let userController = new UserController()
 let userRoutes = new UserRoute(userController)
 app.use("/user",userRoutes.routes)
+
+let gameController = new GameController()
+let gameRoutes = new GameRoute(gameController)
+app.use("/game",gameRoutes.routes)
+
 
 let port = 8080;
 server.listen(port,()=>{

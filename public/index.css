@@ -27,17 +27,18 @@ form > div > .button-flexBox > button{
 img {
   width: 30px;
   height: 30px;
+  margin-right: 4px;
 }
 .dropdown {
   margin-left: auto;
 }
-.userIcon{
+#userIcon-navbar{
   margin-left: auto;
   display:flex;
   align-items: center;
   
 }
-.userIcon::after{
+#userIcon-navbar::after{
   content: attr(username);
 }
 
@@ -98,6 +99,11 @@ img {
 .gBoxCount{
   display: flex;
   justify-content: space-between;
+}
+
+/* profile section */
+.profileForm{
+  width: 400px
 }
 
 

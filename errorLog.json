@@ -139,7 +139,73 @@
   "dateTime": "2023-05-30T04:51:44.649Z"
 }
 {
+<<<<<<< HEAD
   "route": "/login",
   "errMess": "password does not match",
   "dateTime": "2023-05-31T07:39:06.707Z"
+=======
+  "route": "/editProfile",
+  "errMess": "syntax error at or near \",\"",
+  "dateTime": "2023-05-30T08:26:40.386Z"
+}
+{
+  "route": "/editProfile",
+  "errMess": "syntax error at or near \",\"",
+  "dateTime": "2023-05-30T08:28:17.585Z"
+}
+{
+  "route": "/editProfile",
+  "errMess": "syntax error at or near \",\"",
+  "dateTime": "2023-05-30T08:30:05.344Z"
+}
+{
+  "route": "/editProfile",
+  "errMess": "syntax error at or near \",\"",
+  "dateTime": "2023-05-30T08:30:49.278Z"
+}
+{
+  "route": "/editProfile",
+  "errMess": "syntax error at or near \",\"",
+  "dateTime": "2023-05-30T08:31:30.040Z"
+}
+{
+  "route": "/editProfile",
+  "errMess": "syntax error at or near \",\"",
+  "dateTime": "2023-05-30T08:32:08.443Z"
+}
+{
+  "route": "/editProfile",
+  "errMess": "syntax error at or near \",\"",
+  "dateTime": "2023-05-30T08:37:34.394Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-05-30T10:12:07.488Z"
+}
+{
+  "route": "/editProfile",
+  "errMess": "Illegal arguments: undefined, number",
+  "dateTime": "2023-05-31T02:18:43.511Z"
+}
+{
+  "route": "/editProfile",
+  "errMess": "Illegal arguments: undefined, number",
+  "dateTime": "2023-05-31T02:18:47.018Z"
+}
+{
+  "route": "/editProfile",
+  "errMess": "Illegal arguments: undefined, number",
+  "dateTime": "2023-05-31T02:19:38.882Z"
+}
+{
+  "route": "/editProfile",
+  "errMess": "Illegal arguments: undefined, number",
+  "dateTime": "2023-05-31T02:21:17.834Z"
+}
+{
+  "route": "/editProfile",
+  "errMess": "Illegal arguments: undefined, number",
+  "dateTime": "2023-05-31T02:22:50.218Z"
+>>>>>>> 3bf9de4faedfd2c876c1668e67f2379dde56a881
 }
