@@ -56,3 +56,37 @@ function formatIntoSingleObj(formResult:{ fields?: Fields; files?: Files }){
     // console.log('65',result)
     return result
 }
+
+
+// for gameCover images
+const gameForm = formidable({
+  uploadDir,
+  keepExtensions: true,
+  maxFiles: 1,
+  maxFileSize: (1024 ** 2) * 200, // the default limit is 1KB * 200
+  filter: (part) => part.mimetype?.startsWith("image/") || false,
+  //for rename file use
+  filename: (originalName, originalExt, part) => {
+    let timestamp = Date.now();
+    let ext = part.mimetype?.split("/").pop();
+    // return `${fieldName}-${timestamp}.${ext}`;
+    return `gameCover-${originalName}-${timestamp}.${ext}`;
+  },
+});
+
+export function parseFormDataGame(req: Request) {
+  return new Promise<unknown>((resolve, reject:(reason?: unknown) => void) => {
+    
+
+
+    gameForm.parse(req, (err, fields, files) => {
+          
+      if({err}.err !== null){
+          reject({err})
+      }
+      resolve(formatIntoSingleObj({fields, files }));    
+
+    });
+  });
+}
+

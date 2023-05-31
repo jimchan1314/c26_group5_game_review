@@ -1,8 +1,8 @@
 CREATE TABLE "game_message"(
-    "id" VARCHAR(200) primary key
+    "id" VARCHAR(200) primary key,
     "text" TEXT NOT NULL,
     "game_id" VARCHAR (40) references "game"(id) not null,
-    "users_id" VARCHAR (40) references "users"(id) not null
+    "users_id" VARCHAR (40) references "users"(id) not null,
     "create_at" TIMESTAMP default CURRENT_TIMESTAMP 
 );
 
@@ -10,11 +10,12 @@ CREATE TABLE "game"(
     "id" SERIAL primary key,
     "name" VARCHAR(100) NOT NULL,
     "game_type" VARCHAR(20) NOT NULL,
-    "like_count" INTEGER NOT NULL,
+    "like_count" INTEGER NOT NULL, 
     "create_at" TIMESTAMP default CURRENT_TIMESTAMP,
     "update_at" TIMESTAMP default CURRENT_TIMESTAMP,
     "description" TEXT NOT NULL,
-    "create_users_id" INTEGER references "users"(id) not null,
+    "create_users_id" VARCHAR(255), 
+    FOREIGN KEY (create_users_id) references "users"(id),
     "game_cover" VARCHAR(255)
 );
 

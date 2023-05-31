@@ -28,10 +28,21 @@ export class UserRoute extends Routes{
 
 }
 
+export interface IGameController{
+    addGameList(req:Request,res:Response):Promise<void>
+    editGameList(req:Request,res:Response):Promise<void>
+    deleteGameList(req:Request,res:Response):Promise<void>
+    getGameList(req:Request,res:Response):Promise<void>
+}
+
 export class GameRoute  extends Routes{
     constructor(controller:GameController){
         super()
         this.routes.post('/gameList',controller.addGameList)
+        this.routes.put('/gameList',controller.editGameList)
+        this.routes.delete('/gameList',controller.deleteGameList)
+        this.routes.get('/gameList',controller.getGameList)
+
         
         
     }
