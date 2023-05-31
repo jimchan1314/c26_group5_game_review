@@ -4,7 +4,7 @@ async function submitMessage() {
     messageForm.addEventListener('submit', async (e) => {
         e.preventDefault()
 
-        console.log('submit clicked')
+        //console.log('submit clicked')
 
         const message = e.target
         const messageData = new FormData()
@@ -17,9 +17,10 @@ async function submitMessage() {
         })
         const result = await res.json()
         console.log(result)
+        messageForm.reset()
     })
 }
-async function main() {
+async function messageMain() {
     await submitMessage()
 }
-main()
+messageMain()
