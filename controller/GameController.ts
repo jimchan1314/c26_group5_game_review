@@ -22,9 +22,8 @@ export class GameController implements IGameController{
         try {
             
             let form = await parseFormDataGame(req) as Game; 
-            console.log("25", form)
+            // console.log("25", form)
             let gameData = {...form}
-            // console.log(console.log(`ts game form result: ${gameData}`))
             
             await db.query(`INSERT INTO game (name, game_type, like_count, description, create_users_id, game_cover) VALUES ($1,$2,$3,$4,$5,$6)`,
             [gameData.gameName, gameData.game_type, 0, gameData.description, req.session.userId, gameData.gameCover])
@@ -62,13 +61,15 @@ export class GameController implements IGameController{
     async getGameList(req:Request,res:Response):Promise<void> {
         try {
 
-            // let {rows} = await db.query(`SELECT id,name,game_type,like_count,create_at, description, create_users_id, game_cover FROM game WHERE id = $1`,[]);
-            
-            // res.json({isError:false,errMess:"",data:rows[0]})    
+            let {rows} = await db.query(`SELECT * FROM game ORDER BY id DESC`);
+            // const result = await db.query(`SELECT * FROM game ORDER BY id DESC`);
+            // const gameList: Game[] = result.rows 
+            // res.json({isError:false,errMess:"",data:gameList})    
+            res.json({isError:false,errMess:"",data:rows})    
             
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
-            res.json({isError:true,errMess:error.message})
+            res.json({isError:true,errMess:error.message, data:null})
         }
     }
 

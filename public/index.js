@@ -22,8 +22,6 @@ async function getCurrentUser(){
     
 }
 
-
-
 async function fetchTemplate(path,cb){
     
     let res = await fetch(path)
@@ -31,3 +29,18 @@ async function fetchTemplate(path,cb){
     
     cb(html)
 }
+
+// fm gameForm.js
+async function indexGame(){
+    let res = await fetch('/game/getGameList')
+    let json = await res.json()
+    // console.log("indexJs-37")
+    
+    if(json.isError){
+        alert(json.errMess)
+    }else{
+        renderAllGame(json.data)
+    }
+}
+indexGame();
+
