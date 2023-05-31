@@ -8,8 +8,8 @@ async function displayLogin(html) {
     let user = await localStorage.getItem('user')
     user = JSON.parse(user)
 
-    document.querySelectorAll('.userIcon').forEach(icon => icon.setAttribute('username', " Hi " + user.users_name))
-    document.querySelectorAll('.userIcon > img').forEach(img => img.src = user.user_icon ? user.user_icon : "user.png")
+    document.querySelectorAll('#userIcon-navbar').forEach(icon => icon.setAttribute('username', " Hi " + user.users_name))
+    document.querySelectorAll('#userIcon-navbar > img').forEach(img => img.src = user.users_icon ? user.users_icon : "user.png")
     document.querySelectorAll('.logout').forEach(btn =>
         btn.addEventListener('click', async e => {
             e.preventDefault()
@@ -43,7 +43,7 @@ async function renderRegisterFormModal(html) {
 
 
 
-    let form = document.querySelector('.form')
+    let form = document.querySelector('#registerForm')
     form.addEventListener('submit', async (e) => {
         e.preventDefault()
         let formData = new FormData(form)
@@ -71,7 +71,7 @@ async function renderRegisterFormModal(html) {
                 timer: 1500
             })
             document.querySelector('#modalDismiss').click()
-            await localStorage.setItem("user", JSON.stringify(json.data))
+            
 
 
 
@@ -84,7 +84,7 @@ async function renderRegisterFormModal(html) {
 
 async function renderLoginFormModal(html) {
     document.querySelector('.form-modal-body').innerHTML = html
-    let form = document.querySelector('.form')
+    let form = document.querySelector('#loginForm')
     form.addEventListener('submit', async (e) => {
         e.preventDefault()
         let formData = new FormData(form)
@@ -136,12 +136,14 @@ async function renderProfile(html) {
     
     
     
+    
     let form = document.querySelector('.profileForm')
     form.addEventListener('submit', async (e) => {
         e.preventDefault()
         let formData = new FormData(form)
       
-    if(document.querySelector('#confirmPassword').value === document.querySelector('#password').value){
+    
+
         let result = await sweetAlert.fire({
             title: 'Do you want to save the changes?',
             showDenyButton: true,
@@ -164,24 +166,25 @@ async function renderProfile(html) {
                     timer: 1500
                 })
             }else{
-                sweetAlert.fire('Saved!', '', 'success') 
+                await sweetAlert.fire({
+                    icon: 'success',
+                    title: 'Your information has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                await localStorage.setItem('user', JSON.stringify(json.data))
+                
+                await fetchTemplate('loginNavbar.html', displayLogin)
             }
         } else if (result.isDenied) {
             sweetAlert.fire('Changes are not saved', '', 'info')
         }
-    } else {
-        await sweetAlert.fire({
-            icon: 'info',
-            title: 'Password does not match',
-            showConfirmButton: false,
-            timer: 1500
-        })
-    }
-        
-        
-
-
     })
-
+    
 }
+
+
+    
+
+
 

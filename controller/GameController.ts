@@ -28,17 +28,6 @@ export class GameController implements IGameController{
             let gameData = {...form}
             console.log(console.log(`ts game form result: ${gameData}`))
             
-            // let gamesJSON: Array<Game> = await    jsonfile.readFile("games.json")
-            // gamesJSON.push({
-            //     gameName: gameData.gameName,
-            //     game_type: gameData.game_type,
-            //     description: gameData.description,
-            //     gameCover: gameData.gameCover?
-            // });
-            
-            // await jsonfile.writeFile("games.json", gameData, {spaces: 4})
-            // res.redirect("/gameForm.html")
-            
             // await db.query(`INSERT INTO game (name, game_type, like_count, description, create_users_id, game_cover) VALUES ($1,$2,$3,$4,$5,$6)`,
             // [gameData.gameName, gameData.game_type, 0, gameData.description, req.session.userId, gameData.gameCover])
             
