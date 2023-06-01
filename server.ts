@@ -3,9 +3,10 @@ import express from "express"
 import path from 'path'
 import expressSession from "express-session";
 import { UserController } from "./controller/UserController";
-import { GameRoute, UserRoute } from "./routes/Routes";
+import { GameRoute, MessageRoute, UserRoute } from "./routes/Routes";
 import * as yup from 'yup';
 import { GameController } from "./controller/GameController";
+import { MessageController } from "./controller/MessageController";
 
 
 const app = express();
@@ -76,7 +77,9 @@ let gameController = new GameController()
 let gameRoutes = new GameRoute(gameController)
 app.use("/game",gameRoutes.routes)
 
-
+let messageController = new MessageController()
+let messageRoutes = new MessageRoute(messageController)
+app.use("/message",messageRoutes.routes)
 
 
 

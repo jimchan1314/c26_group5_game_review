@@ -69,6 +69,21 @@
   "dateTime": "2023-06-01T04:17:40.228Z"
 }
 {
+<<<<<<< HEAD
+  "route": "/addGameList",
+  "errMess": "null value in column \"id\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-01T09:04:29.831Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"id\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-01T10:04:51.757Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"id\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-01T10:06:12.301Z"
+=======
   "route": "/getGameList",
   "errMess": "relation \"game\" does not exist",
   "dateTime": "2023-06-01T04:48:29.627Z"
@@ -132,6 +147,7 @@
   "route": "/login",
   "errMess": "password does not match",
   "dateTime": "2023-06-01T08:46:21.727Z"
+>>>>>>> d898fd04f8264d62fd1017a99f3bc2c6da5ce14b
 }
 {
   "route": "/login",
