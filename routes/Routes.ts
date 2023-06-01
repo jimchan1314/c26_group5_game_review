@@ -39,8 +39,8 @@ export class GameRoute  extends Routes{
     constructor(controller:GameController){
         super()
         this.routes.post('/addGameList',controller.addGameList)
-        this.routes.put('/editGameList',controller.editGameList)
-        this.routes.delete('/deleteGameList',controller.deleteGameList)
+        this.routes.put('/editGameList/:id',controller.editGameList)
+        this.routes.delete('/deleteGameList/:id',controller.deleteGameList)
         this.routes.get('/getGameList',controller.getGameList)
 
         
