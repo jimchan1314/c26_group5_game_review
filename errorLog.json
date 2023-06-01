@@ -68,3 +68,18 @@
   "errMess": "password does not match",
   "dateTime": "2023-06-01T04:17:40.228Z"
 }
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"id\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-01T09:04:29.831Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"id\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-01T10:04:51.757Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"id\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-01T10:06:12.301Z"
+}
