@@ -1,32 +1,33 @@
-<div class="list-group col-3">
-    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-        Information
-    </a>
-    <a href="#" class="list-group-item list-group-item-action">Privates</a>
-</div>
-<div class="row justify-content-center">
+<div class="row">
+
+    <div class="list-group col-3">
+        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+            Information
+        </a>
+        <a onclick="fetchTemplate('proFile_Private.html', changePassword)" href="#"
+            class="list-group-item list-group-item-action">Privates</a>
+    </div>
+
     <form class="profileForm">
-        <!-- <div class="profile-container"> -->
+        <div class="profileContent">
+
             <div id="icon" class="profile-container">
                 <img class="changeIcon" src="user.png" />
             </div>
-                <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">Username</span>
-                    <input id="username" name="profileUsername" type="text" class="form-control" placeholder="Username"
-                        aria-label="Username" aria-describedby="addon-wrapping">
-                </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Username</span>
+                <input id="username" name="profileUsername" type="text" class="form-control" placeholder="Username"
+                    aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
 
 
-                <div class="input-group mb-3">
-                    <input id="userIcon" name="profileIcon" type="file" class="form-control">
-                </div>
+            <div class="input-group mb-3">
+                <input id="userIcon" name="profileIcon" type="file" class="form-control">
+            </div>
 
-                <button type="submit">Save</button>
+            <button type="submit">Save</button>
 
+        </div>
 
-            
-        <!-- </div> -->
     </form>
-
-
 </div>

@@ -1,3 +1,4 @@
+
 async function displayNotLogin(html) {
     document.querySelector('.collapse').innerHTML = html;
 }
@@ -20,7 +21,6 @@ async function displayLogin(html) {
                 body: "",
             })
             let json = await res.json()
-            console.log(json)
             if (json.isError) {
                 await sweetAlert.fire({
                     icon: 'info',
@@ -30,7 +30,7 @@ async function displayLogin(html) {
                 })
             } else {
                 await localStorage.removeItem('user');
-                await fetchTemplate('nonLoginNavbar.html', displayNotLogin)
+                indexCheck()
 
             }
         })
@@ -126,24 +126,67 @@ async function renderLoginFormModal(html) {
     })
 }
 
+async function changePassword(html) {
+    document.querySelector('.content').innerHTML = html
+    let form = document.querySelector('.profile_PrivateForm')
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault()
+        let formData = new FormData(form)
+        let result = await sweetAlert.fire({
+            title: 'Do you want to save the changes?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Save',
+            denyButtonText: `Don't save`,
+        })
+        if (result.isConfirmed) {
+            let res = await fetch('user/changePassword', {
+                method: 'PUT',
+                body: formData
+            })
+            let json = await res.json()
+            
+            if (json.isError) {
+                await sweetAlert.fire({
+                    icon: 'info',
+                    title: json.errMess,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            } else {
+                await sweetAlert.fire({
+                    icon: 'success',
+                    title: 'Your Password has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        } else if (result.isDenied) {
+            sweetAlert.fire('Changes are not saved', '', 'info')
+        }
+    })
+}
+
 
 
 async function renderProfile(html) {
     let user = localStorage.getItem('user')
     user = JSON.parse(user)
-    document.querySelector('.profilePage').innerHTML = html
+    document.querySelector('.content').innerHTML = html
     document.querySelector('#username').value = user.users_name
-    document.querySelector('.changeIcon').src = user.users_icon
+    // document.querySelector('.changeIcon').src = user.users_icon
+    document.querySelectorAll('.changeIcon').forEach(img => img.src = user.users_icon ? user.users_icon : "user.png")
     let profileIcon = document.querySelector('#icon')
     let inputImg = document.querySelector('#userIcon')
 
 
     profileIcon.addEventListener('click', async (e) => {
         e.target = inputImg.click()
+        console.log(e.target)
 
     })
     inputImg.addEventListener('change', async (e) => {
-        if(e.target.files){
+        if (e.target.files) {
             document.querySelector('.changeIcon').src = URL.createObjectURL(e.target.files[0])
         }
     })

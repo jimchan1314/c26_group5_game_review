@@ -48,6 +48,12 @@ export type Profile = {
   profilePassword:string,
   profileIcon?:any
 }
+
+export let changePasswordSchema = yup.object().shape({
+  profilePassword:yup.string().min(3, 'Password must be at least 3 characters long'),
+  profileConfirmPassword:yup.string().min(3, 'Confirm password must be at least 3 characters long'),
+})
+
 export let registerUserSchema = yup.object().shape({
     username:yup.string().required(),
     email:yup.string().email(),

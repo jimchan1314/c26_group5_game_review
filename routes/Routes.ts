@@ -2,6 +2,7 @@ import express from "express"
 import { Request, Response } from "express";
 import { GameController } from "../controller/GameController";
 import { UserController } from "../controller/UserController";
+import { MessageController } from "../controller/MessageController";
 import { isLoggedInAPI } from "../guard";
 
 class Routes{
@@ -15,6 +16,7 @@ export interface IUserController{
     logout(req:Request,res:Response):Promise<void>
     getCurrentUser(req:Request,res:Response):Promise<void>
     editProfile(req:Request,res:Response):Promise<void>
+    changePassword(req:Request,res:Response):Promise<void>
 }
 export class UserRoute extends Routes{
     constructor(controller:UserController){
@@ -24,6 +26,7 @@ export class UserRoute extends Routes{
         this.routes.post('/logout',controller.logout)
         this.routes.get('/getCurrentUser',isLoggedInAPI,controller.getCurrentUser)
         this.routes.put('/editProfile',isLoggedInAPI,controller.editProfile)
+        this.routes.put('/changePassword',isLoggedInAPI,controller.changePassword)
     }
 
 }
@@ -47,4 +50,21 @@ export class GameRoute  extends Routes{
         
     }
 
+}
+
+export interface IMessageController{
+    addMessage(req:Request,res:Response):Promise<void>
+    editMessage(req:Request,res:Response):Promise<void>
+    deleteMessage(req:Request,res:Response):Promise<void>
+    getMessage(req:Request,res:Response):Promise<void>
+}
+
+export class MessageRoute extends Routes {
+    constructor(controller: MessageController) {
+        super()
+        this.routes.post('/addMessage',controller.addMessage)
+        this.routes.put('/editMessage/:id',controller.editMessage)
+        this.routes.delete('/deleteMessage/:id',controller.deleteMessage)
+        this.routes.get('/getMessage',controller.getMessage)
+    }
 }
