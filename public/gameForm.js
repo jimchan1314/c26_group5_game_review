@@ -142,10 +142,17 @@ function renderBoardGameTemplate(obj,userId){
 
 //put in game area
 async function renderAllGame(gameList) {
-  let user = await localStorage.getItem('user');
-  user = JSON.parse(user);
+  let user = {}
+  user=await localStorage.getItem('user');
+  
   
   // if (gameList[0].game_type === "Video Game") {
+  
+  if(!user){
+    user.id =''
+  }
+  user = JSON.parse(user);
+  console.log("123", user)
   gameList.forEach(obj =>
   obj.game_type === "Video Game" ? renderVideoTemplate(obj,user.id) : renderBoardGameTemplate(obj,user.id))
   
@@ -180,7 +187,7 @@ async function renderAllGame(gameList) {
 
       // i.parentElement.remove()
     }
-    await fetchAllGame()
+    // await fetchAllGame()
   }))
 
 

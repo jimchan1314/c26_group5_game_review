@@ -133,3 +133,13 @@
   "errMess": "password does not match",
   "dateTime": "2023-06-01T08:46:21.727Z"
 }
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-01T10:33:00.350Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-01T10:33:11.506Z"
+}
