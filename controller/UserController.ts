@@ -1,6 +1,6 @@
 import { parseFormData } from "../formidable";
 import { Request, Response } from "express";
-import { Profile, User, loginUserSchema, registerUserSchema } from "../server";
+import { Profile, User, changePasswordSchema, loginUserSchema, registerUserSchema } from "../server";
 import { checkPassword, hashPassword } from "../bcrypt";
 import { v4 as uuid } from 'uuid';
 import { db } from "../db";
@@ -98,5 +98,29 @@ export class UserController implements IUserController{
             res.json({isError:true,errMess:error.message,data:null})
         }
 
+    }
+
+    async changePassword(req: Request, res: Response):Promise<void>{
+        try{
+            let form = await parseFormData(req) as Profile
+            let userData = {...form}
+            let userID = req.session.userId;
+            
+            if(form.profilePassword !== form.profileConfirmPassword){
+                throw new Error('password not match!')
+            }
+            await changePasswordSchema.validate(userData)
+
+
+            delete userData.profileConfirmPassword
+            userData.profilePassword = await hashPassword(userData.profilePassword)
+
+            await db.query(`UPDATE users SET password = $1 WHERE id = $2`, [form.profilePassword,userID])
+            res.json({isError:false,errMess:null,data:userData});    
+        }
+        catch (error){
+            errorHandler({status:error.status,route:req.path,errMess:error.message})
+            res.json({isError:true,errMess:error.message,data:null})
+        }
     }
 }

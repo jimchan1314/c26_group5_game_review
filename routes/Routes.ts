@@ -15,6 +15,7 @@ export interface IUserController{
     logout(req:Request,res:Response):Promise<void>
     getCurrentUser(req:Request,res:Response):Promise<void>
     editProfile(req:Request,res:Response):Promise<void>
+    changePassword(req:Request,res:Response):Promise<void>
 }
 export class UserRoute extends Routes{
     constructor(controller:UserController){
@@ -24,6 +25,7 @@ export class UserRoute extends Routes{
         this.routes.post('/logout',controller.logout)
         this.routes.get('/getCurrentUser',isLoggedInAPI,controller.getCurrentUser)
         this.routes.put('/editProfile',isLoggedInAPI,controller.editProfile)
+        this.routes.put('/changePassword',isLoggedInAPI,controller.changePassword)
     }
 
 }

@@ -2,13 +2,17 @@ async function indexCheck(){
     let user = await getCurrentUser()
 
     if(user){
-
         await fetchTemplate('loginNavbar.html', displayLogin)
+        await fetchTemplate('homePage.html', displayContent)
     }else{
         await fetchTemplate('nonLoginNavbar.html', displayNotLogin)
+        await fetchTemplate('homePage.html', displayContent)
     }
 }
 indexCheck()
+async function displayContent(html){
+    document.querySelector('.content').innerHTML = html;
+}
 
 async function getCurrentUser(){
     let res = await fetch('/user/getCurrentUser')

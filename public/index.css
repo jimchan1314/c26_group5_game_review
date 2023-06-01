@@ -103,8 +103,21 @@ form > div > .button-flexBox > button{
 }
 
 /* profile section */
+.row {
+  width: 100%;
+}
 .profileForm{
   width: 500px
+}
+
+.profileContent{
+  padding-top: 100px;
+  width: 500px;
+  margin-left: 50%;
+}
+
+.profile_PrivateForm{
+  width: 500px;
 }
 
 .list-group{
@@ -137,7 +150,7 @@ form > div > .button-flexBox > button{
 .profile-container::after{
   content:" ";
   display: block;
-  background-image: url(239220.png);
+  background-image: url(239220.png);  
   background-repeat: no-repeat;
   background-position: center center;
   position: absolute;
