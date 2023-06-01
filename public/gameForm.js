@@ -66,7 +66,7 @@ async function fetchAllGame() {
   }
 }
 
-function renderVideoTemplate(obj){
+function renderVideoTemplate(obj,userId){
   document.querySelector('#videoGame').innerHTML += 
   `
   <div class="gameBox card mb-3" style="max-width: 500px;">
@@ -77,8 +77,13 @@ function renderVideoTemplate(obj){
     </div>
     <div class="col-md-8">
         <div class="card-body gBoxBody">
-        <i data-id=${obj.id} class="fa-solid fa-square-pen"> Edit</i>
-        <i data-id=${obj.id} class="fa-solid fa-trash-can"> Delete</i>
+        ${obj.create_users_id === userId ? 
+          `
+          <i data-id=${obj.id} class="fa-solid fa-square-pen"> Edit</i>
+          <i data-id=${obj.id} class="fa-solid fa-trash-can"> Delete</i>
+          ` :
+          ""
+          }
         <h4 class="card-title gBoxName">${obj.name}</h4>
         <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
         <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
@@ -98,7 +103,8 @@ function renderVideoTemplate(obj){
   
 }
 
-function renderBoardGameTemplate(obj){
+function renderBoardGameTemplate(obj,userId){
+  console.log(obj.create_users_id,userId);
   document.querySelector('#boardGame').innerHTML+=
   `
   <div class="gameBox card mb-3" style="max-width: 500px;">
@@ -109,8 +115,14 @@ function renderBoardGameTemplate(obj){
     </div>
     <div class="col-md-8">
         <div class="card-body gBoxBody">
+        ${obj.create_users_id === userId ? 
+        `
         <i data-id=${obj.id} class="fa-solid fa-square-pen"> Edit</i>
         <i data-id=${obj.id} class="fa-solid fa-trash-can"> Delete</i>
+        ` :
+        ""
+        }
+        
         <h4 class="card-title gBoxName">${obj.name}</h4>
         <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
         <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
@@ -130,10 +142,12 @@ function renderBoardGameTemplate(obj){
 
 //put in game area
 async function renderAllGame(gameList) {
-
+  let user = await localStorage.getItem('user');
+  user = JSON.parse(user);
+  
   // if (gameList[0].game_type === "Video Game") {
   gameList.forEach(obj =>
-  obj.game_type === "Video Game" ? renderVideoTemplate(obj) : renderBoardGameTemplate(obj))
+  obj.game_type === "Video Game" ? renderVideoTemplate(obj,user.id) : renderBoardGameTemplate(obj,user.id))
   
 
 
