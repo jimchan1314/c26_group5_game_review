@@ -19,20 +19,20 @@ app.use(express.static(publicFolder));
 app.use(express.static(uploadFolder));
 
 let sessionMiddleware = expressSession({
-    secret: "ajdhaskjdhiuashduiwhiqdoquhcnqwibciq",
-    resave: true,
-    saveUninitialized: true,
-  })
+  secret: "ctyfn5ytru6bive8ter",
+  resave: true,
+  saveUninitialized: true,
+})
   
-  app.use(sessionMiddleware)
+app.use(sessionMiddleware)
     
-    declare module "express-session" {
-      interface SessionData {
-        isLogin?: boolean;
-        userId?: string;
-        
-      }
-    }
+declare module "express-session" {
+  interface SessionData {
+    isLogin?: boolean;
+    userId?: string;
+      
+  }
+}
 
 export type User = {
     username:string,
@@ -75,6 +75,9 @@ app.use("/user",userRoutes.routes)
 let gameController = new GameController()
 let gameRoutes = new GameRoute(gameController)
 app.use("/game",gameRoutes.routes)
+
+
+
 
 
 let port = 8080;

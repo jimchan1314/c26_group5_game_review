@@ -93,8 +93,16 @@ form > div > .button-flexBox > button{
 
 
 /* game section */
-.gameSection{
+.gameSession{
   padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gameBox{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
 }
 
 .gBoxCount{
