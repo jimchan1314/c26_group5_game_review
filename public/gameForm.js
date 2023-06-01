@@ -10,7 +10,7 @@
 //   document.querySelector('.gameSection').innerHTML = html;
 // }
 
-  
+
 
 let form = document.querySelector('#gameForm')
 form.addEventListener("submit", async function (event) {
@@ -76,8 +76,8 @@ async function renderAllGame(gameList){
         </div>
         <div class="col-md-8">
             <div class="card-body gBoxBody">
-            <i data-id=${obj.id} class="fa-solid fa-square-pen"> Edit</i>
-            <i data-id=${obj.id} class="fa-solid fa-trash-can"> Delete</i>
+            <i data-id=${obj.id} data-user=${obj.create_users_id} class="fa-solid fa-square-pen"> Edit</i>
+            <i data-id=${obj.id} data-user=${obj.create_users_id} class="fa-solid fa-trash-can"> Delete</i>
             <h4 class="card-title gBoxName">${obj.name}</h4>
             <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
             <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
@@ -96,36 +96,36 @@ async function renderAllGame(gameList){
   `).join('')
 
 
-//del game
-document.querySelectorAll('.gameBox > div > div > div > i.fa-trash-can').forEach(i=>i.addEventListener("click",async e=>{
-  let id = e.target.dataset.id
-  // console.log('GF103',id)
-  let res = await fetch(`/game/deleteGameList/${id}`,{
-      
-      method:"DELETE",
-      body:""
-  })
-  let json = await res.json()
-      if(json.isError){
-          await sweetAlert.fire({
-              icon: 'info',
-              title: json.errMess,
-              showConfirmButton: false,
-              timer: 1500
-            })
+  //del game
+  document.querySelectorAll('.gameBox > div > div > div > i.fa-trash-can').forEach(i=>i.addEventListener("click",async e=>{
+    let id = e.target.dataset.id
+    // console.log('GF103',id)
+    let res = await fetch(`/game/deleteGameList/${id}`,{
+        
+        method:"DELETE",
+        body:""
+    })
+    let json = await res.json()
+        if(json.isError){
+            await sweetAlert.fire({
+                icon: 'info',
+                title: json.errMess,
+                showConfirmButton: false,
+                timer: 1500
+              })
+              
+        }else{
+            await sweetAlert.fire({
+                icon: 'success',
+                title: 'Successfully Delete Game',
+                showConfirmButton: false,
+                timer: 1500
+              })
             
-      }else{
-          await sweetAlert.fire({
-              icon: 'success',
-              title: 'Successfully Delete Game',
-              showConfirmButton: false,
-              timer: 1500
-            })
-           
-          // i.parentElement.remove()
-      }
-      await fetchAllGame()
-}))
+            // i.parentElement.remove()
+        }
+        await fetchAllGame()
+  }))
 
 
 
