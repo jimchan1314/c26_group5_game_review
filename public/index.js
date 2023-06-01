@@ -3,13 +3,16 @@ async function indexCheck(){
 
     if(user){
         await fetchTemplate('loginNavbar.html', displayLogin)
-        await fetchTemplate('homePage.html', displayContent)
+        await fetchContent('homePage.html', displayContent, fetchAllGame)
     }else{
         await fetchTemplate('nonLoginNavbar.html', displayNotLogin)
-        await fetchTemplate('homePage.html', displayContent)
+        await fetchContent('homePage.html', displayContent, fetchAllGame)
     }
 }
 indexCheck()
+
+
+
 async function displayContent(html){
     document.querySelector('.content').innerHTML = html;
 }
@@ -34,6 +37,15 @@ async function fetchTemplate(path,cb){
     cb(html)
 }
 
+async function fetchContent(path,cb,cb2){
+    
+    let res = await fetch(path)
+    let html = await res.text()
+    
+    cb(html)
+    cb2()
+}
+
 // fm gameForm.js
 async function indexGame(){
     let res = await fetch('/game/getGameList')
@@ -46,5 +58,5 @@ async function indexGame(){
         renderAllGame(json.data)
     }
 }
-indexGame();
+// indexGame()
 

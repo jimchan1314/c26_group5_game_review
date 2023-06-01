@@ -29,7 +29,7 @@ export class GameController implements IGameController{
             [gameData.gameName, gameData.game_type, 0, gameData.description, req.session.userId, gameData.gameCover])
             
 
-            res.json({isError:false,errMess:null,data:form});
+            res.json({isError:false,errMess:null,data:gameData});
 
         } catch (error) {
             
