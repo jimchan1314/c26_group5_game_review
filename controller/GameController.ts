@@ -29,7 +29,7 @@ export class GameController implements IGameController{
             [gameData.gameName, gameData.game_type, 0, gameData.description, req.session.userId, gameData.gameCover])
             
 
-            res.json({isError:false,errMess:null,data:form});
+            res.json({isError:false,errMess:null,data:gameData});
 
         } catch (error) {
             
@@ -42,7 +42,12 @@ export class GameController implements IGameController{
 
     async editGameList(req:Request,res:Response):Promise<void>{
         try {
+            let gameID = req.params.id
+            let gameBody = req.body as Game
             
+            db.query(`UPDATE game SET name=$1, game_type=$2, description=$3, game_cover=$4 WHERE id=$5`,[gameBody.gameName,gameBody.game_type,gameBody.description,gameBody.gameCover,gameID])
+            res.json({isError:false,errMess:"",data:"Success edit memo"})
+
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
             res.json({isError:true,errMess:error.message})
