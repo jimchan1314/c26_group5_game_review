@@ -3,7 +3,7 @@ CREATE TABLE "game_message"(
     "text" TEXT NOT NULL,
     "game_id" VARCHAR (40) references "game"(id) not null,
     "users_id" VARCHAR (40) references "users"(id) not null,
-    "create_at" TIMESTAMP default CURRENT_TIMESTAMP 
+    "create_at" VARCHAR(255) not null
 );
 
 CREATE TABLE "game"(
@@ -11,8 +11,8 @@ CREATE TABLE "game"(
     "name" VARCHAR(100) NOT NULL,
     "game_type" VARCHAR(20) NOT NULL,
     "like_count" INTEGER NOT NULL, 
-    "create_at" TIMESTAMP default CURRENT_TIMESTAMP,
-    "update_at" TIMESTAMP default CURRENT_TIMESTAMP,
+    "create_at" VARCHAR(255) not null,
+    "update_at" VARCHAR(255),
     "description" TEXT NOT NULL,
     "create_users_id" VARCHAR(255), 
     FOREIGN KEY (create_users_id) references "users"(id),
