@@ -114,7 +114,7 @@ async function renderLoginFormModal(html) {
             })
             document.querySelector('#modalDismiss').click()
             await localStorage.setItem("user", JSON.stringify(json.data))
-            fetchTemplate('loginNavbar.html', displayLogin)
+            indexCheck()
 
 
 

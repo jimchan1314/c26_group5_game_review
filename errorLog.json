@@ -1,0 +1,169 @@
+<<<<<<< HEAD
+=======
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T03:07:39.036Z"
+}
+{
+  "route": "/changePassword",
+  "errMess": "bind message supplies 1 parameters, but prepared statement \"\" requires 2",
+  "dateTime": "2023-06-01T03:29:58.114Z"
+}
+{
+  "route": "/changePassword",
+  "errMess": "bind message supplies 1 parameters, but prepared statement \"\" requires 2",
+  "dateTime": "2023-06-01T03:30:02.070Z"
+}
+{
+  "route": "/changePassword",
+  "errMess": "bind message supplies 1 parameters, but prepared statement \"\" requires 2",
+  "dateTime": "2023-06-01T03:32:34.467Z"
+}
+{
+  "route": "/changePassword",
+  "errMess": "bind message supplies 1 parameters, but prepared statement \"\" requires 2",
+  "dateTime": "2023-06-01T03:32:54.944Z"
+}
+{
+  "route": "/changePassword",
+  "errMess": "bind message supplies 1 parameters, but prepared statement \"\" requires 2",
+  "dateTime": "2023-06-01T03:34:12.530Z"
+}
+{
+  "route": "/changePassword",
+  "errMess": "password not match!",
+  "dateTime": "2023-06-01T03:34:58.344Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T04:17:14.234Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T04:17:14.235Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T04:17:17.594Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T04:17:21.701Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T04:17:29.007Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T04:17:34.898Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T04:17:40.228Z"
+}
+{
+<<<<<<< HEAD
+  "route": "/addGameList",
+  "errMess": "null value in column \"id\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-01T09:04:29.831Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"id\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-01T10:04:51.757Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"id\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-01T10:06:12.301Z"
+=======
+  "route": "/getGameList",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-01T04:48:29.627Z"
+}
+{
+  "route": "/getGameList",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-01T04:48:39.064Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T04:51:07.231Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T04:51:12.155Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T04:51:17.259Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T04:51:23.904Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T04:51:26.953Z"
+}
+{
+  "route": "/getGameList",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-01T04:55:18.448Z"
+}
+{
+  "route": "/getGameList",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-01T04:55:21.754Z"
+}
+{
+  "route": "/getGameList",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-01T04:55:24.416Z"
+}
+{
+  "route": "/getGameList",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-01T04:57:33.057Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T05:15:08.483Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-01T08:46:21.727Z"
+>>>>>>> d898fd04f8264d62fd1017a99f3bc2c6da5ce14b
+}
+{
+  "route": "/getGameList",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-01T10:30:05.238Z"
+}
+{
+  "route": "/getGameList",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-01T10:30:05.408Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-02T02:02:17.571Z"
+}
+>>>>>>> refs/remotes/origin/main

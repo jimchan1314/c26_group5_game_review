@@ -8,7 +8,7 @@ async function indexCheck(){
         await fetchContent('homePage.html', displayContent, fetchAllGame)
     }else{
         await fetchTemplate('nonLoginNavbar.html', displayNotLogin)
-        await fetchContent('homePage.html', displayContent, fetchAllGame)
+        await fetchContent('homePage.html', displayContent, fetchGameGuest)
     }
 }
 indexCheck()
@@ -62,25 +62,25 @@ async function indexGame(){
 }
 // indexGame()
 
-async function userCheckLimit(){
-    let res = await fetch('/game/getGameList')
-    let json = await res.json()
-    console.log(json)
-    let user = await getCurrentUser()
-    let gameId = json.data.create_users_id 
-    // let objId = json.data.id
-    console.log(gameId)
+// async function userCheckLimit(){
+//     let res = await fetch('/game/getGameList')
+//     let json = await res.json()
+//     console.log(json)
+//     let user = await getCurrentUser()
+//     let gameId = json.data.create_users_id 
+//     // let objId = json.data.id
+//     console.log(gameId)
 
 
-    if(user.id = gameId){
+//     if(user.id = gameId){
 
-        document.querySelectorAll(`[data-user*=${gameId}]`).forEach(i=>i.style.display = "block")
+//         document.querySelectorAll(`[data-user*=${gameId}]`).forEach(i=>i.style.display = "block")
 
         
-    }else{
+//     }else{
 
-        document.querySelectorAll('.gameBox > div > div > div > i.fa-trash-can').forEach(i=>i.style.display = "none")
-    }
-}
+//         document.querySelectorAll('.gameBox > div > div > div > i.fa-trash-can').forEach(i=>i.style.display = "none")
+//     }
+// }
 // userCheckLimit()
 

@@ -110,6 +110,12 @@ form > div > .button-flexBox > button{
   justify-content: space-between;
 }
 
+.gameCoverDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* profile section */
 .row {
   width: 100%;

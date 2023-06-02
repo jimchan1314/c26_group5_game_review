@@ -4,6 +4,8 @@ import { db } from "../db";
 
 import { errorHandler } from "../errorHandler";
 import { IGameController } from "../routes/Routes";
+import { ParamsDictionary } from "express-serve-static-core";
+import { ParsedQs } from "qs";
 
 // import jsonfile from "jsonfile";
 // import { type } from "os";
@@ -24,6 +26,9 @@ const SQL_UPDATE_GAME = (game:Game,gameId:number)=>{
 
 
 export class GameController implements IGameController{
+    editGameList(req: Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>): Promise<void> {
+        throw new Error("Method not implemented.");
+    }
     
     async addGameList(req:Request,res:Response):Promise<void>{
 
@@ -49,45 +54,45 @@ export class GameController implements IGameController{
     }
 
     //ver 1 test
-    async editGameList(req:Request,res:Response):Promise<void>{
-        try {
-            let gameID = req.params.id
-            let gameBody = req.body as Game
+    // async editGameList(req:Request,res:Response):Promise<void>{
+    //     try {
+    //         let gameID = req.params.id
+    //         let gameBody = req.body as Game
             
-            db.query(`UPDATE game SET name=$1, game_type=$2, description=$3, game_cover=$4 WHERE id=$5`,
-            [gameBody.gameName, gameBody.game_type, gameBody.description, gameBody.gameCover, gameID])
+    //         db.query(`UPDATE game SET name=$1, game_type=$2, description=$3, game_cover=$4 WHERE id=$5`,
+    //         [gameBody.gameName, gameBody.game_type, gameBody.description, gameBody.gameCover, gameID])
 
-            res.json({isError:false,errMess:"",data:"Success edit memo"})
+    //         res.json({isError:false,errMess:"",data:"Success edit memo"})
 
-        } catch (error) {
-            errorHandler({status:error.status,route:req.path,errMess:error.message})
-            res.json({isError:true,errMess:error.message})
-        }
-    }
+    //     } catch (error) {
+    //         errorHandler({status:error.status,route:req.path,errMess:error.message})
+    //         res.json({isError:true,errMess:error.message})
+    //     }
+    // }
 
-    //ver 2 test
-    async editGameList2(req:Request,res:Response):Promise<void>{
-        const {gameID} = req.params;//<-string
-        const int_id = parseInt(gameID);
+    // //ver 2 test
+    // async editGameList2(req:Request,res:Response):Promise<void>{
+    //     const {gameID} = req.params;//<-string
+    //     const int_id = parseInt(gameID);
 
 
         
-        try {
-            let form = await parseFormDataGame(req) as Game; 
-            // console.log("25", form)
-            let gameData = {...form}
+    //     try {
+    //         let form = await parseFormDataGame(req) as Game; 
+    //         // console.log("25", form)
+    //         let gameData = {...form}
             
-            db.query(`UPDATE game SET name=$1, game_type=$2, description=$3, game_cover=$4 WHERE id=$5`,
-            [gameBody.gameName, gameBody.game_type, gameBody.description, gameBody.gameCover, gameID])
+    //         db.query(`UPDATE game SET name=$1, game_type=$2, description=$3, game_cover=$4 WHERE id=$5`,
+    //         [gameBody.gameName, gameBody.game_type, gameBody.description, gameBody.gameCover, gameID])
             
 
-            res.json({isError:false,errMess:null,data:gameData});
+    //         res.json({isError:false,errMess:null,data:gameData});
             
-        } catch (error) {
-            errorHandler({status:error.status,route:req.path,errMess:error.message})
-            res.json({isError:true,errMess:error.message})
-        }
-    }
+    //     } catch (error) {
+    //         errorHandler({status:error.status,route:req.path,errMess:error.message})
+    //         res.json({isError:true,errMess:error.message})
+    //     }
+    // }
 
 
     async deleteGameList(req:Request,res:Response):Promise<void>{
