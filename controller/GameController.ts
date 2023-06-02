@@ -28,7 +28,7 @@ export class GameController implements IGameController{
             let time = new Date();
             let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');   
             
-            await db.query(`INSERT INTO game (name, game_type, like_count, description, create_users_id, game_cover, create_at) VALUES ($1,$2,$3,$4,$5,$6,$7)`,
+            await db.query(`INSERT INTO game (name, game_type, like_count, description, create_users_id, game_cover, create_post) VALUES ($1,$2,$3,$4,$5,$6,$7)`,
             [gameData.gameName, gameData.game_type, 0, gameData.description, req.session.userId, gameData.gameCover, currTime])
             
 
@@ -60,7 +60,7 @@ export class GameController implements IGameController{
     async deleteGameList(req:Request,res:Response):Promise<void>{
         try {
             let gameID = req.params.id
-            await db.query(`DELETE FROM game WHERE id=$1`,[gameID])
+            await db.query(`DELETE FROM game WHERE game.post_id=$1`,[gameID])
             res.json({isError:false,errMess:"",data:"Success delete Game"})
 
         } catch (error) {
@@ -72,7 +72,7 @@ export class GameController implements IGameController{
     async getGameList(req:Request,res:Response):Promise<void> {
         try {
             
-            let {rows} = await db.query(`SELECT * FROM game JOIN users ON users.id = game.create_users_id ORDER BY game.id DESC`);
+            let {rows} = await db.query(`SELECT * FROM game JOIN users ON users.id = game.create_users_id ORDER BY game.post_id DESC`);
             console.log(rows)
             res.json({isError:false,errMess:"",data:rows})    
             
