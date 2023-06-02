@@ -37,7 +37,7 @@ export class GameController implements IGameController{
             // console.log("25", form)
             let gameData = {...form}
             let time = new Date();
-            //let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');   
+            let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');   
             
             await db.query(`INSERT INTO game (name, game_type, like_count, description, create_users_id, game_cover, create_post) VALUES ($1,$2,$3,$4,$5,$6,$7)`,
             [gameData.gameName, gameData.game_type, 0, gameData.description, req.session.userId, gameData.gameCover, currTime])
