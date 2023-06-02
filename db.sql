@@ -1,5 +1,5 @@
 CREATE TABLE "game_message"(
-    "id" VARCHAR(200) primary key,
+    "id" SERIAL primary key,
     "text" TEXT NOT NULL,
     "game_id" VARCHAR (40) references "game"(id) not null,
     "users_id" VARCHAR (40) references "users"(id) not null,
