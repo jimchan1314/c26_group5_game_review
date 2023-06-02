@@ -8,6 +8,7 @@ async function displayLogin(html) {
 
     let user = await localStorage.getItem('user')
     user = JSON.parse(user)
+    console.log(user.users_icon)
 
     document.querySelectorAll('#userIcon-navbar').forEach(icon => icon.setAttribute('username', " Hi " + user.users_name))
     document.querySelectorAll('#userIcon-navbar > img').forEach(img => img.src = user.users_icon ? user.users_icon : "user.png")

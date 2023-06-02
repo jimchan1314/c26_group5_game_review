@@ -18,17 +18,15 @@ FOREIGN KEY (create_users_id) references "users"(id),
 "game_cover" VARCHAR(255)
 );
 CREATE TABLE "like_ref_game_users"(
-"users_id" BIGINT references "users"(id) not null,
-"game_id" BIGINT references "game"(post_id) not null,
-);
-CREATE TABLE "users"(
-id text primary key,
-email VARCHAR(255) NOT NULL,
-password VARCHAR(255) NOT NULL,
-users_icon VARCHAR(255),
-users_name VARCHAR(255) NOT NULL,
-create_at VARCHAR(255) NOT NULL
+    "users_id" BIGINT references "users"(id) not null,
+    "game_id" BIGINT references "game"(post_id) not null,
 );
 
--- mandy notes
-select * from game join users on game.create_users_id = users.id;
+CREATE TABLE "users"(
+    id text primary key,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    users_icon VARCHAR(255),
+    users_name VARCHAR(255) NOT NULL,
+    create_at VARCHAR(255) NOT NULL
+);

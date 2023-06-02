@@ -14,7 +14,7 @@
 async function renderCreateGame(html) {
   document.querySelector('.content').innerHTML = html
   let form = document.querySelector('#gameForm')
-  form.addEventListener("submit", async function (event) {
+  document.querySelector('.submit').addEventListener("click", async function (event) {
     event.preventDefault();
 
 
@@ -161,10 +161,10 @@ function renderVideoTemplate(obj,userId){
           ""
           }
         <h4 class="card-title gBoxName">${obj.name}</h4>
-        <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
-        <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
-        <div class="card-text">Created by: ${obj.users_name}</div>
-        <div class="card-text">Create at: ${obj.create_post}</div>
+        <div class="card-text gBoxType"><span style="color:#ACBCFF">Game Type:</span> ${obj.game_type}</div>
+        <p class="card-text gBoxDescription"><span style="color:#ACBCFF">Description:</span> <br>${obj.description}</p>
+        <div class="card-text"><span style="color:#ACBCFF">Created by:</span> ${obj.users_name}</div>
+        <div class="card-text"><span style="color:#ACBCFF">Create at:</span> ${obj.create_post}</div>
         </div>
         <div class="card-body gBoxCount">
         <i class="fa-regular fa-comment-dots"> Message: 100</i>
@@ -218,9 +218,8 @@ function renderBoardGameTemplate(obj,userId){
 
 //put in game area
 async function renderAllGame(gameList) {
-  // let users = gameList.create_users_id
-  console.log(gameList)
-  let user = localStorage.getItem('user');
+ 
+  let user = await localStorage.getItem('user');
   user = JSON.parse(user);
   
   // if (gameList[0].game_type === "Video Game") {

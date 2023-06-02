@@ -30,8 +30,8 @@ export class UserController implements IUserController{
 
             
             
-            await db.query(`INSERT INTO users (id,email,users_name,password, create_at) VALUES ($1,$2,$3,$4,$5)`,
-            [req.session.userId,userData.email,userData.username,userData.password, currTime])
+            await db.query(`INSERT INTO users (id,email,users_name,password,create_at) VALUES ($1,$2,$3,$4,$5)`,
+            [req.session.userId,userData.email,userData.username,userData.password,currTime])
             
             
             res.json({isError:false,errMess:null,data:userData});    

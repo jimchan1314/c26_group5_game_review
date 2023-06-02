@@ -312,3 +312,53 @@
   "errMess": "syntax error at or near \"WHERE\"",
   "dateTime": "2023-06-02T09:55:42.933Z"
 }
+{
+  "route": "/register",
+  "errMess": "INSERT has more expressions than target columns",
+  "dateTime": "2023-06-02T03:31:16.912Z"
+}
+{
+  "route": "/register",
+  "errMess": "INSERT has more expressions than target columns",
+  "dateTime": "2023-06-02T03:31:19.042Z"
+}
+{
+  "route": "/register",
+  "errMess": "syntax error at or near \"create\"",
+  "dateTime": "2023-06-02T03:32:09.393Z"
+}
+{
+  "route": "/register",
+  "errMess": "syntax error at or near \"create\"",
+  "dateTime": "2023-06-02T03:32:13.546Z"
+}
+{
+  "route": "/register",
+  "errMess": "syntax error at or near \"create\"",
+  "dateTime": "2023-06-02T03:33:58.545Z"
+}
+{
+  "route": "/register",
+  "errMess": "syntax error at or near \"create\"",
+  "dateTime": "2023-06-02T03:35:48.272Z"
+}
+{
+  "route": "/deleteGameList/af315371-60ab-4ad9-811a-d832e4f64a2c",
+  "errMess": "invalid input syntax for type integer: \"af315371-60ab-4ad9-811a-d832e4f64a2c\"",
+  "dateTime": "2023-06-02T03:38:03.817Z"
+}
+{
+  "route": "/deleteGameList/af315371-60ab-4ad9-811a-d832e4f64a2c",
+  "errMess": "invalid input syntax for type integer: \"af315371-60ab-4ad9-811a-d832e4f64a2c\"",
+  "dateTime": "2023-06-02T03:38:15.417Z"
+}
+{
+  "route": "/deleteGameList/af315371-60ab-4ad9-811a-d832e4f64a2c",
+  "errMess": "invalid input syntax for type integer: \"af315371-60ab-4ad9-811a-d832e4f64a2c\"",
+  "dateTime": "2023-06-02T03:43:19.615Z"
+}
+{
+  "route": "/deleteGameList/c8fef13c-401b-489b-946e-c904be575714",
+  "errMess": "invalid input syntax for type integer: \"c8fef13c-401b-489b-946e-c904be575714\"",
+  "dateTime": "2023-06-02T03:57:07.597Z"
+}
