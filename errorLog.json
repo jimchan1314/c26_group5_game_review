@@ -272,3 +272,13 @@
   "errMess": "null value in column \"create_at\" of relation \"users\" violates not-null constraint",
   "dateTime": "2023-06-02T08:33:58.020Z"
 }
+{
+  "route": "/register",
+  "errMess": "password not match!",
+  "dateTime": "2023-06-02T08:43:05.138Z"
+}
+{
+  "route": "/register",
+  "errMess": "null value in column \"create_at\" of relation \"users\" violates not-null constraint",
+  "dateTime": "2023-06-02T08:43:13.411Z"
+}
