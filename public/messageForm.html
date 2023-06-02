@@ -12,15 +12,16 @@
 
 <body>
     <!-- <div class="mb-3 container"></div> -->
-    <form id="messageForm">
+    <!-- id -->
+    <form id="messageForm" data-id="1">
         <div class="mb-3">
-            <label for="message" class="form-label">Comment</label>
-            <textarea class="form-control" name="message" rows="3"></textarea>
+            <label for="text" class="form-label">Comment</label>
+            <textarea class="form-control" name="text" rows="3"></textarea>
         </div>
 
         <div class="mb-3">
-            <label for="formFile" class="form-label">Attachment</label>
-            <input class="form-control" type="file" name="messagePic">
+            <label for="image" class="form-label">Attachment</label>
+            <input class="form-control" type="file" name="image">
         </div>
         <div class="col-12">
             <button class="btn btn-primary" type="submit">Submit form</button>
