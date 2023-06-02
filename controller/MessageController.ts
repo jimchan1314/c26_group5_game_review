@@ -56,7 +56,7 @@ export class MessageController implements IMessageController{
     async deleteMessage(req:Request,res:Response):Promise<void> {
         try {
             let messageID = req.params.id
-            db.query(`DELETE game_message where id=$1`,[messageID])
+            db.query(`DELETE FROM game_message where id=$1`,[messageID])
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
             res.json({isError:true,errMess:error.message})
@@ -66,7 +66,8 @@ export class MessageController implements IMessageController{
     //no need user login
     async getMessage(req:Request,res:Response):Promise<void> {
         try {
-            let {rows} = await db.query(`SELECT * from game_message WHERE game_id='1' ORDER BY create_at ASC`)
+            let gameId = req.params.id
+            let {rows} = await db.query(`SELECT * from game_message WHERE game_id=$1 ORDER BY create_at ASC`,[gameId])
             console.log(rows)
             res.json({isError:false,errMess:null,data:rows});
         } catch (error) {
