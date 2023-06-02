@@ -282,3 +282,33 @@
   "errMess": "null value in column \"create_at\" of relation \"users\" violates not-null constraint",
   "dateTime": "2023-06-02T08:43:13.411Z"
 }
+{
+  "route": "/getGameList",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-02T08:49:42.442Z"
+}
+{
+  "route": "/deleteGameList/4fc85f4a-8be4-4053-9df0-f136503d5d63",
+  "errMess": "invalid input syntax for type integer: \"4fc85f4a-8be4-4053-9df0-f136503d5d63\"",
+  "dateTime": "2023-06-02T08:56:21.944Z"
+}
+{
+  "route": "/editGameList/6",
+  "errMess": "syntax error at or near \"WHERE\"",
+  "dateTime": "2023-06-02T09:42:00.970Z"
+}
+{
+  "route": "/editGameList/6",
+  "errMess": "syntax error at or near \"WHERE\"",
+  "dateTime": "2023-06-02T09:45:32.026Z"
+}
+{
+  "route": "/editGameList/6",
+  "errMess": "syntax error at or near \"WHERE\"",
+  "dateTime": "2023-06-02T09:45:35.302Z"
+}
+{
+  "route": "/editGameList/2",
+  "errMess": "syntax error at or near \"WHERE\"",
+  "dateTime": "2023-06-02T09:55:42.933Z"
+}

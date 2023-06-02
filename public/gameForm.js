@@ -31,7 +31,7 @@ async function renderCreateGame(html) {
     if (json.isError) {
       await sweetAlert.fire({
         icon: 'info',
-        title: gameResult.errMess,
+        title: json.errMess,
         showConfirmButton: false,
         timer: 1500
       })
@@ -84,7 +84,7 @@ function renderAllGameGuest(gameList) {
           <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
           <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
           <div class="card-text">Created by: ${obj.users_name}</div>
-          <div class="card-text">Create at: ${obj.create_at}</div>
+          <div class="card-text">Create at: ${obj.create_post}</div>
           </div>
           <div class="card-body gBoxCount">
           <i class="fa-regular fa-comment-dots"> Message: 100</i>
@@ -112,7 +112,7 @@ function renderAllGameGuest(gameList) {
            <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
            <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
            <div class="card-text">Created by: ${obj.users_name}</div>
-           <div class="card-text">Create at: ${obj.create_at}</div>
+           <div class="card-text">Create at: ${obj.create_post}</div>
            </div>
            <div class="card-body gBoxCount">
            <i class="fa-regular fa-comment-dots"> Message: 100</i>
@@ -155,8 +155,8 @@ function renderVideoTemplate(obj,userId){
         <div class="card-body gBoxBody">
         ${obj.create_users_id === userId ? 
           `
-          <i data-id=${obj.id} class="fa-solid fa-square-pen" onclick="fetchTemplate('editGameForm.html', renderEditGame(${obj.id})")> Edit</i>
-          <i data-id=${obj.id} class="fa-solid fa-trash-can"> Delete</i>
+          <i data-id=${obj.post_id} class="fa-solid fa-square-pen" onclick="renderEditGame()"> Edit</i>
+          <i data-id=${obj.post_id} class="fa-solid fa-trash-can"> Delete</i>
           ` :
           ""
           }
@@ -164,7 +164,7 @@ function renderVideoTemplate(obj,userId){
         <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
         <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
         <div class="card-text">Created by: ${obj.users_name}</div>
-        <div class="card-text">Create at: ${obj.create_at}</div>
+        <div class="card-text">Create at: ${obj.create_post}</div>
         </div>
         <div class="card-body gBoxCount">
         <i class="fa-regular fa-comment-dots"> Message: 100</i>
@@ -193,8 +193,8 @@ function renderBoardGameTemplate(obj,userId){
         <div class="card-body gBoxBody">
         ${obj.create_users_id === userId ? 
         `
-        <i data-id=${obj.id} class="fa-solid fa-square-pen" onclick="fetchTemplate('editGameForm.html', renderEditGame(${obj.id})") > Edit</i>
-        <i data-id=${obj.id} class="fa-solid fa-trash-can"> Delete</i>
+        <i data-id=${obj.post_id} class="fa-solid fa-square-pen" onclick="renderEditGame('${obj.post_id}')") > Edit</i>
+        <i data-id=${obj.post_id} class="fa-solid fa-trash-can"> Delete</i>
         ` :
         ""
         }
@@ -203,7 +203,7 @@ function renderBoardGameTemplate(obj,userId){
         <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
         <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
         <div class="card-text">Created by: ${obj.users_name}</div>
-        <div class="card-text">Create at: ${obj.create_at}</div>
+        <div class="card-text">Create at: ${obj.create_post}</div>
         </div>
         <div class="card-body gBoxCount">
         <i class="fa-regular fa-comment-dots"> Message: 100</i>
@@ -268,18 +268,6 @@ async function renderAllGame(gameList) {
   }))
 
 
-  //edit game form
-  // document.querySelectorAll('.gameBox > div > div > div > i.fa-trash-can').forEach(i => i.addEventListener("click", async e => {
-  //   let id = e.target.dataset.id
-    
-  //   document.querySelector('.editGameForm').innerHTML = html
-  //   let editForm = document.querySelector('#gameForm')
-
-  //   renderEditGame(editForm,id)
-    
-
-  // }))
-
   
 
 
@@ -294,7 +282,10 @@ async function renderAllGame(gameList) {
 
 //edit game form
 async function renderEditGame(id) {
-  // document.querySelector('.editGameForm').innerHTML = html
+  let res = await fetch('editForm.html')
+  let html = await res.text()
+  document.querySelector('.editGameForm').innerHTML = html
+
   let form = document.querySelector('#editGameForm')
   console.log(id)
   form.addEventListener("submit", async function (event) {
@@ -314,7 +305,7 @@ async function renderEditGame(id) {
     if (json.isError) {
       await sweetAlert.fire({
         icon: 'info',
-        title: gameResult.errMess,
+        title: json.errMess,
         showConfirmButton: false,
         timer: 1500
       })

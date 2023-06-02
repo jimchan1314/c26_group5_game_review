@@ -6,6 +6,7 @@ import { v4 as uuid } from 'uuid';
 import { db } from "../db";
 import { IUserController } from "../routes/Routes";
 import { errorHandler } from "../errorHandler";
+import moment from "moment";
 
 export class UserController implements IUserController{
     async register(req:Request,res:Response):Promise<void>{
@@ -16,8 +17,8 @@ export class UserController implements IUserController{
                 throw new Error('password not match!')
             }
             let userData = {...form}
-            // let time = new Date();
-            // let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');   
+            let time = new Date();
+            let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');   
             
             await registerUserSchema.validate(userData);
             
@@ -29,8 +30,8 @@ export class UserController implements IUserController{
 
             
             
-            await db.query(`INSERT INTO users (id,email,users_name,password) VALUES ($1,$2,$3,$4)`,
-            [req.session.userId,userData.email,userData.username,userData.password])
+            await db.query(`INSERT INTO users (id,email,users_name,password, create_at) VALUES ($1,$2,$3,$4,$5)`,
+            [req.session.userId,userData.email,userData.username,userData.password, currTime])
             
             
             res.json({isError:false,errMess:null,data:userData});    

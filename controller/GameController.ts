@@ -84,12 +84,14 @@ export class GameController implements IGameController{
         try{
             // let userID = req.session.userId;
             let gameID = req.params.id
+            console.log("gljs-87",gameID)
             let form = await parseFormDataGame(req) as EditGame
             let gameData = {...form} 
+            console.log("gljs-90",gameData)
             let time = new Date();
             let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');
 
-            let {rows} = await db.query(`UPDATE game SET name = $1, game_type = $2, description = $3, game_cover = $4, update_post = $5, WHERE post_id = $6`,
+            let {rows} = await db.query(`UPDATE game SET name = $1, game_type = $2, description = $3, game_cover = $4, update_post = $5 WHERE post_id = $6`,
             [gameData.gameName, gameData.game_type, gameData.description, gameData.gameCover, currTime, gameID]);
             res.json({isError:false,errMess:"",data:rows[0]})
 
