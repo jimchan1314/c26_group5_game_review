@@ -6,9 +6,7 @@ import { errorHandler } from "../errorHandler";
 
 type Message = {
     text: string,
-    image: string,
-    //game_id: number|string,
-    //user_id: number|string
+    image: string
 }
 
 export class MessageController implements IMessageController{
@@ -17,15 +15,21 @@ export class MessageController implements IMessageController{
         try {
             let form = await parseFormDataGame(req) as Message;
             let message = {...form}
-
-            console.log(message)
+            let userId = req.session.userId!
+            let gameId = req.params.id
+            //console.log(message)
             
             //await db.query(`INSERT INTO game_message (text,image,game_id,users_id) VALUES ($1,$2,$3,$4)`,
             //[message.text,message.image,message.game_id,message.user_id])
 
-            let gameId = await db.query(`SELECT id from game limit 1`)
-            let userId = await db.query(`SELECT id from users limit 1`)
-
+            // let gamequery = await db.query(`SELECT id from game limit 1`)
+            // if(gamequery.rows.length === 0){
+            //     throw new Error('not exist this game')
+            // }
+            // let userQuery = await db.query(`SELECT id from users limit 1`)
+            // if(userQuery.rows.length === 0){
+            //     throw new Error('not exist this user')
+            // }
             await db.query(`INSERT INTO game_message (text,image,game_id,users_id) VALUES ($1,$2,$3,$4)`,
             [message.text,message.image,gameId,userId])
             
@@ -52,7 +56,7 @@ export class MessageController implements IMessageController{
     async deleteMessage(req:Request,res:Response):Promise<void> {
         try {
             let messageID = req.params.id
-            db.query(`DELETE game_message where id=$1`,[messageID])
+            db.query(`DELETE FROM game_message where id=$1`,[messageID])
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
             res.json({isError:true,errMess:error.message})
@@ -62,8 +66,10 @@ export class MessageController implements IMessageController{
     //no need user login
     async getMessage(req:Request,res:Response):Promise<void> {
         try {
-            let messages = await db.query(`SELECT * from game_message asc`)
-            res.json({isError:false,errMess:null,data:messages});
+            let gameId = req.params.id
+            let {rows} = await db.query(`SELECT * from game_message WHERE game_id=$1 ORDER BY create_at ASC`,[gameId])
+            console.log(rows)
+            res.json({isError:false,errMess:null,data:rows});
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
             res.json({isError:true,errMess:error.message})

@@ -31,7 +31,7 @@ async function renderCreateGame(html) {
     if (json.isError) {
       await sweetAlert.fire({
         icon: 'info',
-        title: gameResult.errMess,
+        title: json.errMess,
         showConfirmButton: false,
         timer: 1500
       })
@@ -63,7 +63,7 @@ async function fetchGameGuest(){
     alert(json.errMess)
   } else {
     renderAllGameGuest(json.data)
-  }
+  } 
 }
 
 function renderAllGameGuest(gameList) {
@@ -73,8 +73,8 @@ function renderAllGameGuest(gameList) {
     `
     <div class="gameBox card mb-3" style="max-width: 500px;">
     <div class="row g-0">
-      <div class="col-md-4">
-      Game Cover  
+      <div class="col-md-4 gameCoverDiv">
+      
         <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
       </div>
       <div class="col-md-8">
@@ -100,8 +100,8 @@ function renderAllGameGuest(gameList) {
      `
      <div class="gameBox card mb-3" style="max-width: 500px;">
      <div class="row g-0">
-       <div class="col-md-4">
-       Game Cover  
+       <div class="col-md-4 gameCoverDiv">
+        
          <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
        </div>
        <div class="col-md-8">
@@ -135,7 +135,7 @@ async function fetchAllGame() {
     alert(json.errMess)
   } else {
     renderAllGame(json.data)
-    console.log("GF63", json.data)
+    console.log("GF65", json.data)
   }
 }
 
@@ -147,15 +147,19 @@ function renderVideoTemplate(obj,userId){
   `
   <div class="gameBox card mb-3" style="max-width: 500px;">
   <div class="row g-0">
-    <div class="col-md-4">
-    Game Cover  
+    <div class="col-md-4 gameCoverDiv">
+    
       <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
     </div>
     <div class="col-md-8">
         <div class="card-body gBoxBody">
         ${obj.create_users_id === userId ? 
           `
+<<<<<<< HEAD
           <i data-id=${obj.post_id} class="fa-solid fa-square-pen"> Edit</i>
+=======
+          <i data-id=${obj.post_id} class="fa-solid fa-square-pen" onclick="renderEditGame()"> Edit</i>
+>>>>>>> d8ef9854831b35a8e59af0356e50486b44176110
           <i data-id=${obj.post_id} class="fa-solid fa-trash-can"> Delete</i>
           ` :
           ""
@@ -180,20 +184,24 @@ function renderVideoTemplate(obj,userId){
 }
 
 function renderBoardGameTemplate(obj,userId){
-  console.log(obj.create_users_id,userId);
-  document.querySelector('#boardGame').innerHTML+=
+  // console.log(obj.create_users_id,userId);
+  document.querySelector('#boardGame').innerHTML +=
   `
   <div class="gameBox card mb-3" style="max-width: 500px;">
   <div class="row g-0">
-    <div class="col-md-4">
-    Game Cover  
+    <div class="col-md-4 gameCoverDiv">
+      
       <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
     </div>
     <div class="col-md-8">
         <div class="card-body gBoxBody">
         ${obj.create_users_id === userId ? 
         `
+<<<<<<< HEAD
         <i data-id=${obj.post_id} class="fa-solid fa-square-pen"> Edit</i>
+=======
+        <i data-id=${obj.post_id} class="fa-solid fa-square-pen" onclick="renderEditGame('${obj.post_id}')") > Edit</i>
+>>>>>>> d8ef9854831b35a8e59af0356e50486b44176110
         <i data-id=${obj.post_id} class="fa-solid fa-trash-can"> Delete</i>
         ` :
         ""
@@ -223,6 +231,12 @@ async function renderAllGame(gameList) {
   user = JSON.parse(user);
   
   // if (gameList[0].game_type === "Video Game") {
+  
+  // if(user=null){
+    // user.id ='public'}
+  // }
+  
+  // console.log("123", user)
   gameList.forEach(obj =>
   obj.game_type === "Video Game" ? renderVideoTemplate(obj,user.id) : renderBoardGameTemplate(obj,user.id))
   
@@ -261,9 +275,64 @@ async function renderAllGame(gameList) {
   }))
 
 
+  
+
+
+
+
+
 
 
 }
+
+
+
+//edit game form
+async function renderEditGame(id) {
+  let res = await fetch('editForm.html')
+  let html = await res.text()
+  document.querySelector('.editGameForm').innerHTML = html
+
+  let form = document.querySelector('#editGameForm')
+  console.log(id)
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+
+    const formData = new FormData(form);
+
+    let res = await fetch(`game/editGameList/${id}`, {
+      method: "PUT",
+      body: formData,
+    });
+
+    let json = await res.json(); // { success: true }
+    // console.log("80 ", json)
+
+    if (json.isError) {
+      await sweetAlert.fire({
+        icon: 'info',
+        title: json.errMess,
+        showConfirmButton: false,
+        timer: 1500
+      })
+
+    } else {
+      await sweetAlert.fire({
+        icon: 'success',
+        title: 'Successfully Post Game',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
+
+    }
+    await form.reset();
+  });
+
+
+}
+
 
 
 

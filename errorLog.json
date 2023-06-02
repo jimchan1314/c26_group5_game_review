@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 {
   "route": "/login",
   "errMess": "password does not match",
@@ -150,6 +152,26 @@
 >>>>>>> d898fd04f8264d62fd1017a99f3bc2c6da5ce14b
 }
 {
+<<<<<<< HEAD
+  "route": "/addMessage",
+  "errMess": "value too long for type character varying(40)",
+  "dateTime": "2023-06-02T02:13:07.256Z"
+}
+{
+  "route": "/addMessage",
+  "errMess": "value too long for type character varying(40)",
+  "dateTime": "2023-06-02T02:13:17.951Z"
+}
+{
+  "route": "/addMessage",
+  "errMess": "value too long for type character varying(40)",
+  "dateTime": "2023-06-02T02:20:34.857Z"
+}
+{
+  "route": "/addMessage",
+  "errMess": "null value in column \"text\" of relation \"game_message\" violates not-null constraint",
+  "dateTime": "2023-06-02T02:31:45.309Z"
+=======
   "route": "/getGameList",
   "errMess": "relation \"game\" does not exist",
   "dateTime": "2023-06-01T10:30:05.238Z"
@@ -228,6 +250,67 @@
   "route": "/login",
   "errMess": "email does not exist",
   "dateTime": "2023-06-02T03:23:00.769Z"
+>>>>>>> daf18b86c80039b09e2ba5ad62b47a22e37bd9dd
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-02T08:33:26.835Z"
+}
+{
+  "route": "/register",
+  "errMess": "null value in column \"create_at\" of relation \"users\" violates not-null constraint",
+  "dateTime": "2023-06-02T08:33:52.559Z"
+}
+{
+  "route": "/register",
+  "errMess": "null value in column \"create_at\" of relation \"users\" violates not-null constraint",
+  "dateTime": "2023-06-02T08:33:55.376Z"
+}
+{
+  "route": "/register",
+  "errMess": "null value in column \"create_at\" of relation \"users\" violates not-null constraint",
+  "dateTime": "2023-06-02T08:33:58.020Z"
+}
+{
+  "route": "/register",
+  "errMess": "password not match!",
+  "dateTime": "2023-06-02T08:43:05.138Z"
+}
+{
+  "route": "/register",
+  "errMess": "null value in column \"create_at\" of relation \"users\" violates not-null constraint",
+  "dateTime": "2023-06-02T08:43:13.411Z"
+}
+{
+  "route": "/getGameList",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-02T08:49:42.442Z"
+}
+{
+  "route": "/deleteGameList/4fc85f4a-8be4-4053-9df0-f136503d5d63",
+  "errMess": "invalid input syntax for type integer: \"4fc85f4a-8be4-4053-9df0-f136503d5d63\"",
+  "dateTime": "2023-06-02T08:56:21.944Z"
+}
+{
+  "route": "/editGameList/6",
+  "errMess": "syntax error at or near \"WHERE\"",
+  "dateTime": "2023-06-02T09:42:00.970Z"
+}
+{
+  "route": "/editGameList/6",
+  "errMess": "syntax error at or near \"WHERE\"",
+  "dateTime": "2023-06-02T09:45:32.026Z"
+}
+{
+  "route": "/editGameList/6",
+  "errMess": "syntax error at or near \"WHERE\"",
+  "dateTime": "2023-06-02T09:45:35.302Z"
+}
+{
+  "route": "/editGameList/2",
+  "errMess": "syntax error at or near \"WHERE\"",
+  "dateTime": "2023-06-02T09:55:42.933Z"
 }
 {
   "route": "/register",
