@@ -62,9 +62,9 @@ export interface IMessageController{
 export class MessageRoute extends Routes {
     constructor(controller: MessageController) {
         super()
-        this.routes.post('/addMessage',controller.addMessage)
-        this.routes.put('/editMessage/:id',controller.editMessage)
-        this.routes.delete('/deleteMessage/:id',controller.deleteMessage)
-        this.routes.get('/getMessage',controller.getMessage)
+        this.routes.post('/addMessage/:id',isLoggedInAPI,controller.addMessage)
+        this.routes.put('/editMessage/:id',isLoggedInAPI,controller.editMessage)
+        this.routes.delete('/deleteMessage/:id',isLoggedInAPI,controller.deleteMessage)
+        this.routes.get('/getMessage/:id',controller.getMessage)
     }
 }

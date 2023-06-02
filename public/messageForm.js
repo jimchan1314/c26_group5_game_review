@@ -2,13 +2,11 @@ let messageForm = document.querySelector("#messageForm")
 messageForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     console.log('submit clicked')
+    let gameId = messageForm.dataset.id //as game is born or button is clicked -> html with id is generated.
 
-    //const message = e.target
     const messageData = new FormData(messageForm)
-    //messageData.append('message', message.message.value)
-    //messageData.append('messagePic', message.messagePic.files[0])
 
-    const res = await fetch('message/addMessage', {
+    const res = await fetch(`message/addMessage/${gameId}`, {
         method: "POST",
         body: messageData
     })

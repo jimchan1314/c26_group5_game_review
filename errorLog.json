@@ -152,6 +152,26 @@
 >>>>>>> d898fd04f8264d62fd1017a99f3bc2c6da5ce14b
 }
 {
+<<<<<<< HEAD
+  "route": "/addMessage",
+  "errMess": "value too long for type character varying(40)",
+  "dateTime": "2023-06-02T02:13:07.256Z"
+}
+{
+  "route": "/addMessage",
+  "errMess": "value too long for type character varying(40)",
+  "dateTime": "2023-06-02T02:13:17.951Z"
+}
+{
+  "route": "/addMessage",
+  "errMess": "value too long for type character varying(40)",
+  "dateTime": "2023-06-02T02:20:34.857Z"
+}
+{
+  "route": "/addMessage",
+  "errMess": "null value in column \"text\" of relation \"game_message\" violates not-null constraint",
+  "dateTime": "2023-06-02T02:31:45.309Z"
+=======
   "route": "/getGameList",
   "errMess": "relation \"game\" does not exist",
   "dateTime": "2023-06-01T10:30:05.238Z"
@@ -230,6 +250,7 @@
   "route": "/login",
   "errMess": "email does not exist",
   "dateTime": "2023-06-02T03:23:00.769Z"
+>>>>>>> daf18b86c80039b09e2ba5ad62b47a22e37bd9dd
 }
 {
   "route": "/login",
