@@ -63,7 +63,7 @@ async function fetchGameGuest(){
     alert(json.errMess)
   } else {
     renderAllGameGuest(json.data)
-  }
+  } 
 }
 
 function renderAllGameGuest(gameList) {
@@ -73,8 +73,8 @@ function renderAllGameGuest(gameList) {
     `
     <div class="gameBox card mb-3" style="max-width: 500px;">
     <div class="row g-0">
-      <div class="col-md-4">
-      Game Cover  
+      <div class="col-md-4 gameCoverDiv">
+      
         <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
       </div>
       <div class="col-md-8">
@@ -83,7 +83,7 @@ function renderAllGameGuest(gameList) {
           <h4 class="card-title gBoxName">${obj.name}</h4>
           <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
           <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
-          <div class="card-text">Created by: ${obj.create_users_id}</div>
+          <div class="card-text">Created by: ${obj.users_name}</div>
           <div class="card-text">Create at: ${obj.create_at}</div>
           </div>
           <div class="card-body gBoxCount">
@@ -100,8 +100,8 @@ function renderAllGameGuest(gameList) {
      `
      <div class="gameBox card mb-3" style="max-width: 500px;">
      <div class="row g-0">
-       <div class="col-md-4">
-       Game Cover  
+       <div class="col-md-4 gameCoverDiv">
+        
          <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
        </div>
        <div class="col-md-8">
@@ -111,7 +111,7 @@ function renderAllGameGuest(gameList) {
            <h4 class="card-title gBoxName">${obj.name}</h4>
            <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
            <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
-           <div class="card-text">Created by: ${obj.create_users_id}</div>
+           <div class="card-text">Created by: ${obj.users_name}</div>
            <div class="card-text">Create at: ${obj.create_at}</div>
            </div>
            <div class="card-body gBoxCount">
@@ -142,6 +142,7 @@ async function fetchAllGame() {
 
 
 function renderVideoTemplate(obj,userId){
+  
   document.querySelector('#videoGame').innerHTML += 
   `
   <div class="gameBox card mb-3" style="max-width: 500px;">
@@ -154,7 +155,7 @@ function renderVideoTemplate(obj,userId){
         <div class="card-body gBoxBody">
         ${obj.create_users_id === userId ? 
           `
-          <i data-id=${obj.id} class="fa-solid fa-square-pen" > Edit</i>
+          <i data-id=${obj.id} class="fa-solid fa-square-pen" onclick="fetchTemplate('editGameForm.html', renderEditGame(${obj.id})")> Edit</i>
           <i data-id=${obj.id} class="fa-solid fa-trash-can"> Delete</i>
           ` :
           ""
@@ -162,7 +163,7 @@ function renderVideoTemplate(obj,userId){
         <h4 class="card-title gBoxName">${obj.name}</h4>
         <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
         <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
-        <div class="card-text">Created by: ${obj.create_users_id}</div>
+        <div class="card-text">Created by: ${obj.users_name}</div>
         <div class="card-text">Create at: ${obj.create_at}</div>
         </div>
         <div class="card-body gBoxCount">
@@ -186,22 +187,22 @@ function renderBoardGameTemplate(obj,userId){
   <div class="row g-0">
     <div class="col-md-4 gameCoverDiv">
       
-      <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover" contenteditable="true">
+      <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
     </div>
     <div class="col-md-8">
         <div class="card-body gBoxBody">
         ${obj.create_users_id === userId ? 
         `
-        <i data-id=${obj.id} class="fa-solid fa-square-pen"> Edit</i>
+        <i data-id=${obj.id} class="fa-solid fa-square-pen" onclick="fetchTemplate('editGameForm.html', renderEditGame(${obj.id})") > Edit</i>
         <i data-id=${obj.id} class="fa-solid fa-trash-can"> Delete</i>
         ` :
         ""
         }
         
-        <h4 class="card-title gBoxName" contenteditable="true">${obj.name}</h4>
+        <h4 class="card-title gBoxName">${obj.name}</h4>
         <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
-        <p class="card-text gBoxDescription">Description: <br><div contenteditable="true">${obj.description}</div></p>
-        <div class="card-text">Created by: ${obj.create_users_id}</div>
+        <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
+        <div class="card-text">Created by: ${obj.users_name}</div>
         <div class="card-text">Create at: ${obj.create_at}</div>
         </div>
         <div class="card-body gBoxCount">
@@ -267,48 +268,72 @@ async function renderAllGame(gameList) {
   }))
 
 
-  //edit game
-  let allEditBtn = document.querySelectorAll('.gameBox > div > div > div > i.fa-square-pen')
-  for(let btn of allEditBtn){
-      btn.addEventListener('click',async e=>{
-          
-          let id = e.target.dataset.id
-          
-          let content = document.querySelector(`#memoContent-${id}`).textContent
-          
-          let res = await fetch(`game/editGameList/${id}`,{
-              headers:{
-                  'Content-type':'application/json'
-              },
-              method:"PUT",
-              body:JSON.stringify({content:content})
-          })
-          let json = await res.json()
-          if(json.isError){
-              await sweetAlert.fire({
-                  icon: 'info',
-                  title: json.errMess,
-                  showConfirmButton: false,
-                  timer: 1500
-                })
-                
-          }else{
-              await sweetAlert.fire({
-                  icon: 'success',
-                  title: 'Successfully Edit memo',
-                  showConfirmButton: false,
-                  timer: 1500
-                })
-          }
-      })
-  }
+  //edit game form
+  // document.querySelectorAll('.gameBox > div > div > div > i.fa-trash-can').forEach(i => i.addEventListener("click", async e => {
+  //   let id = e.target.dataset.id
+    
+  //   document.querySelector('.editGameForm').innerHTML = html
+  //   let editForm = document.querySelector('#gameForm')
+
+  //   renderEditGame(editForm,id)
+    
+
+  // }))
+
   
+
+
+
 
 
 
 
 }
 
+
+
+//edit game form
+async function renderEditGame(id) {
+  // document.querySelector('.editGameForm').innerHTML = html
+  let form = document.querySelector('#editGameForm')
+  console.log(id)
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+
+    const formData = new FormData(form);
+
+    let res = await fetch(`game/editGameList/${id}`, {
+      method: "PUT",
+      body: formData,
+    });
+
+    let json = await res.json(); // { success: true }
+    // console.log("80 ", json)
+
+    if (json.isError) {
+      await sweetAlert.fire({
+        icon: 'info',
+        title: gameResult.errMess,
+        showConfirmButton: false,
+        timer: 1500
+      })
+
+    } else {
+      await sweetAlert.fire({
+        icon: 'success',
+        title: 'Successfully Post Game',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
+
+    }
+    await form.reset();
+  });
+
+
+}
 
 
 

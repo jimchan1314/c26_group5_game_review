@@ -166,4 +166,88 @@
   "errMess": "email does not exist",
   "dateTime": "2023-06-02T02:02:17.571Z"
 }
->>>>>>> refs/remotes/origin/main
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"update_at\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-02T02:58:10.547Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"update_at\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-02T02:58:11.751Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"update_at\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-02T02:58:12.466Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"update_at\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-02T02:58:12.602Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"update_at\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-02T02:58:12.745Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"update_at\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-02T02:58:12.886Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"update_at\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-02T02:58:13.264Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"update_at\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-02T02:58:13.404Z"
+}
+{
+  "route": "/addGameList",
+  "errMess": "null value in column \"update_at\" of relation \"game\" violates not-null constraint",
+  "dateTime": "2023-06-02T02:58:13.555Z"
+}
+{
+  "route": "/getGameList",
+  "errMess": "ORDER BY \"id\" is ambiguous",
+  "dateTime": "2023-06-02T03:10:45.290Z"
+}
+{
+  "route": "/getGameList",
+  "errMess": "ORDER BY \"id\" is ambiguous",
+  "dateTime": "2023-06-02T03:11:08.950Z"
+}
+{
+  "route": "/getGameList",
+  "errMess": "ORDER BY \"id\" is ambiguous",
+  "dateTime": "2023-06-02T03:12:19.291Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-02T03:23:00.769Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-02T08:33:26.835Z"
+}
+{
+  "route": "/register",
+  "errMess": "null value in column \"create_at\" of relation \"users\" violates not-null constraint",
+  "dateTime": "2023-06-02T08:33:52.559Z"
+}
+{
+  "route": "/register",
+  "errMess": "null value in column \"create_at\" of relation \"users\" violates not-null constraint",
+  "dateTime": "2023-06-02T08:33:55.376Z"
+}
+{
+  "route": "/register",
+  "errMess": "null value in column \"create_at\" of relation \"users\" violates not-null constraint",
+  "dateTime": "2023-06-02T08:33:58.020Z"
+}
