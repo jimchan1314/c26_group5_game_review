@@ -44,7 +44,7 @@ async function renderCreateGame(html) {
         timer: 1500
       })
 
-      // await renderAllMemo(json.data)  
+      await fetchContent('homePage.html', displayContent, fetchAllGame)
     }
     await form.reset();
   });
@@ -54,6 +54,79 @@ async function renderCreateGame(html) {
 
 
 // get db games -routes
+
+async function fetchGameGuest(){
+  let res = await fetch('/game/getGameList')
+  let json = await res.json()
+
+  if (json.isError) {
+    alert(json.errMess)
+  } else {
+    renderAllGameGuest(json.data)
+  }
+}
+
+function renderAllGameGuest(gameList) {
+  
+  gameList.forEach(obj =>
+    obj.game_type === "Video Game" ? document.querySelector('#videoGame').innerHTML += 
+    `
+    <div class="gameBox card mb-3" style="max-width: 500px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+      Game Cover  
+        <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
+      </div>
+      <div class="col-md-8">
+          <div class="card-body gBoxBody">
+        
+          <h4 class="card-title gBoxName">${obj.name}</h4>
+          <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
+          <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
+          <div class="card-text">Created by: ${obj.create_users_id}</div>
+          <div class="card-text">Create at: ${obj.create_at}</div>
+          </div>
+          <div class="card-body gBoxCount">
+          <i class="fa-regular fa-comment-dots"> Message: 100</i>
+          <i class="fa-regular fa-heart"> like: ${obj.like_count}</i>
+          </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  `  
+     : document.querySelector('#boardGame').innerHTML+=
+     `
+     <div class="gameBox card mb-3" style="max-width: 500px;">
+     <div class="row g-0">
+       <div class="col-md-4">
+       Game Cover  
+         <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
+       </div>
+       <div class="col-md-8">
+           <div class="card-body gBoxBody">
+           
+           
+           <h4 class="card-title gBoxName">${obj.name}</h4>
+           <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
+           <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
+           <div class="card-text">Created by: ${obj.create_users_id}</div>
+           <div class="card-text">Create at: ${obj.create_at}</div>
+           </div>
+           <div class="card-body gBoxCount">
+           <i class="fa-regular fa-comment-dots"> Message: 100</i>
+           <i class="fa-regular fa-heart"> like: ${obj.like_count}</i>
+           </div>
+   
+       </div>
+     </div>
+   </div>  
+     `)
+
+}
+
+
 async function fetchAllGame() {
   let res = await fetch('/game/getGameList')
   let json = await res.json()
@@ -65,6 +138,8 @@ async function fetchAllGame() {
     console.log("GF63", json.data)
   }
 }
+
+
 
 function renderVideoTemplate(obj,userId){
   document.querySelector('#videoGame').innerHTML += 
@@ -142,6 +217,8 @@ function renderBoardGameTemplate(obj,userId){
 
 //put in game area
 async function renderAllGame(gameList) {
+  let users = gameList.create_users_id
+  console.log(gameList)
   let user = await localStorage.getItem('user');
   user = JSON.parse(user);
   
@@ -178,9 +255,9 @@ async function renderAllGame(gameList) {
         timer: 1500
       })
 
-      // i.parentElement.remove()
+      indexCheck()
     }
-    await fetchAllGame()
+    
   }))
 
 

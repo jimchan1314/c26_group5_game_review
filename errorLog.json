@@ -133,3 +133,18 @@
   "errMess": "password does not match",
   "dateTime": "2023-06-01T08:46:21.727Z"
 }
+{
+  "route": "/getGameList",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-01T10:30:05.238Z"
+}
+{
+  "route": "/getGameList",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-01T10:30:05.408Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-02T02:02:17.571Z"
+}
