@@ -15,6 +15,14 @@ type Game = {
     gameCover?:string,
 }
 
+const SQL_UPDATE_GAME = (game:Game,gameId:number)=>{
+    const keys = Object.keys(game);
+    const values = Object.values(game);
+    const str_values = values.map((value,idx)=>`${keys[idx]} = '${value}'`);
+    return `UPDATE game SET ${str_values.join(",")} WHERE id=${gameId}`;
+};
+
+
 export class GameController implements IGameController{
     
     async addGameList(req:Request,res:Response):Promise<void>{
@@ -40,12 +48,15 @@ export class GameController implements IGameController{
         
     }
 
+    //ver 1 test
     async editGameList(req:Request,res:Response):Promise<void>{
         try {
             let gameID = req.params.id
             let gameBody = req.body as Game
             
-            db.query(`UPDATE game SET name=$1, game_type=$2, description=$3, game_cover=$4 WHERE id=$5`,[gameBody.gameName,gameBody.game_type,gameBody.description,gameBody.gameCover,gameID])
+            db.query(`UPDATE game SET name=$1, game_type=$2, description=$3, game_cover=$4 WHERE id=$5`,
+            [gameBody.gameName, gameBody.game_type, gameBody.description, gameBody.gameCover, gameID])
+
             res.json({isError:false,errMess:"",data:"Success edit memo"})
 
         } catch (error) {
@@ -53,6 +64,31 @@ export class GameController implements IGameController{
             res.json({isError:true,errMess:error.message})
         }
     }
+
+    //ver 2 test
+    async editGameList2(req:Request,res:Response):Promise<void>{
+        const {gameID} = req.params;//<-string
+        const int_id = parseInt(gameID);
+
+
+        
+        try {
+            let form = await parseFormDataGame(req) as Game; 
+            // console.log("25", form)
+            let gameData = {...form}
+            
+            db.query(`UPDATE game SET name=$1, game_type=$2, description=$3, game_cover=$4 WHERE id=$5`,
+            [gameBody.gameName, gameBody.game_type, gameBody.description, gameBody.gameCover, gameID])
+            
+
+            res.json({isError:false,errMess:null,data:gameData});
+            
+        } catch (error) {
+            errorHandler({status:error.status,route:req.path,errMess:error.message})
+            res.json({isError:true,errMess:error.message})
+        }
+    }
+
 
     async deleteGameList(req:Request,res:Response):Promise<void>{
         try {
@@ -80,7 +116,7 @@ export class GameController implements IGameController{
             res.json({isError:true,errMess:error.message, data:null})
         }
     }
-
+    
 
     
 }

@@ -32,3 +32,6 @@ CREATE TABLE "users"(
     users_name VARCHAR(255) NOT NULL,
     create_at TIMESTAMP default CURRENT_TIMESTAMP 
 );
+
+-- mandy notes
+select * from game join users on game.create_users_id = users.id;

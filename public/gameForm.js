@@ -62,7 +62,7 @@ async function fetchAllGame() {
     alert(json.errMess)
   } else {
     renderAllGame(json.data)
-    console.log("GF63", json.data)
+    console.log("GF65", json.data)
   }
 }
 
@@ -79,7 +79,7 @@ function renderVideoTemplate(obj,userId){
         <div class="card-body gBoxBody">
         ${obj.create_users_id === userId ? 
           `
-          <i data-id=${obj.id} class="fa-solid fa-square-pen"> Edit</i>
+          <i data-id=${obj.id} class="fa-solid fa-square-pen" > Edit</i>
           <i data-id=${obj.id} class="fa-solid fa-trash-can"> Delete</i>
           ` :
           ""
@@ -104,14 +104,14 @@ function renderVideoTemplate(obj,userId){
 }
 
 function renderBoardGameTemplate(obj,userId){
-  console.log(obj.create_users_id,userId);
-  document.querySelector('#boardGame').innerHTML+=
+  // console.log(obj.create_users_id,userId);
+  document.querySelector('#boardGame').innerHTML +=
   `
   <div class="gameBox card mb-3" style="max-width: 500px;">
   <div class="row g-0">
     <div class="col-md-4">
     Game Cover  
-      <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
+      <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover" contenteditable="true">
     </div>
     <div class="col-md-8">
         <div class="card-body gBoxBody">
@@ -123,9 +123,9 @@ function renderBoardGameTemplate(obj,userId){
         ""
         }
         
-        <h4 class="card-title gBoxName">${obj.name}</h4>
+        <h4 class="card-title gBoxName" contenteditable="true">${obj.name}</h4>
         <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
-        <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
+        <p class="card-text gBoxDescription">Description: <br><div contenteditable="true">${obj.description}</div></p>
         <div class="card-text">Created by: ${obj.create_users_id}</div>
         <div class="card-text">Create at: ${obj.create_at}</div>
         </div>
@@ -146,13 +146,14 @@ async function renderAllGame(gameList) {
   user=await localStorage.getItem('user');
   
   
+  
   // if (gameList[0].game_type === "Video Game") {
   
-  if(!user){
-    user.id =''
-  }
+  // if(user=null){
+    // user.id ='public'}
+  // }
   user = JSON.parse(user);
-  console.log("123", user)
+  // console.log("123", user)
   gameList.forEach(obj =>
   obj.game_type === "Video Game" ? renderVideoTemplate(obj,user.id) : renderBoardGameTemplate(obj,user.id))
   
@@ -191,9 +192,49 @@ async function renderAllGame(gameList) {
   }))
 
 
+  //edit game
+  let allEditBtn = document.querySelectorAll('.gameBox > div > div > div > i.fa-square-pen')
+  for(let btn of allEditBtn){
+      btn.addEventListener('click',async e=>{
+          
+          let id = e.target.dataset.id
+          
+          let content = document.querySelector(`#memoContent-${id}`).textContent
+          
+          let res = await fetch(`game/editGameList/${id}`,{
+              headers:{
+                  'Content-type':'application/json'
+              },
+              method:"PUT",
+              body:JSON.stringify({content:content})
+          })
+          let json = await res.json()
+          if(json.isError){
+              await sweetAlert.fire({
+                  icon: 'info',
+                  title: json.errMess,
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+                
+          }else{
+              await sweetAlert.fire({
+                  icon: 'success',
+                  title: 'Successfully Edit memo',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+          }
+      })
+  }
+  
+
+
 
 
 }
+
+
 
 
 

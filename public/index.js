@@ -2,7 +2,7 @@
 
 async function indexCheck(){
     let user = await getCurrentUser()
-
+    console.log("indjs5",user)
     if(user){
         await fetchTemplate('loginNavbar.html', displayLogin)
         await fetchContent('homePage.html', displayContent, fetchAllGame)
@@ -82,5 +82,5 @@ async function userCheckLimit(){
         document.querySelectorAll('.gameBox > div > div > div > i.fa-trash-can').forEach(i=>i.style.display = "none")
     }
 }
-userCheckLimit()
+// userCheckLimit()
 
