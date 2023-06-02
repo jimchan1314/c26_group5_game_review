@@ -155,20 +155,16 @@ function renderVideoTemplate(obj,userId){
         <div class="card-body gBoxBody">
         ${obj.create_users_id === userId ? 
           `
-<<<<<<< HEAD
-          <i data-id=${obj.post_id} class="fa-solid fa-square-pen"> Edit</i>
-=======
           <i data-id=${obj.post_id} class="fa-solid fa-square-pen" onclick="renderEditGame()"> Edit</i>
->>>>>>> d8ef9854831b35a8e59af0356e50486b44176110
           <i data-id=${obj.post_id} class="fa-solid fa-trash-can"> Delete</i>
           ` :
           ""
           }
         <h4 class="card-title gBoxName">${obj.name}</h4>
-        <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
-        <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
-        <div class="card-text">Created by: ${obj.users_name}</div>
-        <div class="card-text">Create at: ${obj.create_post}</div>
+        <div class="card-text gBoxType"><span style="color:#ACBCFF">Game Type:</span> ${obj.game_type}</div>
+        <p class="card-text gBoxDescription"><span style="color:#ACBCFF">Description:</span> <br>${obj.description}</p>
+        <div class="card-text"><span style="color:#ACBCFF">Created by:</span> ${obj.users_name}</div>
+        <div class="card-text"><span style="color:#ACBCFF">Create at:</span> ${obj.create_post}</div>
         </div>
         <div class="card-body gBoxCount">
         <i class="fa-regular fa-comment-dots"> Message: 100</i>
@@ -197,11 +193,7 @@ function renderBoardGameTemplate(obj,userId){
         <div class="card-body gBoxBody">
         ${obj.create_users_id === userId ? 
         `
-<<<<<<< HEAD
-        <i data-id=${obj.post_id} class="fa-solid fa-square-pen"> Edit</i>
-=======
         <i data-id=${obj.post_id} class="fa-solid fa-square-pen" onclick="renderEditGame('${obj.post_id}')") > Edit</i>
->>>>>>> d8ef9854831b35a8e59af0356e50486b44176110
         <i data-id=${obj.post_id} class="fa-solid fa-trash-can"> Delete</i>
         ` :
         ""

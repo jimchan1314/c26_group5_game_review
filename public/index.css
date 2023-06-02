@@ -402,3 +402,9 @@ form > div > .button-flexBox > button{
   width: auto;
   z-index: 2;
 }
+#username{
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
+  color: rgb(255, 248, 234);
+}
