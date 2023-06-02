@@ -4,6 +4,7 @@ import { db } from "../db";
 
 import { errorHandler } from "../errorHandler";
 import { IGameController } from "../routes/Routes";
+import moment from "moment";
 
 // import jsonfile from "jsonfile";
 // import { type } from "os";
@@ -24,15 +25,17 @@ export class GameController implements IGameController{
             let form = await parseFormDataGame(req) as Game; 
             // console.log("25", form)
             let gameData = {...form}
+            let time = new Date();
+            let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');   
             
-            await db.query(`INSERT INTO game (name, game_type, like_count, description, create_users_id, game_cover) VALUES ($1,$2,$3,$4,$5,$6)`,
-            [gameData.gameName, gameData.game_type, 0, gameData.description, req.session.userId, gameData.gameCover])
+            await db.query(`INSERT INTO game (name, game_type, like_count, description, create_users_id, game_cover, create_at) VALUES ($1,$2,$3,$4,$5,$6,$7)`,
+            [gameData.gameName, gameData.game_type, 0, gameData.description, req.session.userId, gameData.gameCover, currTime])
             
 
             res.json({isError:false,errMess:null,data:gameData});
 
         } catch (error) {
-            
+            console.log(error.message)
             errorHandler({status:error.status,route:req.path,errMess:error.message})
             res.json({isError:true,errMess:error.message})
         }
@@ -68,11 +71,9 @@ export class GameController implements IGameController{
 
     async getGameList(req:Request,res:Response):Promise<void> {
         try {
-
-            let {rows} = await db.query(`SELECT * FROM game ORDER BY id DESC`);
-            // const result = await db.query(`SELECT * FROM game ORDER BY id DESC`);
-            // const gameList: Game[] = result.rows 
-            // res.json({isError:false,errMess:"",data:gameList})    
+            
+            let {rows} = await db.query(`SELECT * FROM game JOIN users ON users.id = game.create_users_id ORDER BY game.id DESC`);
+            console.log(rows)
             res.json({isError:false,errMess:"",data:rows})    
             
         } catch (error) {

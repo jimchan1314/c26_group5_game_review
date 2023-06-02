@@ -16,7 +16,8 @@ export class UserController implements IUserController{
                 throw new Error('password not match!')
             }
             let userData = {...form}
-            
+            // let time = new Date();
+            // let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');   
             
             await registerUserSchema.validate(userData);
             

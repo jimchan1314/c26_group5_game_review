@@ -83,7 +83,7 @@ function renderAllGameGuest(gameList) {
           <h4 class="card-title gBoxName">${obj.name}</h4>
           <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
           <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
-          <div class="card-text">Created by: ${obj.create_users_id}</div>
+          <div class="card-text">Created by: ${obj.users_name}</div>
           <div class="card-text">Create at: ${obj.create_at}</div>
           </div>
           <div class="card-body gBoxCount">
@@ -111,7 +111,7 @@ function renderAllGameGuest(gameList) {
            <h4 class="card-title gBoxName">${obj.name}</h4>
            <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
            <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
-           <div class="card-text">Created by: ${obj.create_users_id}</div>
+           <div class="card-text">Created by: ${obj.users_name}</div>
            <div class="card-text">Create at: ${obj.create_at}</div>
            </div>
            <div class="card-body gBoxCount">
@@ -142,6 +142,7 @@ async function fetchAllGame() {
 
 
 function renderVideoTemplate(obj,userId){
+  
   document.querySelector('#videoGame').innerHTML += 
   `
   <div class="gameBox card mb-3" style="max-width: 500px;">
@@ -162,7 +163,7 @@ function renderVideoTemplate(obj,userId){
         <h4 class="card-title gBoxName">${obj.name}</h4>
         <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
         <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
-        <div class="card-text">Created by: ${obj.create_users_id}</div>
+        <div class="card-text">Created by: ${obj.users_name}</div>
         <div class="card-text">Create at: ${obj.create_at}</div>
         </div>
         <div class="card-body gBoxCount">
@@ -201,7 +202,7 @@ function renderBoardGameTemplate(obj,userId){
         <h4 class="card-title gBoxName">${obj.name}</h4>
         <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
         <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
-        <div class="card-text">Created by: ${obj.create_users_id}</div>
+        <div class="card-text">Created by: ${obj.users_name}</div>
         <div class="card-text">Create at: ${obj.create_at}</div>
         </div>
         <div class="card-body gBoxCount">
