@@ -362,3 +362,13 @@
   "errMess": "invalid input syntax for type integer: \"c8fef13c-401b-489b-946e-c904be575714\"",
   "dateTime": "2023-06-02T03:57:07.597Z"
 }
+{
+  "route": "/getSingleGame/1,%20[object%20Object]",
+  "errMess": "invalid input syntax for type integer: \"1, [object Object]\"",
+  "dateTime": "2023-06-04T07:53:54.584Z"
+}
+{
+  "route": "/getSingleGame/1,%20[object%20Object]",
+  "errMess": "invalid input syntax for type integer: \"1, [object Object]\"",
+  "dateTime": "2023-06-04T07:54:06.786Z"
+}

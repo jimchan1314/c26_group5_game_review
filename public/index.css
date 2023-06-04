@@ -408,3 +408,58 @@ form > div > .button-flexBox > button{
   font-style: normal;
   color: rgb(255, 248, 234);
 }
+
+
+/* editGameForm */
+/* @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+@mixin step4( $width, $color, $bgcolor ) {
+  box-shadow:
+    $width 0 $bgcolor,
+    -$width 0 $bgcolor,
+    0 (-$width) $bgcolor,
+    0 $width $bgcolor,
+    2*$width 0 $bgcolor,
+    -2*$width 0 $bgcolor,
+    0 (-2*$width) $bgcolor,
+    0 2*$width $bgcolor, 
+    0 0 0 $width $bgcolor,
+    3*$width 0 $bgcolor,
+    -3*$width 0 $bgcolor, 
+    0 3*$width $bgcolor,
+    0 (-3*$width) $bgcolor,
+    0 (-$width) 0 $width $bgcolor,
+    0 $width 0 $width $bgcolor,
+    $width 0 0 $width $bgcolor,
+    -$width 0 0 $width $bgcolor,
+    4*$width 0 $color, 
+    -4*$width 0 $color,
+    0 (-4*$width) $color, 
+    0 4*$width $color,
+    2*$width 0 0 $width $color,
+    -2*$width 0 0 $width $color,
+    0 2*$width 0 $width $color,
+    0 (-2*$width) 0 $width $color,
+    0 0 0 2*$width $color;
+    margin: 4*$width auto;
+} */
+
+#editGameFormModal{
+  background-color: rgb(129, 91, 91);
+  padding: 15px;
+  border:rgb(255, 248, 234);
+  border-style: dashed;
+  border-radius: 5%;
+  font-family: 'ConnectionRegular';
+  color: rgb(255, 248, 234);
+
+
+  /* @include step4( 5px, green, white ); */
+  /* https://codepen.io/albpara/pen/JjRarO */
+}
+
+/* #editGameFormModal > .btn{
+  display: flex;
+  justify-content: space-between;
+  background-color: #fb8332;
+} */

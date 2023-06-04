@@ -1,6 +1,13 @@
 <form id="editGameForm">
     <div class="col-md-12">
-        <h1>Update Game Information</h1>
+        <h3>Update Game Information</h3>
+    </div>
+
+    <div>
+        <div>Current Game Cover</div>
+        <div id="CurGameCover" class="col-md-12 mb-3">
+            <img src="">
+        </div>
     </div>
 
     <div class="col-md-12 mb-3">
@@ -25,12 +32,13 @@
     </div>
 
     <div class="col col-md-12 mb-3">
+        
         <label for="gameCover" class="form-label">Upload Game Cover</label>
         <input class="form-control" type="file" name="gameCover" id="gameCover">
     </div>
 
-    <div class="gameBtns col-md-12">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+    <div class="gameBtns col-md-12 d-grid">
+        <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn" value="submit">Submit</button>
     </div>
 </form>

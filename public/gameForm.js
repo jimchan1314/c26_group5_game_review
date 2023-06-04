@@ -1,6 +1,8 @@
 // const { json } = require("stream/consumers");
 // working...
 
+// const { json } = require("stream/consumers");
+
 //back for main page? may change fm renderAllGame
 // async function publicAreaGameList(html) {
 //   document.querySelector('.gameSection').innerHTML = html;
@@ -155,8 +157,8 @@ function renderVideoTemplate(obj,userId){
         <div class="card-body gBoxBody">
         ${obj.create_users_id === userId ? 
           `
-          <i data-id=${obj.post_id} class="fa-solid fa-square-pen" onclick="renderEditGame()"> Edit</i>
-          <i data-id=${obj.post_id} class="fa-solid fa-trash-can"> Delete</i>
+          <i data-id=${obj.post_id} class="btn fa-solid fa-square-pen" onclick="renderEditGame('${obj.post_id}')" data-bs-toggle="modal" data-bs-target="#editGameModal") > Edit</i>
+          <i data-id=${obj.post_id} class="btn fa-solid fa-trash-can"> Delete</i>
           ` :
           ""
           }
@@ -193,17 +195,17 @@ function renderBoardGameTemplate(obj,userId){
         <div class="card-body gBoxBody">
         ${obj.create_users_id === userId ? 
         `
-        <i data-id=${obj.post_id} class="fa-solid fa-square-pen" onclick="renderEditGame('${obj.post_id}')") > Edit</i>
-        <i data-id=${obj.post_id} class="fa-solid fa-trash-can"> Delete</i>
+        <i data-id=${obj.post_id} class="btn fa-solid fa-square-pen" onclick="renderEditGame('${obj.post_id}')" data-bs-toggle="modal" data-bs-target="#editGameModal") > Edit</i>
+        <i data-id=${obj.post_id} class="btn fa-solid fa-trash-can"> Delete</i>
         ` :
         ""
         }
         
         <h4 class="card-title gBoxName">${obj.name}</h4>
-        <div class="card-text gBoxType">Game Type: ${obj.game_type}</div>
-        <p class="card-text gBoxDescription">Description: <br>${obj.description}</p>
-        <div class="card-text">Created by: ${obj.users_name}</div>
-        <div class="card-text">Create at: ${obj.create_post}</div>
+        <div class="card-text gBoxType"><span style="color:#ACBCFF">Game Type:</span> ${obj.game_type}</div>
+        <p class="card-text gBoxDescription"><span style="color:#ACBCFF">Description:</span> <br>${obj.description}</p>
+        <div class="card-text"><span style="color:#ACBCFF">Created by:</span> ${obj.users_name}</div>
+        <div class="card-text"><span style="color:#ACBCFF">Create at:</span> ${obj.create_post}</div>
         </div>
         <div class="card-body gBoxCount">
         <i class="fa-regular fa-comment-dots"> Message: 100</i>
@@ -283,10 +285,23 @@ async function renderAllGame(gameList) {
 async function renderEditGame(id) {
   let res = await fetch('editForm.html')
   let html = await res.text()
+  
   document.querySelector('.editGameForm').innerHTML = html
+  
+  let gameData = await fetch(`game/getSingleGame/${id}`)
+  let resGame = await gameData.json()
+  console.log("gf289",resGame.data)
+  document.querySelector('#gameName').value = resGame.data.name
+  document.querySelector('#game_type').value = resGame.data.game_type
+  document.querySelector('#description').value = resGame.data.description
+  document.querySelector('#CurGameCover').innerHTML = `<img src=${resGame.data.game_cover} />`
+  
+
+
+
 
   let form = document.querySelector('#editGameForm')
-  console.log(id)
+  // console.log(id)
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -317,12 +332,25 @@ async function renderEditGame(id) {
         timer: 1500
       })
 
-
+      await fetchContent('homePage.html', displayContent, fetchAllGame)
     }
     await form.reset();
   });
 
 
+}
+
+
+async function fetchSingleGame(id) {
+  let res = await fetch(`/game/getGameList/${id}`)
+  let json = await res.json()
+
+  if (json.isError) {
+    alert(json.errMess)
+  } else {
+    renderAllGame(json.data)
+    console.log("GF352", json.data)
+  }
 }
 
 
