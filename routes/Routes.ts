@@ -37,6 +37,7 @@ export interface IGameController{
     deleteGameList(req:Request,res:Response):Promise<void>
     getGameList(req:Request,res:Response):Promise<void>
     getSingleGame(req:Request,res:Response):Promise<void>
+    likeGame(req:Request,res:Response):Promise<void>
 }
 
 export class GameRoute  extends Routes{
@@ -47,7 +48,7 @@ export class GameRoute  extends Routes{
         this.routes.delete('/deleteGameList/:id',controller.deleteGameList)
         this.routes.get('/getGameList',controller.getGameList)
         this.routes.get('/getSingleGame/:id',controller.getSingleGame)
-
+        this.routes.post('/likeGame/:id',controller.likeGame)
         
         
     }

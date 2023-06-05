@@ -752,6 +752,12 @@ form>div>.button-flexBox>button {
   font-weight: normal;
   font-style: normal;
 }
+.form-control{
+  
+  border-radius: 0% !important;
+  border: 0px !important;
+  background-color: #594545;
+}
 
 /* gameForm */
 
@@ -902,4 +908,12 @@ form>div>.button-flexBox>button {
   font-family: 'ConnectionRegular';
   font-weight: normal;
   font-style: normal;
+}
+
+#gameLogo{
+  height: 60px;
+}
+
+.card-body{
+  padding-bottom: 10px;
 }
