@@ -3,28 +3,26 @@
   <button type="button" id="modalDismiss" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <form id="loginForm" class="form">
-  <div class="row" style="margin-bottom:20px">
-      <div class="form-floating col-md-12">
-          <input name="email" type="text" class="form-control" id="floatingInput"
-              placeholder="username">
-          <label class="floatText" for="floatingInput">Email</label>
-      </div>
+  <div class="row">
+    <div class="inputEmail col-mb-9">
+        
+        <input type="email" name="email"class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
   </div>    
   <div class="row">
-      <div class="form-floating col-md-12">
-          <input name="password"type="password" class="form-control"
-              placeholder="password">
-          <label class="floatText" for="floatingInput">Password</label>
-      </div>
+    <div class="inputPassword col-mb-9">
+        
+        <input type="password" name="password"class="form-control" placeholder="Password">
+    </div>
   </div>
 
   <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8 button-flexBox">
-          <button type="submit" class="button-5" role="button">Login</button>
+          <button type="submit" class="button-5" role="button" >Login</button>
       </div>
       <div class="col-md-2"></div>
   </div>
-  <span>New to Game Center?</span> <a onclick="fetchTemplate('registerForm.html',renderRegisterFormModal)" href="#">Sign Up</a>
+  <span class="welcome">New to Game Center?</span> <a class="register"onclick="fetchTemplate('registerForm.html',renderRegisterFormModal)" href="#">Sign Up</a>
 </form>
 </div>

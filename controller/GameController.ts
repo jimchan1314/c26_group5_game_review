@@ -5,8 +5,8 @@ import { db } from "../db";
 import { errorHandler } from "../errorHandler";
 import { IGameController } from "../routes/Routes";
 import moment from "moment";
-import { ParamsDictionary } from "express-serve-static-core";
-import { ParsedQs } from "qs";
+// import { ParamsDictionary } from "express-serve-static-core";
+// import { ParsedQs } from "qs";
 // import { ParamsDictionary } from "express-serve-static-core";
 // import { ParsedQs } from "qs";
 
@@ -87,10 +87,10 @@ export class GameController implements IGameController{
         try{
             // let userID = req.session.userId;
             let gameID = req.params.id
-            console.log("gljs-87",gameID)
+            // console.log("gljs-87",gameID)
             let form = await parseFormDataGame(req) as EditGame
             let gameData = {...form} 
-            console.log("gljs-90",gameData)
+            // console.log("gljs-90",gameData)
             let time = new Date();
             let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');
 
@@ -117,7 +117,42 @@ export class GameController implements IGameController{
         }
     }
 
+    async likeGame(req:Request,res:Response):Promise<void>{
+
+        try {
+            let gameID = req.params.id
+            console.log("gc124",gameID)
+            console.log('gc125',req.session.id)
+            // console.log('gc126',req.session.id)
+
+            let {rows} = await db.query(`UPDATE game SET like_count=like_count+1 WHERE post_id=$1 AND create_users_id!=$2 AND post_id NOT IN (SELECT game_id FROM like_game WHERE users_id = $3) RETURNING *`,
+            [gameID,req.session.userId,req.session.userId])
     
+            if(rows.length===0){
+                throw new Error('Cannot like memo!') 
+            }
+    
+            await db.query(`INSERT INTO like_game (users_id,game_id) VALUES ($1,$2)`,[req.session.userId,gameID])
+    
+            res.json({isError:false,errMess:"",data:rows[0]})
+    
+        } catch (error) {
+            errorHandler({status:error.status,route:req.path,errMess:error.message})
+            res.json({isError:true,errMess:error.message,data:null})
+        }
+    }
+
+    async getVideoGameList(req:Request, res:Response):Promise<void> {
+        try{
+            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Video Game'`);
+            
+            res.json({isError:false,errMess:"",data:rows})    
+
+        } catch (error) {
+            errorHandler({status:error.status,route:req.path,errMess:error.message})
+            res.json({isError:true,errMess:error.message,data:null})
+        }
+    } 
 
     
 }

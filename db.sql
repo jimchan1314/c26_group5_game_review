@@ -17,9 +17,10 @@ CREATE TABLE "game"(
 FOREIGN KEY (create_users_id) references "users"(id),
 "game_cover" VARCHAR(255)
 );
-CREATE TABLE "like_ref_game_users"(
-    "users_id" BIGINT references "users"(id) not null,
-    "game_id" BIGINT references "game"(post_id) not null,
+CREATE TABLE "like_game"(
+    "like_id" SERIAL primary key,
+    "users_id" TEXT references "users"(id) not null,
+    "game_id" INTEGER references "game"(post_id) not null
 );
 
 CREATE TABLE "users"(
