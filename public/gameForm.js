@@ -94,7 +94,7 @@ function renderAllGameGuest(gameList) {
           </div>
       </div>
       <div class="box-content">
-        <div class="visit">Visit Page</div>
+        <div class="btn visit">Visit Page</div>
       </div>
     </div>
   </div>
@@ -124,7 +124,7 @@ function renderAllGameGuest(gameList) {
            </div>
        </div>
       <div class="box-content">
-        <div class="visit">Visit Page</div>
+        <div class="btn visit">Visit Page</div>
       </div>
      </div>
    </div>  
@@ -178,7 +178,7 @@ function renderVideoTemplate(obj, userId) {
         </div>
     </div>
     <div class="box-content">
-      <div class="visit">Visit Page</div>
+      <div class="btn visit">Visit Page</div>
     </div>
   </div>
 </div>
@@ -219,7 +219,7 @@ function renderBoardGameTemplate(obj, userId) {
         </div>
     </div>
     <div class="box-content">
-      <div class="visit">Visit Page</div>
+      <div class="btn visit">Visit Page</div>
     </div>
   </div>
 </div>  
