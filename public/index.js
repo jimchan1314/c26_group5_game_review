@@ -5,7 +5,7 @@ async function indexCheck(){
     
     if(user){
         await fetchTemplate('loginNavbar.html', displayLogin)
-        await fetchContent('homePage.html', displayContent, fetchAllGame)
+        await fetchContent('homePage.html', displayContent, fetchGameGuest)
     }else{
         await fetchTemplate('nonLoginNavbar.html', displayNotLogin)
         await fetchContent('homePage.html', displayContent, fetchGameGuest)

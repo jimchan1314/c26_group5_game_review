@@ -142,7 +142,17 @@ export class GameController implements IGameController{
         }
     }
 
-    
+    async getVideoGameList(req:Request, res:Response):Promise<void> {
+        try{
+            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Video Game'`);
+            
+            res.json({isError:false,errMess:"",data:rows})    
+
+        } catch (error) {
+            errorHandler({status:error.status,route:req.path,errMess:error.message})
+            res.json({isError:true,errMess:error.message,data:null})
+        }
+    } 
 
     
 }

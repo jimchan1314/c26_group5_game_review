@@ -353,14 +353,14 @@ form>div>.button-flexBox>button {
 .box {
   text-align: center;
   align-items: center;
-  margin-left: 5px;
+  margin: 5px;
   width: 500px;
   background-color: rgb(89, 69, 69);
   border: 2px solid rgb(158, 118, 118) !important;
   position: relative;
   overflow: hidden;
   transition: all 0.6s ease 0s;
-
+  padding: 5px;
 }
 
 .box .box-content{
@@ -381,7 +381,8 @@ form>div>.button-flexBox>button {
   transform: translateX(-50%) translateY(-50%) scaleY(1);
 }
 .box:hover{
-  background: #ce5f159d;
+  
+  background-color: #7c48269a;
 }
 
 
@@ -444,6 +445,15 @@ form>div>.button-flexBox>button {
 #profile {
   max-width: 1400px;
   margin: 0px auto;
+}
+#videoGame{
+  display: flex;
+  flex-wrap: wrap
+}
+
+#boardGame{
+  display: flex;
+  flex-wrap: wrap
 }
 
 .profileForm {

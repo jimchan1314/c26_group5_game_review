@@ -452,3 +452,13 @@
   "errMess": "Cannot like memo!",
   "dateTime": "2023-06-05T08:48:07.721Z"
 }
+{
+  "route": "/likeGame/8",
+  "errMess": "relation \"like_game\" does not exist",
+  "dateTime": "2023-06-05T08:58:21.758Z"
+}
+{
+  "route": "/likeGame/8",
+  "errMess": "relation \"like_game\" does not exist",
+  "dateTime": "2023-06-05T08:58:24.279Z"
+}
