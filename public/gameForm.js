@@ -57,7 +57,7 @@ async function renderCreateGame(html) {
 
 // get db games -routes
 
-async function fetchGameGuest(){
+async function fetchGameGuest() {
   let res = await fetch('/game/getGameList')
   let json = await res.json()
 
@@ -65,14 +65,15 @@ async function fetchGameGuest(){
     alert(json.errMess)
   } else {
     renderAllGameGuest(json.data)
-  } 
+    //expandMessageBox()
+  }
 }
 
 function renderAllGameGuest(gameList) {
-  
+
   gameList.forEach(obj =>
-    obj.game_type === "Video Game" ? document.querySelector('#videoGame').innerHTML += 
-    `
+    obj.game_type === "Video Game" ? document.querySelector('#videoGame').innerHTML +=
+      `
     <div class="gameBox card mb-3" style="max-width: 500px;">
     <div class="row g-0">
       <div class="col-md-4 gameCoverDiv">
@@ -89,7 +90,7 @@ function renderAllGameGuest(gameList) {
           <div class="card-text">Create at: ${obj.create_post}</div>
           </div>
           <div class="card-body gBoxCount">
-          <i class="fa-regular fa-comment-dots"> Message: 100</i>
+          <i data-id=${obj.post_id} class="fa-regular fa-comment-dots"> Message: 100</i>
           <i class="fa-regular fa-heart"> like: ${obj.like_count}</i>
           </div>
   
@@ -97,9 +98,9 @@ function renderAllGameGuest(gameList) {
     </div>
   </div>
   
-  `  
-     : document.querySelector('#boardGame').innerHTML+=
-     `
+  `
+      : document.querySelector('#boardGame').innerHTML +=
+      `
      <div class="gameBox card mb-3" style="max-width: 500px;">
      <div class="row g-0">
        <div class="col-md-4 gameCoverDiv">
@@ -117,7 +118,7 @@ function renderAllGameGuest(gameList) {
            <div class="card-text">Create at: ${obj.create_post}</div>
            </div>
            <div class="card-body gBoxCount">
-           <i class="fa-regular fa-comment-dots"> Message: 100</i>
+           <i data-id=${obj.post_id} class="fa-regular fa-comment-dots"> Message: 100</i>
            <i class="fa-regular fa-heart"> like: ${obj.like_count}</i>
            </div>
    
@@ -143,10 +144,10 @@ async function fetchAllGame() {
 
 
 
-function renderVideoTemplate(obj,userId){
-  
-  document.querySelector('#videoGame').innerHTML += 
-  `
+function renderVideoTemplate(obj, userId) {
+
+  document.querySelector('#videoGame').innerHTML +=
+    `
   <div class="gameBox card mb-3" style="max-width: 500px;">
   <div class="row g-0">
     <div class="col-md-4 gameCoverDiv">
@@ -155,13 +156,13 @@ function renderVideoTemplate(obj,userId){
     </div>
     <div class="col-md-8">
         <div class="card-body gBoxBody">
-        ${obj.create_users_id === userId ? 
-          `
+        ${obj.create_users_id === userId ?
+      `
           <i data-id=${obj.post_id} class="btn fa-solid fa-square-pen" onclick="renderEditGame('${obj.post_id}')" data-bs-toggle="modal" data-bs-target="#editGameModal") > Edit</i>
           <i data-id=${obj.post_id} class="btn fa-solid fa-trash-can"> Delete</i>
           ` :
-          ""
-          }
+      ""
+    }
         <h4 class="card-title gBoxName">${obj.name}</h4>
         <div class="card-text gBoxType"><span style="color:#ACBCFF">Game Type:</span> ${obj.game_type}</div>
         <p class="card-text gBoxDescription"><span style="color:#ACBCFF">Description:</span> <br>${obj.description}</p>
@@ -169,7 +170,7 @@ function renderVideoTemplate(obj,userId){
         <div class="card-text"><span style="color:#ACBCFF">Create at:</span> ${obj.create_post}</div>
         </div>
         <div class="card-body gBoxCount">
-        <i class="fa-regular fa-comment-dots"> Message: 100</i>
+        <i data-bs-toggle="modal" data-bs-target="#addMessageModal" data-id=${obj.post_id} class="fa-regular fa-comment-dots"> Message: 100</i>
         <i class="fa-regular fa-heart"> like: ${obj.like_count}</i>
         </div>
 
@@ -177,14 +178,14 @@ function renderVideoTemplate(obj,userId){
   </div>
 </div>
 
-`  
-  
+`
+
 }
 
-function renderBoardGameTemplate(obj,userId){
+function renderBoardGameTemplate(obj, userId) {
   // console.log(obj.create_users_id,userId);
   document.querySelector('#boardGame').innerHTML +=
-  `
+    `
   <div class="gameBox card mb-3" style="max-width: 500px;">
   <div class="row g-0">
     <div class="col-md-4 gameCoverDiv">
@@ -193,13 +194,13 @@ function renderBoardGameTemplate(obj,userId){
     </div>
     <div class="col-md-8">
         <div class="card-body gBoxBody">
-        ${obj.create_users_id === userId ? 
-        `
+        ${obj.create_users_id === userId ?
+      `
         <i data-id=${obj.post_id} class="btn fa-solid fa-square-pen" onclick="renderEditGame('${obj.post_id}')" data-bs-toggle="modal" data-bs-target="#editGameModal") > Edit</i>
         <i data-id=${obj.post_id} class="btn fa-solid fa-trash-can"> Delete</i>
         ` :
-        ""
-        }
+      ""
+    }
         
         <h4 class="card-title gBoxName">${obj.name}</h4>
         <div class="card-text gBoxType"><span style="color:#ACBCFF">Game Type:</span> ${obj.game_type}</div>
@@ -208,7 +209,7 @@ function renderBoardGameTemplate(obj,userId){
         <div class="card-text"><span style="color:#ACBCFF">Create at:</span> ${obj.create_post}</div>
         </div>
         <div class="card-body gBoxCount">
-        <i class="fa-regular fa-comment-dots"> Message: 100</i>
+        <i data-bs-toggle="modal" data-bs-target="#addMessageModal" data-id=${obj.post_id} class="fa-regular fa-comment-dots"> Message: 100</i>
         <i class="fa-regular fa-heart"> like: ${obj.like_count}</i>
         </div>
 
@@ -220,22 +221,24 @@ function renderBoardGameTemplate(obj,userId){
 
 //put in game area
 async function renderAllGame(gameList) {
- 
+
   let user = await localStorage.getItem('user');
   user = JSON.parse(user);
-  
+
   // if (gameList[0].game_type === "Video Game") {
-  
+
   // if(user=null){
-    // user.id ='public'}
+  // user.id ='public'}
   // }
-  
+
   // console.log("123", user)
   gameList.forEach(obj =>
-  obj.game_type === "Video Game" ? renderVideoTemplate(obj,user.id) : renderBoardGameTemplate(obj,user.id))
-  
+    obj.game_type === "Video Game" ? renderVideoTemplate(obj, user.id) : renderBoardGameTemplate(obj, user.id))
 
 
+  // expand Message
+  //expandMessageBox()
+  //fetchTemplate('messageForm.html', expandMessageForm)
 
   //del game
   document.querySelectorAll('.gameBox > div > div > div > i.fa-trash-can').forEach(i => i.addEventListener("click", async e => {
@@ -265,16 +268,8 @@ async function renderAllGame(gameList) {
 
       indexCheck()
     }
-    
+
   }))
-
-
-  
-
-
-
-
-
 
 
 }
@@ -285,17 +280,17 @@ async function renderAllGame(gameList) {
 async function renderEditGame(id) {
   let res = await fetch('editForm.html')
   let html = await res.text()
-  
+
   document.querySelector('.editGameForm').innerHTML = html
-  
+
   let gameData = await fetch(`game/getSingleGame/${id}`)
   let resGame = await gameData.json()
-  console.log("gf289",resGame.data)
+  console.log("gf289", resGame.data)
   document.querySelector('#gameName').value = resGame.data.name
   document.querySelector('#game_type').value = resGame.data.game_type
   document.querySelector('#description').value = resGame.data.description
   document.querySelector('#CurGameCover').innerHTML = `<img src=${resGame.data.game_cover} />`
-  
+
 
 
 

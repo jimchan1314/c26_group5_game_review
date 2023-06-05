@@ -59,6 +59,7 @@ export interface IMessageController{
     editMessage(req:Request,res:Response):Promise<void>
     deleteMessage(req:Request,res:Response):Promise<void>
     getMessage(req:Request,res:Response):Promise<void>
+    getCurrentMessage(req:Request,res:Response):Promise<void>
 }
 
 export class MessageRoute extends Routes {
@@ -68,5 +69,6 @@ export class MessageRoute extends Routes {
         this.routes.put('/editMessage/:id',isLoggedInAPI,controller.editMessage)
         this.routes.delete('/deleteMessage/:id',isLoggedInAPI,controller.deleteMessage)
         this.routes.get('/getMessage/:id',controller.getMessage)
+        this.routes.get('/getCurrMessage/:id',isLoggedInAPI,controller.getCurrentMessage)
     }
 }

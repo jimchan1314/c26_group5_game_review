@@ -1,5 +1,42 @@
-renderAddMessage()
-renderGetMessage()
+// renderAddMessage()
+// renderGetMessage()
+
+
+// step 1
+async function regCardEvent(gameId) {
+    // document.querySelectorAll('.card.messageCard').forEach(card => {
+    //     card.addEventListener('click', async (e) => {
+    await fetchTemplate('messageForm.html', renderContent)
+    await renderGetMessage(gameId)
+    // })
+    // })
+}
+function renderContent(html) {
+    document.querySelector('.content').innerHTML = html
+}
+
+//get message
+async function renderGetMessage(gameId) {
+    // let messageContainer = document.querySelector(".messageContainer")
+    let user = await localStorage.getItem('user')
+    user = JSON.parse(user)
+    // let postId = gameId
+
+    // let postId = messageContainer.dataset.id
+
+    const res = await fetch(`message/getMessage/${gameId}`)
+    const result = await res.json()
+    //console.log(result.data)
+    document.querySelector('.messageContainer').innerHTML = result.data.map(obj => messageTemplate(obj, user.id)).join('')
+
+
+
+    deleteMessage()
+    editMessage()
+
+
+}
+
 
 //add message
 async function renderAddMessage() {
@@ -21,25 +58,9 @@ async function renderAddMessage() {
     })
 }
 
-//get message
-async function renderGetMessage() {
-    let messageContainer = document.querySelector(".messageContainer")
-    let user = await localStorage.getItem('user')
-    user = JSON.parse(user)
 
-    window.addEventListener("load", async () => {
-        let gameId = messageContainer.dataset.id //get comment div born as game is born
 
-        const res = await fetch(`message/getMessage/${gameId}`, {
-            method: "GET"
-        })
-        const result = await res.json()
-        //console.log(result.data)
-        document.querySelector('.messageContainer').innerHTML = result.data.map(obj => messageTemplate(obj, user.id)).join('')
-        deleteMessage()
-        editMessage(result.data)
-    })
-}
+
 
 //delete message
 async function deleteMessage() {
@@ -69,24 +90,48 @@ async function deleteMessage() {
     }))
 }
 
+// async function displayEditMessageForm(html) {
+
+//     document.querySelector('.addMessageModal').innerHTML = html
+
+//     //not yet
+//     const editMessageForm = document.querySelector("#editMessageForm")
+//     const messageData = new FormData(editMessageForm)
+
+//     const res = await fetch(`message/editMessage/${msgId}`, {
+//         method: "PUT",
+//         body: messageData
+//     })
+//     const result = await res.json()
+//     console.log(result)
+// }
+
 //edit message
-async function editMessage(messages) {
+async function editMessage() {
     document.querySelectorAll('.card-body > .messageCardBody > div > div > .fa-square-pen').forEach(i => i.addEventListener("click", async e => {
         console.log('edit clicked')
-        console.log(messages)
-        let id = e.target.dataset.id
-        console.log(id)
-        //let content = messages.filter(messsge => message.id == id)
-        //console.log(content)
-        //const messageForm = document.querySelector("#messageForm")
-        //messageForm.text.defaultValue = message.
 
-        //const res = await fetch(`message/editMessage/${id}`, {
-        //    method: "PUT"
-        //})
-        //await res.json()
+        // let msgId = e.target.dataset.id
+        //console.log(msgId)
+        // getCurrentMessage(msgId)
+
+
+        await fetchTemplate('editMessageForm.html', displayEditMessageForm)
+
+
+        await messageForm.reset()
     })
     )
+}
+
+async function getCurrentMessage(msgId) {
+    const res = await fetch(`message/getCurrMessage/${msgId}`, {
+        method: "GET"
+    })
+    let result = await res.json()
+    let currMsg = result.data[0]["text"]
+    //console.log(currMsg)
+    document.querySelector("#messageText").defaultValue = currMsg
 }
 
 function messageTemplate(obj, userId) {
@@ -103,7 +148,7 @@ function messageTemplate(obj, userId) {
                   <div>
                     <div>created at: ${obj.create_at}</div>
                     <div>
-                        <i data-id=${obj.id} class="fa-solid fa-square-pen"> Edit</i>
+                        <i class="btn btn-primary" data-bs-toggle="modal" data-id=${obj.id} class="fa-solid fa-square-pen"> Edit</i>
                         <i data-id=${obj.id} class="fa-solid fa-trash-can"> Delete</i> 
                     </div>
                   </div>
@@ -132,3 +177,10 @@ function messageTemplate(obj, userId) {
     }
 }
 
+
+async function expandEditMessageForm(html, msgId) {
+    document.querySelector('.editMessageModal').innerHTML = html
+    console.log(document.querySelector('.editMessageModal').innerHTML)
+}
+
+//await fetchTemplate('editMessageForm.html',)

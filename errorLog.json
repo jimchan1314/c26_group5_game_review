@@ -372,3 +372,183 @@
   "errMess": "invalid input syntax for type integer: \"1, [object Object]\"",
   "dateTime": "2023-06-04T07:54:06.786Z"
 }
+{
+  "route": "/getGameList",
+  "errMess": "column game.post_id does not exist",
+  "dateTime": "2023-06-05T02:15:40.203Z"
+}
+{
+  "route": "/register",
+  "errMess": "invalid input syntax for type timestamp: \"June 5th 2023, 10:36:08 am\"",
+  "dateTime": "2023-06-05T02:36:08.175Z"
+}
+{
+  "route": "/register",
+  "errMess": "invalid input syntax for type timestamp: \"June 5th 2023, 10:36:11 am\"",
+  "dateTime": "2023-06-05T02:36:11.114Z"
+}
+{
+  "route": "/register",
+  "errMess": "invalid input syntax for type timestamp: \"June 5th 2023, 10:36:13 am\"",
+  "dateTime": "2023-06-05T02:36:14.100Z"
+}
+{
+  "route": "/register",
+  "errMess": "invalid input syntax for type timestamp: \"June 5th 2023, 10:36:19 am\"",
+  "dateTime": "2023-06-05T02:36:19.440Z"
+}
+{
+  "route": "/register",
+  "errMess": "invalid input syntax for type timestamp: \"June 5th 2023, 10:36:21 am\"",
+  "dateTime": "2023-06-05T02:36:22.028Z"
+}
+{
+  "route": "/register",
+  "errMess": "invalid input syntax for type timestamp: \"June 5th 2023, 10:36:30 am\"",
+  "dateTime": "2023-06-05T02:36:30.661Z"
+}
+{
+  "route": "/register",
+  "errMess": "invalid input syntax for type timestamp: \"June 5th 2023, 10:36:33 am\"",
+  "dateTime": "2023-06-05T02:36:33.650Z"
+}
+{
+  "route": "/register",
+  "errMess": "invalid input syntax for type timestamp: \"June 5th 2023, 10:36:36 am\"",
+  "dateTime": "2023-06-05T02:36:36.350Z"
+}
+{
+  "route": "/register",
+  "errMess": "invalid input syntax for type timestamp: \"June 5th 2023, 10:36:39 am\"",
+  "dateTime": "2023-06-05T02:36:40.045Z"
+}
+{
+  "route": "/register",
+  "errMess": "invalid input syntax for type timestamp: \"June 5th 2023, 10:36:42 am\"",
+  "dateTime": "2023-06-05T02:36:42.771Z"
+}
+{
+  "route": "/register",
+  "errMess": "invalid input syntax for type timestamp: \"June 5th 2023, 10:36:45 am\"",
+  "dateTime": "2023-06-05T02:36:45.622Z"
+}
+{
+  "route": "/getMessage/2",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:09:36.003Z"
+}
+{
+  "route": "/getMessage/1",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:15:37.559Z"
+}
+{
+  "route": "/addMessage/1",
+  "errMess": "column \"game_id\" of relation \"game_message\" does not exist",
+  "dateTime": "2023-06-05T07:16:11.698Z"
+}
+{
+  "route": "/addMessage/1",
+  "errMess": "column \"game_id\" of relation \"game_message\" does not exist",
+  "dateTime": "2023-06-05T07:16:11.912Z"
+}
+{
+  "route": "/getMessage/1",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:17:04.423Z"
+}
+{
+  "route": "/addMessage/1",
+  "errMess": "column \"game_id\" of relation \"game_message\" does not exist",
+  "dateTime": "2023-06-05T07:17:11.577Z"
+}
+{
+  "route": "/getMessage/1",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:17:31.547Z"
+}
+{
+  "route": "/getMessage/1",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:17:56.512Z"
+}
+{
+  "route": "/addMessage/1",
+  "errMess": "null value in column \"create_at\" of relation \"game_message\" violates not-null constraint",
+  "dateTime": "2023-06-05T07:18:01.847Z"
+}
+{
+  "route": "/getMessage/1",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:20:12.161Z"
+}
+{
+  "route": "/getMessage/1",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:20:46.086Z"
+}
+{
+  "route": "/getMessage/2",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:25:15.830Z"
+}
+{
+  "route": "/getMessage/1",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:26:10.800Z"
+}
+{
+  "route": "/getMessage/2",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:26:28.774Z"
+}
+{
+  "route": "/getMessage/3",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:27:03.716Z"
+}
+{
+  "route": "/getMessage/4",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:27:29.386Z"
+}
+{
+  "route": "/getMessage/4",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:28:26.636Z"
+}
+{
+  "route": "/getMessage/1",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:28:35.455Z"
+}
+{
+  "route": "/getMessage/2",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:28:53.190Z"
+}
+{
+  "route": "/getMessage/3",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:29:24.814Z"
+}
+{
+  "route": "/getMessage/4",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:29:45.036Z"
+}
+{
+  "route": "/getMessage/4",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:30:23.102Z"
+}
+{
+  "route": "/getMessage/4",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:32:34.504Z"
+}
+{
+  "route": "/getMessage/4",
+  "errMess": "column \"game_id\" does not exist",
+  "dateTime": "2023-06-05T07:32:56.840Z"
+}
