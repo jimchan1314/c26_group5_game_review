@@ -174,7 +174,7 @@ function renderVideoTemplate(obj, userId) {
         </div>
         <div class="card-body gBoxCount">
         <i class="fa-regular fa-comment-dots"> Message: 100</i>
-        <i data-likeID=${obj.post_id} class="btn fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
+        <i data-likeID=${obj.post_id} class="btn fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
         </div>
     </div>
     <div class="box-content">

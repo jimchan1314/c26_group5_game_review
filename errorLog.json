@@ -432,3 +432,23 @@
   "errMess": "Password must be at least 3 characters long",
   "dateTime": "2023-06-05T03:18:01.656Z"
 }
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-05T08:42:28.621Z"
+}
+{
+  "route": "/likeGame/7",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-05T08:45:46.524Z"
+}
+{
+  "route": "/likeGame/6",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-05T08:45:48.919Z"
+}
+{
+  "route": "/likeGame/7",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-05T08:48:07.721Z"
+}
