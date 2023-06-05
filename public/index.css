@@ -1,55 +1,71 @@
-.navbar-nav{
-    width: 100%;
+.navbar-nav {
+  width: 100%;
 }
+
 .title {
   font-family: 'StopmotionRegular';
-   font-weight: normal;
-   font-style: normal;
-   font-size: 30px;
-   color: rgb(255, 248, 234);
-
+  font-weight: normal;
+  font-style: normal;
+  font-size: 30px;
+  color: rgb(255, 248, 234);
+  cursor: pointer;
 }
 
 
 
-#navbar{
-  background-color: rgb(158, 118, 118)!important;
+#navbar {
+  background-color: rgb(158, 118, 118) !important;
 }
 
 body {
   background-color: rgb(129, 91, 91);
 }
-.navbar-nav > span:hover {
+
+.navbar-nav>span:hover {
   cursor: pointer;
 }
-.navbar-nav > span {
+
+.navbar-nav>span {
   font-family: 'ConnectionRegular';
-   font-weight: normal;
-   font-style: normal;
+  font-weight: normal;
+  font-style: normal;
   color: rgb(255, 248, 234);
-  
-}
-.loginButton {
-    margin-left: auto;
-}
-.modal-header{
-    border-bottom: none;
-}
-.form-modal-body{
-    padding: 10px;
-    height: 600px;
+
 }
 
-form > div > .button-flexBox{
-    margin-top: 20px;
-    text-align: center;
-    margin-bottom: 20px;
+.loginButton {
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
+  color: rgb(255, 248, 234);
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  cursor: pointer;
+
 }
-form > div > .button-flexBox > button{
-    width: 100%;
+
+.modal-header {
+  border-bottom: none;
 }
-.form-floating>label{
-    left: 10px!important;
+
+.form-modal-body {
+  padding: 10px;
+  height: 600px;
+}
+
+form>div>.button-flexBox {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form>div>.button-flexBox>button {
+  width: 100%;
+}
+
+.form-floating>label {
+  left: 10px !important;
 }
 
 .navIcon {
@@ -58,29 +74,40 @@ form > div > .button-flexBox > button{
   margin-right: 4px;
   border-radius: 50%;
 }
+
 .dropdown {
   margin-left: auto;
 }
-#userIcon-navbar{
+
+#userIcon-navbar {
   margin-left: auto;
   margin-right: 10px;
-  display:flex;
+  display: flex;
   align-items: center;
   background-color: rgb(129, 91, 91);
 }
-.dropdown-menu{
+
+.dropdown-menu {
   background-color: rgb(158, 118, 118);
 }
 
 .dropdown-item {
-  color: rgb(255, 248, 234)!important;
+  color: rgb(255, 248, 234) !important;
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
 }
-.dropdown-item:hover{
-  color: var(--bs-nav-link-hover-color)!important;
+
+.dropdown-item:hover {
+  color: var(--bs-nav-link-hover-color) !important;
 }
-#userIcon-navbar::after{
+
+#userIcon-navbar::after {
   content: attr(username);
-  font-family: 'MedievalSharpBookOblique';
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
+  color:rgb(255, 248, 234);
 }
 
 
@@ -88,17 +115,16 @@ form > div > .button-flexBox > button{
 .button-5 {
   align-items: center;
   background-clip: padding-box;
-  background-color: #fa6400;
+  background-color: rgb(195, 129, 84);
   border: 1px solid transparent;
-  border-radius: 50px;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
+  font-family: 'ConnectionRegular';
+  font-weight: bold;
+  font-style: normal;
   justify-content: center;
   line-height: 1.25;
   margin: 0;
@@ -111,83 +137,342 @@ form > div > .button-flexBox > button{
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: baseline;
-  width: auto;
-  
+  width: 160px;
+
 }
 
 .button-5:hover,
 .button-5:focus {
-  background-color: #fb8332;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  background-color: rgb(255, 194, 111);
+  --pixel-bg: rgb(255, 194, 111) !important;
+  box-shadow:
+    0 calc(var(--pixel) * -3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * 3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+
+    /* Pixel Border Layer 1 */
+    calc(var(--pixel) * -1) 0 0 0 var(--pixel-border),
+    var(--pixel) 0 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * 2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * 5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * -10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * 10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * -13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+    0 calc(var(--pixel) * 13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+
+    /* Pixel Border Layer 2 */
+    calc(var(--pixel) * -2) 0 0 0 var(--pixel-border-2),
+    calc(var(--pixel) * 2) 0 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -1) 0 var(--pixel) var(--pixel-border-2),
+    0 var(--pixel) 0 var(--pixel) var(--pixel-border-2),
+    0 calc(var(--pixel) * -4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * 4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * -8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * 8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * -11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * 11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * -14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+    0 calc(var(--pixel) * 14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+
+    /* Border Layer 3: --pixel-border-3 */
+    calc(var(--pixel) * -3) 0 0 0 var(--pixel-border-3),
+    calc(var(--pixel) * 3) 0 0 0 var(--pixel-border-3),
+    0 0 0 calc(var(--pixel) * 2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * 3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * -5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * 5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3),
+    0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
+
 }
 
 .button-5:hover {
-  transform: translateY(-1px);
+  --pixel-bg: rgb(255, 194, 111);
+  box-shadow:
+    0 calc(var(--pixel) * -3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * 3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+
+
+    calc(var(--pixel) * -1) 0 0 0 var(--pixel-border),
+    var(--pixel) 0 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * 2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * 5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * -10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * 10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * -13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+    0 calc(var(--pixel) * 13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+
+
+    calc(var(--pixel) * -2) 0 0 0 var(--pixel-border-2),
+    calc(var(--pixel) * 2) 0 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -1) 0 var(--pixel) var(--pixel-border-2),
+    0 var(--pixel) 0 var(--pixel) var(--pixel-border-2),
+    0 calc(var(--pixel) * -4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * 4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * -8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * 8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * -11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * 11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * -14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+    0 calc(var(--pixel) * 14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+
+
+    calc(var(--pixel) * -3) 0 0 0 var(--pixel-border-3),
+    calc(var(--pixel) * 3) 0 0 0 var(--pixel-border-3),
+    0 0 0 calc(var(--pixel) * 2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * 3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * -5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * 5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3),
+    0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
+
 }
 
 .button-5:active {
-  background-color: #c85000;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+
+
+
+  --pixel-bg: rgb(249, 224, 187);
+  box-shadow:
+    0 calc(var(--pixel) * -3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * 3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+
+    /* Pixel Border Layer 1 */
+    calc(var(--pixel) * -1) 0 0 0 var(--pixel-border),
+    var(--pixel) 0 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * 2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * 5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * -10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * 10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * -13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+    0 calc(var(--pixel) * 13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+
+    /* Pixel Border Layer 2 */
+    calc(var(--pixel) * -2) 0 0 0 var(--pixel-border-2),
+    calc(var(--pixel) * 2) 0 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -1) 0 var(--pixel) var(--pixel-border-2),
+    0 var(--pixel) 0 var(--pixel) var(--pixel-border-2),
+    0 calc(var(--pixel) * -4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * 4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * -8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * 8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * -11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * 11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * -14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+    0 calc(var(--pixel) * 14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+
+    /* Border Layer 3: --pixel-border-3 */
+    calc(var(--pixel) * -3) 0 0 0 var(--pixel-border-3),
+    calc(var(--pixel) * 3) 0 0 0 var(--pixel-border-3),
+    0 0 0 calc(var(--pixel) * 2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * 3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * -5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * 5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3),
+    0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
   transform: translateY(0);
+}
+
+.button-flexBox>button {
+  margin-top: 20px;
+  width: 160px !important;
 }
 
 
 /* game section */
-.gameSession{
+.gameSession {
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.gameBox{
+.gameBox {
   display: flex;
   flex-wrap: wrap;
-  margin: 10px;
+  margin-left: 5px;
+  max-width: 500px;
+  width: auto;
 }
 
-.gBoxCount{
+.box {
+  text-align: center;
+  align-items: center;
+  margin-left: 5px;
+  width: 500px;
+  background-color: rgb(89, 69, 69);
+  border: 2px solid rgb(158, 118, 118) !important;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s ease 0s;
+
+}
+
+.box .box-content{
+  color: rgb(255, 248, 234);
+  width: 100%;
+  transform: translateX(-50%) translateY(-50%) scaleY(0);
+  transform-origin: top center;
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transition: all 0.5s ease 0s;
+}
+.box:hover .box-content{ 
+  
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%) scaleY(1);
+}
+.box:hover{
+  background: #ce5f159d;
+}
+
+
+
+
+.box .visit{
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 0 0 10px;
+  display: block;
+}
+
+.gBoxName {
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 35px;
+
+}
+
+.card-text {
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 15px;
+  color:rgb(255, 248, 234)
+}
+
+.gBoxCount {
   display: flex;
   justify-content: space-between;
 }
 
-.gameCoverDiv{
+.gameCoverDiv {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 /* profile section */
+.list-group-item{
+  background-color: #884A39;
+  color: rgb(255, 248, 234);
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
+  
+}
+.list-group-item.active {
+  background-color: #C38154;
+  color: rgb(255, 248, 234);
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
+  
+}
 #profile {
   max-width: 1400px;
   margin: 0px auto;
 }
-.profileForm{
+
+.profileForm {
   width: 500px
 }
 
-.profileContent{
+.profileContent {
   padding-top: 100px;
   width: 500px;
   margin-left: 50%;
 }
 
-.profile_PrivateForm{
+.profile_PrivateForm {
   width: 500px;
 }
 
-.list-group{
+.list-group {
   width: 200px;
 }
 
-.profile-container{
+.profile-container {
   width: 250px;
   position: relative;
   margin: 0px auto;
   text-align: center;
 }
 
-#userIcon{
-  display:none;
+#userIcon {
+  display: none;
 }
 
 
@@ -195,132 +480,311 @@ form > div > .button-flexBox > button{
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  
+
 }
 
-.input-group{
+.input-group {
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-.profile-container::after{
-  content:" ";
+.profile-container::after {
+  content: " ";
   display: block;
-  background-image: url(239220.png);  
+  background-image: url(239220.png);
   background-repeat: no-repeat;
   background-position: center center;
   position: absolute;
   top: 0px;
   bottom: 0px;
   left: 0px;
-  right:0px;
+  right: 0px;
   background-size: 50px 50px;
   transition: all 0.5s;
   opacity: 0;
- 
+
 }
 
-.profile-container::before{
+.profile-container::before {
   content: '';
-  background: repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(255,255,255,0.1) 10px,rgba(255,255,255,0.1) 20px);
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    transition: all 0.3s;
-    border-radius: 50%;
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 20px);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  transition: all 0.3s;
+  border-radius: 50%;
 }
-.profile-container:hover:before{ opacity: 1; }
 
-.profile-container:hover{
-  cursor: pointer;
-  
-}
-.profile-container:hover::after{
+.profile-container:hover:before {
   opacity: 1;
 }
 
-.g-0{
-  background-color: rgb(89, 69, 69);
-  border: 2px solid rgb(158, 118, 118)!important;
-  
+.profile-container:hover {
+  cursor: pointer;
+
 }
 
-.g-0 > div{
-  color:rgb(255, 248, 234)
-}
-.gBoxName {
-  font-family: 'ConnectionRegular';
-   font-weight: normal;
-   font-style: normal;
-   font-size: 35px;
-  
-}
-.card-text{
-  font-family: 'ConnectionRegular';
-   font-weight: normal;
-   font-style: normal;
-   font-size: 15px;
+.profile-container:hover::after {
+  opacity: 1;
 }
 
 
 
-.card{
+
+
+.card {
+  max-width: 500px;
   --bs-card-border-color: transparent !important;
-  --bs-card-border-width:0px solid !important;
+  --bs-card-border-width: 0px solid !important;
+  margin-left: 5px;
 }
 
-.homeTitle{
+.homeTitle {
   font-family: 'ConnectionRegular';
   font-weight: bold;
   font-style: normal;
   margin-top: 10px;
   margin-left: 10px;
-  color:rgb(255, 248, 234)
+  color: rgb(255, 248, 234);
 }
-/* gameForm */
-::placeholder{
+
+
+/* LoginForm */
+.welcome {
+  color: rgb(255, 248, 234) !important;
   font-family: 'ConnectionRegular';
   font-weight: normal;
   font-style: normal;
-  color: rgb(255, 248, 234)!important;
 }
-.form-control{
-  
+
+.register {
+  color: rgb(255, 248, 234) !important;
+  font-family: 'ConnectionRegular';
+  font-weight: bold;
+  font-style: normal;
+}
+
+.inputEmail {
+  margin-bottom: 25px;
+}
+
+.modal-title {
+  color: rgb(255, 248, 234) !important;
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
+}
+
+.modal-content {
+
+  background-color: rgb(136, 74, 57) !important;
+}
+
+::placeholder {
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
+  color: rgb(255, 248, 234) !important;
+}
+
+.form-control {
+
   border-radius: 0% !important;
   border: 0px !important;
-  background-color: #594545;
+  background-color: #C38154;
+  color: rgb(255, 248, 234) !important;
+  ;
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
 }
+
+.form-control:focus {
+  background: var(--pixel-bg);
+  box-shadow:
+
+    /* Inner Background Color */
+    0 calc(var(--pixel) * -3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * 3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+
+    /* Pixel Border Layer 1 */
+    calc(var(--pixel) * -1) 0 0 0 var(--pixel-border),
+    var(--pixel) 0 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * 2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * 5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * -10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * 10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * -13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+    0 calc(var(--pixel) * 13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+
+    /* Pixel Border Layer 2 */
+    calc(var(--pixel) * -2) 0 0 0 var(--pixel-border-2),
+    calc(var(--pixel) * 2) 0 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -1) 0 var(--pixel) var(--pixel-border-2),
+    0 var(--pixel) 0 var(--pixel) var(--pixel-border-2),
+    0 calc(var(--pixel) * -4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * 4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * -8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * 8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * -11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * 11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * -14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+    0 calc(var(--pixel) * 14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+
+    /* Border Layer 3: --pixel-border-3 */
+    calc(var(--pixel) * -3) 0 0 0 var(--pixel-border-3),
+    calc(var(--pixel) * 3) 0 0 0 var(--pixel-border-3),
+    0 0 0 calc(var(--pixel) * 2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * 3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * -5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * 5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3),
+    0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
+}
+
+:root {
+  --pixel-bg: #C38154;
+  /* ↑ Inner background color */
+
+  --pixel-border: rgb(136, 74, 57);
+  /* ↑ Inner border color */
+
+  --pixel-border-2: white;
+  /* ↑ Middle border color */
+
+  --pixel-border-3: var(--pixel-border);
+  /* ↑ Outer border color */
+
+  --pixel: .1rem;
+  /* ↑ Pixel size */
+}
+
+.pixel-border {
+  background: var(--pixel-bg);
+  box-shadow:
+
+    /* Inner Background Color */
+    0 calc(var(--pixel) * -3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * 3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+
+    /* Pixel Border Layer 1 */
+    calc(var(--pixel) * -1) 0 0 0 var(--pixel-border),
+    var(--pixel) 0 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * 2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * 5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * -10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * 10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * -13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+    0 calc(var(--pixel) * 13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+
+    /* Pixel Border Layer 2 */
+    calc(var(--pixel) * -2) 0 0 0 var(--pixel-border-2),
+    calc(var(--pixel) * 2) 0 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -1) 0 var(--pixel) var(--pixel-border-2),
+    0 var(--pixel) 0 var(--pixel) var(--pixel-border-2),
+    0 calc(var(--pixel) * -4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * 4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * -8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * 8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * -11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * 11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * -14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+    0 calc(var(--pixel) * 14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+
+    /* Border Layer 3: --pixel-border-3 */
+    calc(var(--pixel) * -3) 0 0 0 var(--pixel-border-3),
+    calc(var(--pixel) * 3) 0 0 0 var(--pixel-border-3),
+    0 0 0 calc(var(--pixel) * 2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * 3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * -5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * 5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3),
+    0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
+}
+
+/* registerForm */
+.form-label {
+  color: rgb(255, 248, 234) !important;
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* gameForm */
+
 .input-group-text {
   border-radius: 0% !important;
   border: 0px !important;
   background-color: #594545;
-  color: rgb(255, 248, 234)!important;
+  color: rgb(255, 248, 234) !important;
   font-family: 'ConnectionRegular';
   font-weight: normal;
   font-style: normal;
 }
+
 .form-select {
   border-radius: 0% !important;
   border: 0px !important;
   background-color: #594545;
-  color: rgb(255, 248, 234)!important;
+  color: rgb(255, 248, 234) !important;
   font-family: 'ConnectionRegular';
   font-weight: normal;
   font-style: normal;
 }
 
 
-.gameFormContainer{
+.gameFormContainer {
   max-width: 1400px;
   margin: 0px auto;
 }
-.pixel2 > p{
+
+.pixel2>p {
   text-align: center;
   margin-bottom: 0px;
 }
+
 .container {
   margin: 50px;
   display: block;
@@ -330,22 +794,23 @@ form > div > .button-flexBox > button{
   text-align: center;
 }
 
-.pixel, .pixel2 {
+.pixel,
+.pixel2 {
   font-size: 25px;
   color: white;
   height: auto;
   margin: 10px;
   font-family: 'ConnectionRegular';
-   font-weight: normal;
-   font-style: normal;
-  
+  font-weight: normal;
+  font-style: normal;
+
   position: relative;
   display: inline-block;
   vertical-align: top;
   text-transform: uppercase;
-  
+
   cursor: pointer;
-  
+
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -354,7 +819,8 @@ form > div > .button-flexBox > button{
   user-select: none;
 }
 
-.pixel:active, .pixel2:active {
+.pixel:active,
+.pixel2:active {
   top: 2px;
 }
 
@@ -364,9 +830,9 @@ form > div > .button-flexBox > button{
   display: block;
   margin: 10px;
   font-family: 'ConnectionRegular';
-   font-weight: normal;
-   font-style: normal;
-  
+  font-weight: normal;
+  font-style: normal;
+
   font-size: 25px;
   color: white;
 }
@@ -402,7 +868,8 @@ form > div > .button-flexBox > button{
   width: auto;
   z-index: 2;
 }
-#username{
+
+#username {
   font-family: 'ConnectionRegular';
   font-weight: normal;
   font-style: normal;
@@ -410,44 +877,12 @@ form > div > .button-flexBox > button{
 }
 
 
-/* editGameForm */
-/* @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
 
-@mixin step4( $width, $color, $bgcolor ) {
-  box-shadow:
-    $width 0 $bgcolor,
-    -$width 0 $bgcolor,
-    0 (-$width) $bgcolor,
-    0 $width $bgcolor,
-    2*$width 0 $bgcolor,
-    -2*$width 0 $bgcolor,
-    0 (-2*$width) $bgcolor,
-    0 2*$width $bgcolor, 
-    0 0 0 $width $bgcolor,
-    3*$width 0 $bgcolor,
-    -3*$width 0 $bgcolor, 
-    0 3*$width $bgcolor,
-    0 (-3*$width) $bgcolor,
-    0 (-$width) 0 $width $bgcolor,
-    0 $width 0 $width $bgcolor,
-    $width 0 0 $width $bgcolor,
-    -$width 0 0 $width $bgcolor,
-    4*$width 0 $color, 
-    -4*$width 0 $color,
-    0 (-4*$width) $color, 
-    0 4*$width $color,
-    2*$width 0 0 $width $color,
-    -2*$width 0 0 $width $color,
-    0 2*$width 0 $width $color,
-    0 (-2*$width) 0 $width $color,
-    0 0 0 2*$width $color;
-    margin: 4*$width auto;
-} */
 
-#editGameFormModal{
+.gameFormBorder {
   background-color: rgb(129, 91, 91);
   padding: 15px;
-  border:rgb(255, 248, 234);
+  border: rgb(255, 248, 234);
   border-style: dashed;
   border-radius: 5%;
   font-family: 'ConnectionRegular';
@@ -458,8 +893,12 @@ form > div > .button-flexBox > button{
   /* https://codepen.io/albpara/pen/JjRarO */
 }
 
-/* #editGameFormModal > .btn{
-  display: flex;
-  justify-content: space-between;
-  background-color: #fb8332;
-} */
+.btn{
+  color:#FFC26F
+}
+.card-title {
+  color:rgb(255, 248, 234);
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
+}

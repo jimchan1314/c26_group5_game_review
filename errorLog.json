@@ -372,3 +372,63 @@
   "errMess": "invalid input syntax for type integer: \"1, [object Object]\"",
   "dateTime": "2023-06-04T07:54:06.786Z"
 }
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-05T02:24:29.577Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-05T02:28:05.872Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-05T03:02:15.113Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-05T03:02:18.137Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-05T03:02:25.740Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-05T03:02:53.931Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-05T03:02:55.966Z"
+}
+{
+  "route": "/login",
+  "errMess": "Password must be at least 3 characters long",
+  "dateTime": "2023-06-05T03:06:29.723Z"
+}
+{
+  "route": "/login",
+  "errMess": "Password must be at least 3 characters long",
+  "dateTime": "2023-06-05T03:16:53.230Z"
+}
+{
+  "route": "/login",
+  "errMess": "Password must be at least 3 characters long",
+  "dateTime": "2023-06-05T03:17:33.075Z"
+}
+{
+  "route": "/login",
+  "errMess": "Password must be at least 3 characters long",
+  "dateTime": "2023-06-05T03:17:55.129Z"
+}
+{
+  "route": "/login",
+  "errMess": "Password must be at least 3 characters long",
+  "dateTime": "2023-06-05T03:18:01.656Z"
+}
