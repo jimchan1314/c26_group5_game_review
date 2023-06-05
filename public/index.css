@@ -463,3 +463,6 @@ form > div > .button-flexBox > button{
   justify-content: space-between;
   background-color: #fb8332;
 } */
+#gameLogo{
+  height: 60px;
+}
