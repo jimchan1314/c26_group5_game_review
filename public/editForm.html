@@ -1,0 +1,44 @@
+<form id="editGameForm">
+    <div class="col-md-12">
+        <h3>Update Game Information</h3>
+    </div>
+
+    <div>
+        <div>Current Game Cover</div>
+        <div id="CurGameCover" class="col-md-12 mb-3">
+            <img src="">
+        </div>
+    </div>
+
+    <div class="col-md-12 mb-3">
+        <label for="gameName" class="form-label">Game Name</label>
+        <input type="text" class="form-control" id="gameName" name="gameName" placeholder="Game Name">
+    </div>
+
+    <div class="input-group col-md-6 mb-3">
+        <label class="input-group-text" for="game_type">Game Type</label>
+        <select class="form-select" id="game_type" name="game_type">
+        <option selected="">Choose Game Type</option>
+        <option value="Board Game">Board Game</option>
+        <option value="Video Game">Video Game</option>
+        </select>
+    </div>
+
+    <div class="col col-md-12">
+        <label for="description" class="form-label">Game Description</label>
+    </div>
+    <div class="col col-md-12 mb-3">
+        <textarea class="form-control" id="description" name="description" rows="5"></textarea>
+    </div>
+
+    <div class="col col-md-12 mb-3">
+        
+        <label for="gameCover" class="form-label">Upload Game Cover</label>
+        <input class="form-control" type="file" name="gameCover" id="gameCover">
+    </div>
+
+    <div class="gameBtns col-md-12 d-grid">
+        <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn" value="submit">Submit</button>
+    </div>
+</form>
