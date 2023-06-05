@@ -372,3 +372,193 @@
   "errMess": "invalid input syntax for type integer: \"1, [object Object]\"",
   "dateTime": "2023-06-04T07:54:06.786Z"
 }
+{
+  "route": "/likeGame/5",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T04:32:21.169Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T04:35:16.169Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T04:38:01.265Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T04:38:03.874Z"
+}
+{
+  "route": "/likeGame/7",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T06:42:57.327Z"
+}
+{
+  "route": "/likeGame/7",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T06:42:59.605Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T06:43:02.521Z"
+}
+{
+  "route": "/likeGame/7",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T06:47:58.607Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T06:49:49.277Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T06:54:29.566Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T06:57:55.860Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:10:10.086Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:10:46.334Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:11:00.928Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:12:37.181Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:13:58.680Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:14:36.993Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:15:10.960Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:18:05.311Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:19:29.319Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:20:48.994Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:21:26.993Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:21:30.691Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:25:18.224Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:26:08.544Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "column \"id\" does not exist",
+  "dateTime": "2023-06-05T07:26:49.892Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-05T07:35:39.496Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-05T07:35:46.689Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-05T07:35:49.138Z"
+}
+{
+  "route": "/likeGame/7",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-05T07:35:53.656Z"
+}
+{
+  "route": "/likeGame/7",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-05T07:35:55.719Z"
+}
+{
+  "route": "/likeGame/1",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-05T07:36:22.499Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-05T07:37:06.112Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-05T07:37:21.200Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-05T07:37:37.459Z"
+}
+{
+  "route": "/likeGame/7",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-05T07:37:49.373Z"
+}
+{
+  "route": "/likeGame/7",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-05T07:37:51.357Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-05T07:38:35.859Z"
+}

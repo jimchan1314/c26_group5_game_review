@@ -137,7 +137,7 @@ async function fetchAllGame() {
     alert(json.errMess)
   } else {
     renderAllGame(json.data)
-    console.log("GF65", json.data)
+    // console.log("GF65", json.data)
   }
 }
 
@@ -170,7 +170,7 @@ function renderVideoTemplate(obj,userId){
         </div>
         <div class="card-body gBoxCount">
         <i class="fa-regular fa-comment-dots"> Message: 100</i>
-        <i class="fa-regular fa-heart"> like: ${obj.like_count}</i>
+        <i data-likeID=${obj.post_id} class="btn fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
         </div>
 
     </div>
@@ -209,7 +209,7 @@ function renderBoardGameTemplate(obj,userId){
         </div>
         <div class="card-body gBoxCount">
         <i class="fa-regular fa-comment-dots"> Message: 100</i>
-        <i class="fa-regular fa-heart"> like: ${obj.like_count}</i>
+        <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
         </div>
 
     </div>
@@ -269,6 +269,37 @@ async function renderAllGame(gameList) {
   }))
 
 
+    //like game
+  document.querySelectorAll('.gBoxCount > i.fa-heart').forEach(i => i.addEventListener("click", async e => {
+    let id = e.target.dataset.likeid
+    // console.log('GF275',e.target.dataset.likeid)
+    let res = await fetch(`game/likeGame/${id}`,{
+      method:"POST",
+      body:""
+    })
+    let json = await res.json()
+    if (json.isError) {
+      await sweetAlert.fire({
+        icon: 'info',
+        title: json.errMess,
+        showConfirmButton: false,
+        timer: 1500
+      })
+
+    } else {
+      await sweetAlert.fire({
+        icon: 'success',
+        title: 'Successfully Like Game',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
+      indexCheck()
+    }
+    
+  }))
+
+
   
 
 
@@ -290,7 +321,7 @@ async function renderEditGame(id) {
   
   let gameData = await fetch(`game/getSingleGame/${id}`)
   let resGame = await gameData.json()
-  console.log("gf289",resGame.data)
+  // console.log("gf289",resGame.data)
   document.querySelector('#gameName').value = resGame.data.name
   document.querySelector('#game_type').value = resGame.data.game_type
   document.querySelector('#description').value = resGame.data.description
@@ -349,9 +380,11 @@ async function fetchSingleGame(id) {
     alert(json.errMess)
   } else {
     renderAllGame(json.data)
-    console.log("GF352", json.data)
+    // console.log("GF352", json.data)
   }
 }
+
+
 
 
 
