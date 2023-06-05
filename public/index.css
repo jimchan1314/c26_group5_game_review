@@ -360,7 +360,7 @@ form>div>.button-flexBox>button {
   position: relative;
   overflow: hidden;
   transition: all 0.6s ease 0s;
-
+  padding: 5px;
 }
 
 .box .box-content{
@@ -381,7 +381,8 @@ form>div>.button-flexBox>button {
   transform: translateX(-50%) translateY(-50%) scaleY(1);
 }
 .box:hover{
-  background: #ce5f159d;
+  
+  background-color: #7c48269a;
 }
 
 

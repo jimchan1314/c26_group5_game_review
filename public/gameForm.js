@@ -145,6 +145,18 @@ async function fetchAllGame() {
   }
 }
 
+async function fetchVideoGame() {
+  let res = await fetch('/game/getVideoGameList')
+  let json = await res.json()
+
+  if (json.isError) {
+    alert(json.errMess)
+  } else {
+    renderVideoTemplate(json.data)
+    console.log("GF65", json.data)
+  }
+}
+
 
 
 function renderVideoTemplate(obj, userId) {
