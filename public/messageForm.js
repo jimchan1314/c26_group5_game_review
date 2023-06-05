@@ -1,3 +1,6 @@
+renderAddMessage()
+renderGetMessage()
+
 //add message
 async function renderAddMessage() {
     let messageForm = document.querySelector("#messageForm")
@@ -33,28 +36,57 @@ async function renderGetMessage() {
         const result = await res.json()
         //console.log(result.data)
         document.querySelector('.messageContainer').innerHTML = result.data.map(obj => messageTemplate(obj, user.id)).join('')
-        deletemessage()
+        deleteMessage()
+        editMessage(result.data)
     })
 }
 
-//let user = await localStorage.getItem('user')
-//user = JSON.parse(user)
-
-
-renderAddMessage()
-renderGetMessage()
-
 //delete message
-async function deletemessage() {
+async function deleteMessage() {
     document.querySelectorAll('.card-body > .messageCardBody > div > div > .fa-trash-can').forEach(i => i.addEventListener("click", async e => {
         let id = e.target.dataset.id
-        const res = await fetch(`message/deleteMessage/${id}`, {
-            method: "DELETE"
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                const res = await fetch(`message/deleteMessage/${id}`, {
+                    method: "DELETE"
+                })
+                Swal.fire(
+                    'Deleted!',
+                    'Your comment has been deleted.',
+                    'success'
+                )
+                await res.json()
+            }
         })
-        await res.json()
-        //const result = await res.json()
-        //console.log(result)
     }))
+}
+
+//edit message
+async function editMessage(messages) {
+    document.querySelectorAll('.card-body > .messageCardBody > div > div > .fa-square-pen').forEach(i => i.addEventListener("click", async e => {
+        console.log('edit clicked')
+        console.log(messages)
+        let id = e.target.dataset.id
+        console.log(id)
+        //let content = messages.filter(messsge => message.id == id)
+        //console.log(content)
+        //const messageForm = document.querySelector("#messageForm")
+        //messageForm.text.defaultValue = message.
+
+        //const res = await fetch(`message/editMessage/${id}`, {
+        //    method: "PUT"
+        //})
+        //await res.json()
+    })
+    )
 }
 
 function messageTemplate(obj, userId) {
@@ -63,7 +95,7 @@ function messageTemplate(obj, userId) {
         <div class="card messageCard" style="width: 400px;">
             <div class="card-body">
                 <div class="userInfo">
-                    <img src="users_pic">
+                    <img src="user_pic">
                     <div>user id: ${obj.users_id}</div>
                 </div>
                 <div class="messageCardBody">
@@ -99,5 +131,4 @@ function messageTemplate(obj, userId) {
         `
     }
 }
-
 

@@ -3,10 +3,10 @@ import { Request, Response } from "express";
 import { db } from "../db";
 import { IMessageController } from "../routes/Routes";
 import { errorHandler } from "../errorHandler";
+import moment from "moment";
 
 type Message = {
-    text: string,
-    image: string
+    text: string
 }
 
 export class MessageController implements IMessageController{
@@ -17,21 +17,9 @@ export class MessageController implements IMessageController{
             let message = {...form}
             let userId = req.session.userId!
             let gameId = req.params.id
-            //console.log(message)
             
-            //await db.query(`INSERT INTO game_message (text,image,game_id,users_id) VALUES ($1,$2,$3,$4)`,
-            //[message.text,message.image,message.game_id,message.user_id])
-
-            // let gamequery = await db.query(`SELECT id from game limit 1`)
-            // if(gamequery.rows.length === 0){
-            //     throw new Error('not exist this game')
-            // }
-            // let userQuery = await db.query(`SELECT id from users limit 1`)
-            // if(userQuery.rows.length === 0){
-            //     throw new Error('not exist this user')
-            // }
-            await db.query(`INSERT INTO game_message (text,image,game_id,users_id) VALUES ($1,$2,$3,$4)`,
-            [message.text,message.image,gameId,userId])
+            await db.query(`INSERT INTO game_message (text,game_id,users_id) VALUES ($1,$2,$3)`,
+            [message.text,gameId,userId])
             
             res.json({isError:false,errMess:null,data:form});
 
@@ -68,7 +56,7 @@ export class MessageController implements IMessageController{
         try {
             let gameId = req.params.id
             let {rows} = await db.query(`SELECT * from game_message WHERE game_id=$1 ORDER BY create_at ASC`,[gameId])
-            console.log(rows)
+            //console.log(rows)
             res.json({isError:false,errMess:null,data:rows});
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})

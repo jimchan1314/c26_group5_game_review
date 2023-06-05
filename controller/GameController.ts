@@ -4,7 +4,7 @@ import { db } from "../db";
 
 import { errorHandler } from "../errorHandler";
 import { IGameController } from "../routes/Routes";
-//import moment from "moment";
+import moment from "moment";
 
 // import jsonfile from "jsonfile";
 // import { type } from "os";
@@ -26,7 +26,7 @@ export class GameController implements IGameController{
             // console.log("25", form)
             let gameData = {...form}
             let time = new Date();
-            //let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');   
+            let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');   
             
             await db.query(`INSERT INTO game (name, game_type, like_count, description, create_users_id, game_cover) VALUES ($1,$2,$3,$4,$5,$6)`,
             [gameData.gameName, gameData.game_type, 0, gameData.description, req.session.userId, gameData.gameCover])
