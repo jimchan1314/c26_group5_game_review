@@ -1,17 +1,3 @@
-// const { json } = require("stream/consumers");
-// working...
-
-// const { json } = require("stream/consumers");
-
-//back for main page? may change fm renderAllGame
-// async function publicAreaGameList(html) {
-//   document.querySelector('.gameSection').innerHTML = html;
-// }
-
-// async function specialAreaGameList(html) {
-//   document.querySelector('.gameSection').innerHTML = html;
-// }
-
 
 async function renderCreateGame(html) {
   document.querySelector('.content').innerHTML = html
@@ -69,7 +55,7 @@ async function fetchGameGuest() {
 }
 
 function renderAllGameGuest(gameList) {
-console.log(gameList.data)
+// console.log(gameList.data)
   gameList.forEach(obj =>
     obj.game_type === "Video Game" ? document.querySelector('#videoGame').innerHTML +=
       `
@@ -94,7 +80,7 @@ console.log(gameList.data)
           </div>
       </div>
       <div class="box-content">
-        <div class="btn visit">Visit Page</div>
+        <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
       </div>
     </div>
   </div>
@@ -124,7 +110,7 @@ console.log(gameList.data)
            </div>
        </div>
       <div class="box-content">
-        <div class="btn visit">Visit Page</div>
+        <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
       </div>
      </div>
    </div>  
@@ -136,7 +122,7 @@ console.log(gameList.data)
 async function fetchAllGame() {
   let res = await fetch('/game/getGameList')
   let json = await res.json()
-  console.log(json)
+  // console.log(json)
   if (json.isError) {
     alert(json.errMess)
   } else {
@@ -185,7 +171,7 @@ obj.forEach(obj =>
         </div>
     </div>
     <div class="box-content">
-      <div class="btn visit">Visit Page</div>
+      <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
     </div>
   </div>
 </div>
@@ -220,7 +206,7 @@ function renderBoardGameTemplate(obj) {
         </div>
     </div>
     <div class="box-content">
-      <div class="btn visit">Visit Page</div>
+      <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
     </div>
   </div>
 </div>  
@@ -240,8 +226,8 @@ async function renderAllGame(gameList) {
   // }
 
   // console.log("123", user)
-  gameList.forEach(obj =>
-    obj.game_type === "Video Game" ? renderVideoTemplate(obj, user.id) : renderBoardGameTemplate(obj, user.id))
+  // gameList.forEach(obj =>
+  //   obj.game_type === "Video Game" ? renderVideoTemplate(obj, user.id) : renderBoardGameTemplate(obj, user.id))
 
 
 
@@ -381,17 +367,54 @@ async function renderEditGame(id) {
 }
 
 
-async function fetchSingleGame(id) {
-  let res = await fetch(`/game/getGameList/${id}`)
+async function fetchSingleGame(gameIDD) {
+
+  console.log("gf386",gameIDD)
+  // console.log(gf387,user)
+  let res = await fetch(`/game/getSingleGame/${gameIDD}`)
   let json = await res.json()
+  // console.log("gfjs387",json.data)
+
+  document.querySelector('#gameName1').textContent = json.data.name
+  document.querySelector('#gameType1').textContent = json.data.game_type
+  document.querySelector('#description').textContent = json.data.description
+  document.querySelector('#createPost1').textContent = json.data.create_post
+  document.querySelector('#likeCount1').textContent = json.data.like_count
+  document.querySelector('#usersName1').textContent = json.data.users_name
+  document.querySelector('#curGameCover').innerHTML = `<img src=${json.data.game_cover} />`
+
+  let user = localStorage.getItem('user')
+  user = JSON.parse(user)
+  console.log('gfjs402',user.id)
+
+  // checking
+  {json.data.create_users_id === user.id ?
+    
+    document.querySelector('.userbtnSet').innerHTML =
+    `
+      <i data-id=${gameIDD} class="btn fa-solid fa-square-pen" onclick="renderEditGame('${gameIDD}')" data-bs-toggle="modal" data-bs-target="#editGameModal") > Edit</i>
+      <i data-id=${gameIDD} class="btn fa-solid fa-trash-can"> Delete</i>
+    `
+    // document.querySelector('.fa-heart').innerHTML =`<i class="fa-regular fa-heart"> like: ${obj.like_count}</i>`
+   
+    :
+    ""
+    // document.querySelector('.userbtnSet').innerHTML ="wrong!!!!!!"
+    
+  }
+
 
   if (json.isError) {
     alert(json.errMess)
   } else {
     renderAllGame(json.data)
-    // console.log("GF352", json.data)
+    console.log("GF352", json.data)
   }
 }
+
+
+
+
 
 
 
