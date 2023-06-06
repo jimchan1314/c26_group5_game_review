@@ -57,7 +57,10 @@ export class MessageController implements IMessageController{
     async getMessage(req:Request,res:Response):Promise<void> {
         try {
             let postId = req.params.id
-            let {rows} = await db.query(`SELECT * from game_message WHERE post_id=$1 ORDER BY create_at ASC`,[postId])
+
+            let {rows} = await db.query(`SELECT message_id,text,post_id,users_id,message_create_at,users_icon,users_name 
+            FROM game_message JOIN users ON users_id = users.id where post_id=$1 ORDER BY message_create_at ASC`,[postId])
+            //let {rows} = await db.query(`SELECT * from game_message WHERE post_id=$1 ORDER BY create_at ASC`,[postId])
             //console.log(rows)
             res.json({isError:false,errMess:null,data:rows});
         } catch (error) {
