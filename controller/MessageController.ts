@@ -35,7 +35,7 @@ export class MessageController implements IMessageController{
         try {
             let messageID = req.params.id
             let form = await parseFormDataGame(req) as Message
-            db.query(`UPDATE game_message SET text=$1 where id=$2`,[form.text,messageID])
+            db.query(`UPDATE game_message SET text=$1 where message_id=$2`,[form.text,messageID])
             res.json({isError:false,errMess:null,data:"edited successfully"});
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
@@ -46,7 +46,7 @@ export class MessageController implements IMessageController{
     async deleteMessage(req:Request,res:Response):Promise<void> {
         try {
             let messageID = req.params.id
-            db.query(`DELETE FROM game_message where id=$1`,[messageID])
+            db.query(`DELETE FROM game_message where message_id=$1`,[messageID])
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
             res.json({isError:true,errMess:error.message})
@@ -72,7 +72,7 @@ export class MessageController implements IMessageController{
         try{
             let msgId = req.params.id
             //console.log(msgId)
-            let {rows} = await db.query(`SELECT text from game_message WHERE id=$1`,[msgId])
+            let {rows} = await db.query(`SELECT text from game_message WHERE message_id=$1`,[msgId])
             //console.log(rows)
             res.json({isError:false,errMess:null,data:rows});
         } catch (error) {
