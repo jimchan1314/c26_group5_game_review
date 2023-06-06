@@ -111,7 +111,7 @@ async function editMessage(msgId, postId) {
 
         const editMessageData = new FormData(editMessageForm)
 
-        const res = await fetch(`message/editMessage/${postId}`, {
+        const res = await fetch(`message/editMessage/${msgId}`, {
             method: "PUT",
             body: editMessageData
         })
@@ -148,7 +148,6 @@ async function expandEditMessage(msgId, postId) {
     document.querySelector('.messageFormContaniner').innerHTML = html
 
     editMessage(msgId, postId)
-
 
 }
 

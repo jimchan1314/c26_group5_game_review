@@ -9,6 +9,10 @@ type Message = {
     text: string
 }
 
+type EditedMessage = {
+    edittext: string
+}
+
 export class MessageController implements IMessageController{
     //need user login
     async addMessage(req:Request,res:Response):Promise<void> {
@@ -34,8 +38,8 @@ export class MessageController implements IMessageController{
     async editMessage(req:Request,res:Response):Promise<void> {
         try {
             let messageID = req.params.id
-            let form = await parseFormDataGame(req) as Message
-            db.query(`UPDATE game_message SET text=$1 where message_id=$2`,[form.text,messageID])
+            let form = await parseFormDataGame(req) as EditedMessage
+            db.query(`UPDATE game_message SET text=$1 where message_id=$2`,[form.edittext,messageID])
             res.json({isError:false,errMess:null,data:"edited successfully"});
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
