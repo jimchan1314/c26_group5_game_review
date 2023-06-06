@@ -20,7 +20,7 @@ export class MessageController implements IMessageController{
             let time = new Date();
             let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');  
             
-            await db.query(`INSERT INTO game_message (text,post_id,users_id,create_at) VALUES ($1,$2,$3,$4)`,
+            await db.query(`INSERT INTO game_message (text,post_id,users_id,message_create_at) VALUES ($1,$2,$3,$4)`,
             [message.text,postId,userId,currTime])
             
             res.json({isError:false,errMess:null,data:form});

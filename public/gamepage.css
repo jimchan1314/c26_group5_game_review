@@ -62,4 +62,10 @@
     margin-top: 10px;
     /* border-radius: 0,0,0,10%; */
 }
+.layer8 > .messageCard {
+    font-family: 'ConnectionRegular';
+    font-weight: normal;
+    font-style: normal;
+    background-color: rgb(158, 118, 118);
+}
 

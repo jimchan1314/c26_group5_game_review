@@ -72,7 +72,7 @@ async function fetchGameContentWID(path, cb, game_postID) {
     // let user = await getCurrentUser()
     let user = localStorage.getItem('user')
     user = JSON.parse(user)
-    console.log('index75', user)
+    //console.log('index75', user)
 
     // let gameUserId = json.data.create_users_id 
     let gameIDD = await game_postID
