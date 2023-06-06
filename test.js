@@ -68,7 +68,7 @@ async function fetchAllGame() {
         </div>
         <div class="card-body gBoxCount">
         <i data-bs-toggle="modal" data-bs-target="#addMessageModal" data-id=${obj.post_id} class="fa-regular fa-comment-dots"> Message: 100</i>
-        <i class="fa-regular fa-heart"> like: ${obj.like_count}</i>
+        <i class="fa-regular fa-heart" > like: ${obj.like_count}</i>
         </div>
     
     </div>
