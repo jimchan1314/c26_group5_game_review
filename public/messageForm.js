@@ -1,40 +1,36 @@
 // step 1
-async function regCardEvent(gameId) {
-    // document.querySelectorAll('.card.messageCard').forEach(card => {
-    //     card.addEventListener('click', async (e) => {
-    await fetchTemplate('messageForm.html', renderContent)
-    await renderGetMessage(gameId)
-    // })
-    // })
-}
-function renderContent(html) {
-    document.querySelector('.content').innerHTML = html
-}
+//async function regCardEvent(gameId) {
+//    // document.querySelectorAll('.card.messageCard').forEach(card => {
+//    //     card.addEventListener('click', async (e) => {
+//    await fetchTemplate('messageForm.html', renderContent)
+//    await renderGetMessage(gameId)
+//    // })
+//    // })
+//}
+//function renderContent(html) {
+//    document.querySelector('.content').innerHTML = html
+//}
 
 //get message
-async function renderGetMessage(gameId) {
-    //console.log(gameId)
+async function renderGetMessage(postId) {
 
     let user = await localStorage.getItem('user')
     user = JSON.parse(user)
 
-    const res = await fetch(`message/getMessage/${gameId}`)
+    const res = await fetch(`message/getMessage/${postId}`)
     const result = await res.json()
 
     if (!user) {
-        console.log("guest")
         document.querySelector('.messageContainer').innerHTML = result.data.map(obj => messageTemplateGuest(obj)).join('')
     } else {
-        //console.log("logged in")
         document.querySelector('.messageContainer').innerHTML = result.data.map(obj => messageTemplate(obj, user.id)).join('')
         document.querySelector('.expandMessageForm').innerHTML =
-            `<i class="fa-solid fa-clipboard" id="expandButton" onclick="expandMessageForm(${gameId})">Add Comment</i>`
+            `<i class="fa-solid fa-clipboard" id="expandButton" onclick="expandMessageForm(${postId})">Add Comment</i>`
 
-        deleteMessage()
-        editMessage()
+        // deleteMessage()
+        // editMessage()
     }
 }
-
 
 
 //add message
@@ -43,7 +39,6 @@ async function renderAddMessage(gameId) {
     messageForm.addEventListener('submit', async (e) => {
         e.preventDefault()
         console.log('submit clicked')
-        //let gameId = messageForm.dataset.id //as game is born or button is clicked -> html with id is generated.
 
         const messageData = new FormData(messageForm)
 
@@ -58,13 +53,10 @@ async function renderAddMessage(gameId) {
 }
 
 
-
-
-
-//delete message
+//delete message: not yet finish
 async function deleteMessage() {
     document.querySelectorAll('.card-body > .messageCardBody > div > div > .fa-trash-can').forEach(i => i.addEventListener("click", async e => {
-        let id = e.target.dataset.id
+        let id = e.target.dataset.id //get from ??
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -89,52 +81,27 @@ async function deleteMessage() {
     }))
 }
 
-// async function displayEditMessageForm(html) {
-
-//     document.querySelector('.addMessageModal').innerHTML = html
-
-//     //not yet
-//     const editMessageForm = document.querySelector("#editMessageForm")
-//     const messageData = new FormData(editMessageForm)
-
-//     const res = await fetch(`message/editMessage/${msgId}`, {
-//         method: "PUT",
-//         body: messageData
-//     })
-//     const result = await res.json()
-//     console.log(result)
-// }
-
-//edit message
+//edit message: not yet finish
 async function editMessage() {
     document.querySelectorAll('.card-body > .messageCardBody > div > div > .fa-square-pen').forEach(i => i.addEventListener("click", async e => {
-        console.log('edit clicked')
-
-        // let msgId = e.target.dataset.id
-        //console.log(msgId)
-        // getCurrentMessage(msgId)
-
-
         await fetchTemplate('editMessageForm.html', displayEditMessageForm)
-
-
         await messageForm.reset()
     })
     )
 }
 
+//get current message: not yet finish
 async function getCurrentMessage(msgId) {
     const res = await fetch(`message/getCurrMessage/${msgId}`, {
         method: "GET"
     })
     let result = await res.json()
     let currMsg = result.data[0]["text"]
-    //console.log(currMsg)
+
     document.querySelector("#messageText").defaultValue = currMsg
 }
 
 function messageTemplate(obj, userId) {
-    //console.log(obj)
     if (obj.users_id === userId) {
         return `
         <div class="card messageCard" style="width: 70%;">
@@ -197,21 +164,37 @@ function messageTemplateGuest(obj) {
         `
 }
 
+async function expandMessageForm(postId) {
+    let res = await fetch('messageForm.html')
+    let html = await res.text()
+
+    //console.log(postId) //able to get post Id
+
+    document.querySelector('.messageFormContaniner').innerHTML = html
+
+    renderAddMessage(postId)
+}
+
+
+//edit:
+// async function displayEditMessageForm(html) {
+
+//     document.querySelector('.editMessageModal').innerHTML = html
+
+//     //not yet
+//     const editMessageForm = document.querySelector("#editMessageForm")
+//     const messageData = new FormData(editMessageForm)
+
+//     const res = await fetch(`message/editMessage/${msgId}`, {
+//         method: "PUT",
+//         body: messageData
+//     })
+//     const result = await res.json()
+//     console.log(result)
+// }
+
 
 //async function expandEditMessageForm(html, msgId) {
 //    document.querySelector('.editMessageModal').innerHTML = html
 //    console.log(document.querySelector('.editMessageModal').innerHTML)
 //}
-
-async function expandMessageForm(postId) {
-    let res = await fetch('messageForm.html')
-    let html = await res.text()
-
-    document.querySelector('.messageFormContaniner').innerHTML = html
-
-    //const messageaddID = await fetch(`message/addMessage/${postId}`)
-
-    //console.log(html)
-    console.log(postId)
-    renderAddMessage(postId)
-}
