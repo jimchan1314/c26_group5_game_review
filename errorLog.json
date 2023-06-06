@@ -472,3 +472,73 @@
   "errMess": "invalid input syntax for type integer: \"undefined\"",
   "dateTime": "2023-06-06T07:03:01.947Z"
 }
+{
+  "route": "/getSingleGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T07:10:40.914Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:19:04.115Z"
+}
+{
+  "route": "/getMessage/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:29:00.985Z"
+}
+{
+  "route": "/getMessage/5",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:33:44.326Z"
+}
+{
+  "route": "/getMessage/5",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:34:32.847Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T07:34:37.311Z"
+}
+{
+  "route": "/getMessage/6",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:34:41.846Z"
+}
+{
+  "route": "/likeGame/6",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T07:34:46.946Z"
+}
+{
+  "route": "/getMessage/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:34:54.307Z"
+}
+{
+  "route": "/getMessage/5",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:35:10.262Z"
+}
+{
+  "route": "/getMessage/5",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:35:24.078Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T07:35:26.217Z"
+}
+{
+  "route": "/getMessage/6",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:35:33.807Z"
+}
+{
+  "route": "/likeGame/6",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T07:35:37.375Z"
+}

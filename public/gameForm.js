@@ -249,6 +249,7 @@ function renderVideoTemplate(obj) {
 }
 
 function renderBoardGameTemplate(obj) {
+  obj.forEach(obj =>
 
   document.querySelector('#boardGame').innerHTML +=
     `
@@ -279,7 +280,7 @@ function renderBoardGameTemplate(obj) {
   </div>
 </div>  
 
-`
+`)
 
 }
 
@@ -454,7 +455,7 @@ async function renderVideoRankList(obj) {
           </div>
       </div>
       <div class="box-content">
-        <div class="visit">Visit Page</div>
+        <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
       </div>
     </div>
   </div>
@@ -489,7 +490,7 @@ async function renderBoardRankList(obj) {
         </div>
     </div>
     <div class="box-content">
-      <div class="visit">Visit Page</div>
+      <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
     </div>
   </div>
 </div>  
