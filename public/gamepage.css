@@ -1,0 +1,64 @@
+.layer0{
+    font-family: 'ConnectionRegular';
+    font-weight: normal;
+    font-style: normal;
+    background-color: rgb(89, 69, 69);
+    border: 4px dashed rgb(158, 118, 118);
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* .layer1{
+    background-color:aqua ;
+    display: flex;
+    justify-content: center;
+
+} */
+
+.layer2{
+    width: 500px;
+}
+
+
+.layer2 > #curGameCover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layer2 > .col-8{
+    /* display: flex;
+    align-items: center; */
+    align-self: center
+}
+
+.l2r {
+    color: bisque;
+    background-color: rgb(129, 91, 91);
+}
+
+
+/* .layer3{
+    background-color:cadetblue;
+}
+
+.layer4{
+    background-color: darkolivegreen;
+}
+
+.layer5{
+    background-color: darkseagreen;
+} */
+
+.layer6{
+    font-family: 'ConnectionRegular';
+    font-weight: normal;
+    font-style: normal;
+    background-color: rgb(89, 69, 69);
+    border: thick double rgb(158, 118, 118);
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    /* border-radius: 0,0,0,10%; */
+}

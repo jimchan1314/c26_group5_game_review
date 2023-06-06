@@ -62,25 +62,24 @@ async function indexGame(){
 }
 // indexGame()
 
-// async function userCheckLimit(){
-//     let res = await fetch('/game/getGameList')
-//     let json = await res.json()
-//     console.log(json)
-//     let user = await getCurrentUser()
-//     let gameId = json.data.create_users_id 
-//     // let objId = json.data.id
-//     console.log(gameId)
+async function fetchGameContentWID(path,cb, game_postID){
+    
+    let res = await fetch(path)
+    let html = await res.text()
+    
+    await cb(html)
+
+    // let user = await getCurrentUser()
+    let user = localStorage.getItem('user')
+    user = JSON.parse(user)
+    console.log('index75',user)
+
+    // let gameUserId = json.data.create_users_id 
+    let gameIDD = await game_postID
+    // console.log('index79',gameIDD)
+
+    await fetchSingleGame(gameIDD)
+}
 
 
-//     if(user.id = gameId){
-
-//         document.querySelectorAll(`[data-user*=${gameId}]`).forEach(i=>i.style.display = "block")
-
-        
-//     }else{
-
-//         document.querySelectorAll('.gameBox > div > div > div > i.fa-trash-can').forEach(i=>i.style.display = "none")
-//     }
-// }
-// userCheckLimit()
 

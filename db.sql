@@ -31,3 +31,6 @@ CREATE TABLE "users"(
     "users_name" VARCHAR(255) NOT NULL,
     "create_at" VARCHAR(255) NOT NULL
 );
+
+-- mandy testing
+-- SELECT name, game_type, description, game_cover, create_post, update_post, users_name  FROM game JOIN users ON users.id = game.create_users_id where post_id = 5;
