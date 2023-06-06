@@ -5,10 +5,11 @@ async function indexCheck(){
     
     if(user){
         await fetchTemplate('loginNavbar.html', displayLogin)
-        await fetchContent('homePage.html', displayContent, fetchGameGuest)
+        await fetchAllContent('homePage.html', displayContent, fetchBoardRank,fetchVideoRank)
     }else{
         await fetchTemplate('nonLoginNavbar.html', displayNotLogin)
-        await fetchContent('homePage.html', displayContent, fetchGameGuest)
+        await fetchAllContent('homePage.html', displayContent, fetchBoardRank,fetchVideoRank)
+        
     }
 }
 indexCheck()
@@ -31,6 +32,8 @@ async function getCurrentUser(){
     
 }
 
+
+
 async function fetchTemplate(path,cb){
     
     let res = await fetch(path)
@@ -44,10 +47,19 @@ async function fetchContent(path,cb,cb2){
     let res = await fetch(path)
     let html = await res.text()
     
-    cb(html)
-    cb2()
+    await cb(html)
+    await cb2()
 }
 
+async function fetchAllContent(path,cb,cb2,cb3){
+    
+    let res = await fetch(path)
+    let html = await res.text()
+    
+    await cb(html)
+    await cb2()
+    await cb3()
+}
 // fm gameForm.js
 async function indexGame(){
     let res = await fetch('/game/getGameList')
@@ -60,6 +72,8 @@ async function indexGame(){
         renderAllGame(json.data)
     }
 }
+
+
 // indexGame()
 
 // async function userCheckLimit(){

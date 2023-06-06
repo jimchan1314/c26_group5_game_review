@@ -39,6 +39,9 @@ export interface IGameController{
     getSingleGame(req:Request,res:Response):Promise<void>
     likeGame(req:Request,res:Response):Promise<void>
     getVideoGameList(req:Request,res:Response):Promise<void>
+    getBoardGameList(req:Request,res:Response):Promise<void>
+    getVideoRank(req:Request,res:Response):Promise<void>
+    getBoardRank(req:Request,res:Response):Promise<void>
 }
 
 export class GameRoute  extends Routes{
@@ -51,8 +54,9 @@ export class GameRoute  extends Routes{
         this.routes.get('/getSingleGame/:id',controller.getSingleGame)
         this.routes.post('/likeGame/:id',controller.likeGame)
         this.routes.get('/getVideoGameList/',controller.getVideoGameList)
-        
-        
+        this.routes.get('/getBoardGameList/',controller.getBoardGameList)
+        this.routes.get('/getVideoRank/',controller.getVideoRank)
+        this.routes.get('/getBoardRank/',controller.getBoardRank)
     }
 
 }

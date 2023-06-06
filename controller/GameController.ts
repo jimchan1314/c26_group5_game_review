@@ -73,7 +73,7 @@ export class GameController implements IGameController{
         try {
 
             
-            let {rows} = await db.query(`SELECT * FROM game JOIN users ON users.id = game.create_users_id ORDER BY game.post_id DESC`);
+            let {rows} = await db.query(`SELECT * FROM game JOIN users ON users.id = game.create_users_id ORDER BY game.like_count DESC`);
             // console.log(rows)
             res.json({isError:false,errMess:"",data:rows})    
             
@@ -85,12 +85,12 @@ export class GameController implements IGameController{
 
     async editGameList(req:Request, res:Response):Promise<void>{
         try{
-            // let userID = req.session.userId;
+            
             let gameID = req.params.id
-            // console.log("gljs-87",gameID)
+            
             let form = await parseFormDataGame(req) as EditGame
             let gameData = {...form} 
-            // console.log("gljs-90",gameData)
+            
             let time = new Date();
             let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');
 
@@ -144,7 +144,7 @@ export class GameController implements IGameController{
 
     async getVideoGameList(req:Request, res:Response):Promise<void> {
         try{
-            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Video Game'`);
+            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Video Game' ORDER BY game.create_post DESC`);
             
             res.json({isError:false,errMess:"",data:rows})    
 
@@ -154,5 +154,36 @@ export class GameController implements IGameController{
         }
     } 
 
-    
+    async getBoardGameList(req: Request, res: Response): Promise<void> {
+        try{
+            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Board Game' ORDER BY game.create_post DESC`)
+
+            res.json({isError:false,errMess:"",data:rows})
+        } catch (error) {
+            errorHandler({status:error.status,route:req.path,errMess:error.message})
+            res.json({isError:true,errMess:error.message,data:null})
+        }
+    }
+
+    async getVideoRank(req: Request, res: Response): Promise<void>{
+        try {
+            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Video Game' ORDER BY game.like_count DESC LIMIT 10`)
+
+            res.json({isError:false,errMess:"",data:rows})
+        } catch (error){
+            errorHandler({status:error.status,route:req.path,errMess:error.message})
+            res.json({isError:true,errMess:error.message,data:null})
+        }
+    }
+
+    async getBoardRank(req: Request, res: Response): Promise<void>{
+        try {
+            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Board Game' ORDER BY game.like_count DESC LIMIT 10`)
+
+            res.json({isError:false,errMess:"",data:rows})
+        } catch (error){
+            errorHandler({status:error.status,route:req.path,errMess:error.message})
+            res.json({isError:true,errMess:error.message,data:null})
+        }
+    }
 }

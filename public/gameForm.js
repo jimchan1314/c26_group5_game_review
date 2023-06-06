@@ -1,16 +1,82 @@
-// const { json } = require("stream/consumers");
-// working...
 
-// const { json } = require("stream/consumers");
 
-//back for main page? may change fm renderAllGame
-// async function publicAreaGameList(html) {
-//   document.querySelector('.gameSection').innerHTML = html;
-// }
+async function fetchGameGuest() {
+  let res = await fetch('/game/getGameList')
+  let json = await res.json()
 
-// async function specialAreaGameList(html) {
-//   document.querySelector('.gameSection').innerHTML = html;
-// }
+  if (json.isError) {
+    alert(json.errMess)
+  } else {
+    renderAllGameGuest(json.data)
+  }
+}
+
+async function fetchAllGame() {
+  let res = await fetch('/game/getGameList')
+  let json = await res.json()
+  console.log(json)
+  if (json.isError) {
+    alert(json.errMess)
+  } else {
+    renderAllGame(json.data)
+    
+  }
+}
+async function fetchVideoGame() {
+  let res = await fetch('/game/getVideoGameList')
+  let json = await res.json()
+
+  if (json.isError) {
+    alert(json.errMess)
+  } else {
+    renderVideoTemplate(json.data)
+  }
+}
+async function fetchBoardGame() {
+   let res = await fetch('/game/getBoardGameList')
+   let json = await res.json()
+
+   if (json.isError) {
+    alert(json.errMess)
+   } else{
+    renderBoardGameTemplate(json.data)
+   }
+}
+
+async function fetchSingleGame(id) {
+  let res = await fetch(`/game/getGameList/${id}`)
+  let json = await res.json()
+
+  if (json.isError) {
+    alert(json.errMess)
+  } else {
+    renderAllGame(json.data)
+    // console.log("GF352", json.data)
+  }
+}
+
+async function fetchVideoRank(){
+  let res = await fetch('game/getVideoRank/')
+  let json = await res.json()
+
+  if (json.isError) {
+    alert(json.errMess)
+  } else {
+    renderVideoRankList(json.data)
+  }
+}
+
+async function fetchBoardRank(){
+  let res = await fetch('game/getBoardRank/')
+  let json = await res.json()
+
+  if (json.isError) {
+    alert(json.errMess)
+  } else {
+    renderBoardRankList(json.data)
+  }
+}
+
 
 
 async function renderCreateGame(html) {
@@ -46,35 +112,20 @@ async function renderCreateGame(html) {
         timer: 1500
       })
 
-      await fetchContent('homePage.html', displayContent, fetchGameGuest)
+      await fetchAllContent('homePage.html', displayContent, fetchBoardRank,fetchVideoRank)
     }
     await form.reset();
   });
-
-
-}
-
-
-// get db games -routes
-
-async function fetchGameGuest() {
-  let res = await fetch('/game/getGameList')
-  let json = await res.json()
-
-  if (json.isError) {
-    alert(json.errMess)
-  } else {
-    renderAllGameGuest(json.data)
-  }
 }
 
 function renderAllGameGuest(gameList) {
 console.log(gameList.data)
-  gameList.forEach(obj =>
+  gameList.forEach((obj,i) =>
     obj.game_type === "Video Game" ? document.querySelector('#videoGame').innerHTML +=
       `
     <div class="gameBox mb-3">
-    <div class="row box">
+    <div id="ranking" class="rank_${i+1}">NO.${i+1}</div> 
+    <div class="row box animate__animated animate__flipInX">
       <div class="col-md-4 gameCoverDiv">
       
         <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
@@ -90,7 +141,7 @@ console.log(gameList.data)
           </div>
           <div class="card-body gBoxCount">
           <i class="fa-regular fa-comment-dots"> Message: 100</i>
-          <i class="fa-regular fa-heart"> like: ${obj.like_count}</i>
+          <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
           </div>
       </div>
       <div class="box-content">
@@ -103,7 +154,8 @@ console.log(gameList.data)
       : document.querySelector('#boardGame').innerHTML +=
       `
      <div class="gameBox mb-3">
-      <div class="row box">
+     <div id="ranking" class="rank_${i+1}">NO.${i+1}</div> 
+      <div class="row box animate__animated animate__flipInX">
        <div class="col-md-4 gameCoverDiv">
         
          <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
@@ -120,7 +172,7 @@ console.log(gameList.data)
            </div>
            <div class="card-body gBoxCount">
            <i class="fa-regular fa-comment-dots"> Message: 100</i>
-           <i class="fa-regular fa-heart"> like: ${obj.like_count}</i>
+           <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
            </div>
        </div>
       <div class="box-content">
@@ -133,39 +185,13 @@ console.log(gameList.data)
 }
 
 
-async function fetchAllGame() {
-  let res = await fetch('/game/getGameList')
-  let json = await res.json()
-  console.log(json)
-  if (json.isError) {
-    alert(json.errMess)
-  } else {
-    renderAllGame(json.data)
-    // console.log("GF65", json.data)
-  }
-}
-
-async function fetchVideoGame() {
-  let res = await fetch('/game/getVideoGameList')
-  let json = await res.json()
-
-  if (json.isError) {
-    alert(json.errMess)
-  } else {
-    renderVideoTemplate(json.data)
-    
-  }
-}
-
-
-
 function renderVideoTemplate(obj) {
-console.log(obj.data)
+
 obj.forEach(obj =>
   document.querySelector('#videoGame').innerHTML +=
     `
   <div class="gameBox mb-3">
-  <div class="row box">
+    <div class="row box animate__animated animate__flipInY">
     <div class="col-md-4 gameCoverDiv">
     
       <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
@@ -190,16 +216,16 @@ obj.forEach(obj =>
   </div>
 </div>
 
-`).join('')
+`)
 
 }
 
 function renderBoardGameTemplate(obj) {
-  
+obj.forEach((obj,i) => 
   document.querySelector('#boardGame').innerHTML +=
     `
   <div class="gameBox mb-3">
-  <div class="row box">
+  <div class="row box animate__animated animate__flipInY">
     <div class="col-md-4 gameCoverDiv">
       
       <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
@@ -224,7 +250,9 @@ function renderBoardGameTemplate(obj) {
     </div>
   </div>
 </div>  
-  `
+
+`)
+
 }
 
 //put in game area
@@ -240,8 +268,8 @@ async function renderAllGame(gameList) {
   // }
 
   // console.log("123", user)
-  gameList.forEach(obj =>
-    obj.game_type === "Video Game" ? renderVideoTemplate(obj, user.id) : renderBoardGameTemplate(obj, user.id))
+  // gameList.forEach(obj =>
+  //   obj.game_type === "Video Game" ? renderVideoTemplate(obj, user.id) : renderBoardGameTemplate(obj, user.id))
 
 
 
@@ -308,17 +336,7 @@ async function renderAllGame(gameList) {
     
   }))
 
-
-  
-
-
-
-
-
-
-
 }
-
 
 
 //edit game form
@@ -377,20 +395,76 @@ async function renderEditGame(id) {
     await form.reset();
   });
 
-
 }
 
+async function renderVideoRankList(obj){
+  obj.forEach((obj,i) =>
+    document.querySelector('#videoGame').innerHTML +=
+      `
+    
+    <div class="gameBox mb-3">
+    <div id="ranking" class="rank_${i+1}">NO.${i+1}</div> 
+      <div class="row box animate__animated animate__flipInY">
+      <div class="col-md-4 gameCoverDiv">
+      
+        <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
+      </div>
+      <div class="col-md-8">
+          <div class="card-body gBoxBody">
+          
+          <h4 class="card-title gBoxName">${obj.name}</h4>
+          <div class="card-text gBoxType"><span style="color:#EF9A53">Game Type:</span> ${obj.game_type}</div>
+          <p class="card-text gBoxDescription"><span style="color:#EF9A53">Description:</span> <br>${obj.description}</p>
+          <div class="card-text"><span style="color:#EF9A53">Created by:</span> ${obj.users_name}</div>
+          <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${obj.create_post}</div>
+          </div>
+          <div class="card-body gBoxCount">
+          <i class="fa-regular fa-comment-dots"> Message: 100</i>
+          <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
+          </div>
+      </div>
+      <div class="box-content">
+        <div class="visit">Visit Page</div>
+      </div>
+    </div>
+  </div>
+  
+  `)
+}
 
-async function fetchSingleGame(id) {
-  let res = await fetch(`/game/getGameList/${id}`)
-  let json = await res.json()
+async function renderBoardRankList(obj){
+  obj.forEach((obj,i) => 
+  document.querySelector('#boardGame').innerHTML +=
+    `
+  <div class="gameBox mb-3">
+  <div id="ranking" class="rank_${i+1}">NO.${i+1}</div> 
+  <div class="row box animate__animated animate__flipInY">
+    <div class="col-md-4 gameCoverDiv">
+      
+      <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
+    </div>
+    <div class="col-md-8">
+        <div class="card-body gBoxBody">
+        
+        
+        <h4 class="card-title gBoxName">${obj.name}</h4>
+        <div class="card-text gBoxType"><span style="color:#EF9A53">Game Type:</span> ${obj.game_type}</div>
+        <p class="card-text gBoxDescription"><span style="color:#EF9A53">Description:</span> <br>${obj.description}</p>
+        <div class="card-text"><span style="color:#EF9A53">Created by:</span> ${obj.users_name}</div>
+        <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${obj.create_post}</div>
+        </div>
+        <div class="card-body gBoxCount">
+        <i class="fa-regular fa-comment-dots"> Message: 100</i>
+        <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
+        </div>
+    </div>
+    <div class="box-content">
+      <div class="visit">Visit Page</div>
+    </div>
+  </div>
+</div>  
 
-  if (json.isError) {
-    alert(json.errMess)
-  } else {
-    renderAllGame(json.data)
-    // console.log("GF352", json.data)
-  }
+`)
 }
 
 

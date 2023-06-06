@@ -2,6 +2,9 @@
   width: 100%;
 }
 
+.row{
+  margin-right: 0;
+}
 .title {
   font-family: 'StopmotionRegular';
   font-weight: normal;
@@ -350,6 +353,10 @@ form>div>.button-flexBox>button {
   width: auto;
 }
 
+.animate__flipInY{
+  --animate-delay: attr(time)
+}
+
 .box {
   text-align: center;
   align-items: center;
@@ -361,6 +368,7 @@ form>div>.button-flexBox>button {
   overflow: hidden;
   transition: all 0.6s ease 0s;
   padding: 5px;
+  
 }
 
 .box .box-content{
@@ -375,6 +383,7 @@ form>div>.button-flexBox>button {
   z-index: 2;
   transition: all 0.5s ease 0s;
 }
+
 .box:hover .box-content{ 
   
   opacity: 1;
@@ -443,8 +452,12 @@ form>div>.button-flexBox>button {
   
 }
 #profile {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0px auto;
+}
+#videoGameRank{
+  display: flex;
+  flex-wrap: wrap
 }
 #videoGame{
   display: flex;
@@ -769,6 +782,41 @@ form>div>.button-flexBox>button {
 }
 
 /* gameForm */
+
+#ranking {
+  color: rgb(255, 248, 234);
+  font-family: 'ConnectionRegular';
+  font-weight: normal;
+  font-style: normal;
+  margin-left: 10px;
+}
+
+.rank_1{
+  color: #dda242; /*if no support for background-clip*/
+  background: -webkit-linear-gradient(transparent, transparent),
+  -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
+  background: -o-linear-gradient(transparent, transparent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 30px;
+  text-shadow: 0px 0px 3px rgba(213,173,109,1);
+   
+}
+
+.rank_2 {
+  color: #dfd6ae !important;
+  text-shadow: 0px 0px 3px #b9b18e;
+  font-size: 25px;
+}
+
+.rank_3 {
+  color: #ce8139 !important;
+  text-shadow: 0px 0px 3px #B87333;
+  font-size: 20px;
+}
+
+
 
 .input-group-text {
   border-radius: 0% !important;
