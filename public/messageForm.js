@@ -30,7 +30,6 @@ async function renderAddMessage(postId) {
             body: messageData
         })
         const json = await res.json()
-        //console.log(result)
 
         if (json.isError) {
             await sweetAlert.fire({
@@ -52,6 +51,15 @@ async function renderAddMessage(postId) {
         }
         await messageForm.reset()
     })
+}
+//"add comment" button
+async function expandMessageForm(postId) {
+    let res = await fetch('messageForm.html')
+    let html = await res.text()
+
+    document.querySelector('.messageFormContaniner').innerHTML = html
+
+    renderAddMessage(postId)
 }
 
 
@@ -148,16 +156,6 @@ async function getCurrentMessage(msgId) {
     //console.log(result)
     let currMsg = result.data[0]["text"]
     document.querySelector("#edittext").defaultValue = currMsg
-}
-
-//"add comment" button
-async function expandMessageForm(postId) {
-    let res = await fetch('messageForm.html')
-    let html = await res.text()
-
-    document.querySelector('.messageFormContaniner').innerHTML = html
-
-    renderAddMessage(postId)
 }
 
 //callback functions
