@@ -542,3 +542,388 @@
   "errMess": "Cannot like memo!",
   "dateTime": "2023-06-06T07:35:37.375Z"
 }
+{
+  "route": "/getMessage/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:48:35.101Z"
+}
+{
+  "route": "/getMessage/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T08:31:32.836Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:31:35.169Z"
+}
+{
+  "route": "/getMessage/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T08:32:59.577Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:33:03.183Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T08:33:11.915Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:33:14.935Z"
+}
+{
+  "route": "/getMessage/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T08:33:24.036Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "insert or update on table \"like_game\" violates foreign key constraint \"like_game_users_id_fkey\"",
+  "dateTime": "2023-06-06T08:33:25.869Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "insert or update on table \"like_game\" violates foreign key constraint \"like_game_users_id_fkey\"",
+  "dateTime": "2023-06-06T08:33:29.815Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "insert or update on table \"like_game\" violates foreign key constraint \"like_game_users_id_fkey\"",
+  "dateTime": "2023-06-06T08:33:32.285Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "insert or update on table \"like_game\" violates foreign key constraint \"like_game_users_id_fkey\"",
+  "dateTime": "2023-06-06T08:35:21.856Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T08:37:01.169Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T08:37:02.560Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T08:41:42.617Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "insert or update on table \"like_game\" violates foreign key constraint \"like_game_users_id_fkey\"",
+  "dateTime": "2023-06-06T08:41:44.933Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "insert or update on table \"like_game\" violates foreign key constraint \"like_game_users_id_fkey\"",
+  "dateTime": "2023-06-06T08:42:30.989Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "insert or update on table \"like_game\" violates foreign key constraint \"like_game_users_id_fkey\"",
+  "dateTime": "2023-06-06T08:42:36.234Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "insert or update on table \"like_game\" violates foreign key constraint \"like_game_users_id_fkey\"",
+  "dateTime": "2023-06-06T08:42:38.415Z"
+}
+{
+  "route": "/getMessage/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T08:46:01.000Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "insert or update on table \"like_game\" violates foreign key constraint \"like_game_users_id_fkey\"",
+  "dateTime": "2023-06-06T08:46:09.500Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T08:46:43.338Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "insert or update on table \"like_game\" violates foreign key constraint \"like_game_users_id_fkey\"",
+  "dateTime": "2023-06-06T08:46:46.083Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:53:32.614Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:53:49.082Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:54:06.245Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T08:54:18.548Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:55:15.049Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:55:30.126Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T08:55:37.680Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:58:06.361Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:58:15.280Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:58:23.094Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:58:28.894Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T08:58:36.729Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:58:46.095Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:58:52.727Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:59:36.461Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:59:42.060Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T08:59:48.976Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T08:59:54.827Z"
+}
+{
+  "route": "/likeGame/7",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:00:06.512Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:00:14.278Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:00:22.700Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:02:06.698Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:02:09.158Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:02:11.411Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:02:13.213Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:02:19.763Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:02:24.079Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:02:27.262Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:02:30.562Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:02:34.379Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:02:38.196Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:03:24.834Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:03:27.213Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:03:29.845Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:03:31.927Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:03:49.015Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:06:34.237Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:06:37.298Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:06:40.715Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:08:54.133Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:08:56.035Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:08:58.200Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:09:01.650Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T09:10:35.810Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:10:48.438Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:14:29.322Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:14:33.069Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:14:37.855Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:17:05.157Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:17:18.573Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:17:27.704Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:23:15.632Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:23:20.892Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T09:23:52.142Z"
+}

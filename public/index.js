@@ -93,7 +93,7 @@ async function fetchGameContentWID(path, cb, game_postID) {
     // console.log('index79',gameIDD)
 
     await fetchSingleGame(gameIDD)
-    await renderGetMessage(gameIDD)
+    // await renderGetMessage(gameIDD)
 }
 
 
