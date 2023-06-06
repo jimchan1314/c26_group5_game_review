@@ -467,3 +467,8 @@
   "errMess": "relation \"like_game\" does not exist",
   "dateTime": "2023-06-06T04:46:52.769Z"
 }
+{
+  "route": "/getSingleGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T07:03:01.947Z"
+}

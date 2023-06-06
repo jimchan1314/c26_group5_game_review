@@ -279,7 +279,7 @@ function renderBoardGameTemplate(obj) {
   </div>
 </div>  
 
-`)
+`
 
 }
 
