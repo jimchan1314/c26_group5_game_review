@@ -267,9 +267,9 @@ async function renderAllGame(gameList) {
 
 
     //like game
-  document.querySelectorAll('.gBoxCount > i.fa-heart').forEach(i => i.addEventListener("click", async e => {
+  document.querySelectorAll('#likeCount1').forEach(i => i.addEventListener("click", async e => {
     let id = e.target.dataset.likeid
-    // console.log('GF275',e.target.dataset.likeid)
+    console.log('GF275',id)
     let res = await fetch(`game/likeGame/${id}`,{
       method:"POST",
       body:""
@@ -373,7 +373,7 @@ async function fetchSingleGame(gameIDD) {
   document.querySelector('#gameType1').textContent = json.data.game_type
   document.querySelector('#description').textContent = json.data.description
   document.querySelector('#createPost1').textContent = json.data.create_post
-  document.querySelector('#likeCount1').textContent = json.data.like_count
+  document.querySelector('#likeCount1').innerHTML = `<i data-likeid=${gameIDD} class="fa-regular fa-heart"> like: ${json.data.like_count}</i>`
   document.querySelector('#usersName1').textContent = json.data.users_name
   document.querySelector('#curGameCover').innerHTML = `<img src=${json.data.game_cover} />`
 
@@ -382,20 +382,26 @@ async function fetchSingleGame(gameIDD) {
   console.log('gfjs402',user.id)
 
   // checking
-  {json.data.create_users_id === user.id ?
+  if(json.data.create_users_id === user.id ){
     
     document.querySelector('.userbtnSet').innerHTML =
     `
       <i data-id=${gameIDD} class="btn fa-solid fa-square-pen" onclick="renderEditGame('${gameIDD}')" data-bs-toggle="modal" data-bs-target="#editGameModal") > Edit</i>
       <i data-id=${gameIDD} class="btn fa-solid fa-trash-can"> Delete</i>
     `
-    // document.querySelector('.fa-heart').innerHTML =`<i class="fa-regular fa-heart"> like: ${obj.like_count}</i>`
-   
-    :
+    document.querySelector('#likeCount1').innerHTML = `<i data-likeid=${gameIDD} class="btn fa-regular fa-heart"> like: ${json.data.like_count}</i>`
+  }else { 
     ""
-    // document.querySelector('.userbtnSet').innerHTML ="wrong!!!!!!"
     
+    document.querySelector('#likeCount1').innerHTML = 
+    `<i data-likeid=${gameIDD} class="btn fa-regular fa-heart"> like: ${json.data.like_count}</i>`
+
   }
+
+  // `<i data-likeid=${gameIDD} class="btn fa-regular fa-heart"> like: ${json.data.like_count}</i>`
+    
+    
+  
 
 
   if (json.isError) {
