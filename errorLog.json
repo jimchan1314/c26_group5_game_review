@@ -542,8 +542,3 @@
   "errMess": "Cannot like memo!",
   "dateTime": "2023-06-06T07:35:37.375Z"
 }
-{
-  "route": "/getCurrMessage/21",
-  "errMess": "column \"id\" does not exist",
-  "dateTime": "2023-06-06T09:08:58.732Z"
-}

@@ -90,9 +90,19 @@ export class GameController implements IGameController{
             let time = new Date();
             let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');
 
-            let {rows} = await db.query(`UPDATE game SET name = $1, game_type = $2, description = $3, game_cover = $4, update_post = $5 WHERE post_id = $6`,
-            [gameData.gameName, gameData.game_type, gameData.description, gameData.gameCover, currTime, gameID]);
-            res.json({isError:false,errMess:"",data:rows[0]})
+            if(!gameData.gameCover){
+                let {rows} = await db.query(`UPDATE game SET name = $1, game_type = $2, description = $3, update_post = $4 WHERE post_id = $5`,
+                [gameData.gameName, gameData.game_type, gameData.description, currTime, gameID]);
+                res.json({isError:false,errMess:"",data:rows[0]})
+
+            }else{
+                let {rows} = await db.query(`UPDATE game SET name = $1, game_type = $2, description = $3, game_cover = $4, update_post = $5 WHERE post_id = $6`,
+                [gameData.gameName, gameData.game_type, gameData.description, gameData.gameCover, currTime, gameID]);
+                res.json({isError:false,errMess:"",data:rows[0]})
+            }
+
+            
+            
 
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
@@ -104,11 +114,11 @@ export class GameController implements IGameController{
     async getSingleGame(req:Request, res:Response):Promise<void> {
         try {
             let gameID = req.params.id
-            console.log("gts-111",gameID)
+            // console.log("gts-111",gameID)
             let {rows} = await db.query(`SELECT name, game_type, description, game_cover, create_post, update_post, like_count, create_users_id, id, users_name  FROM game JOIN users ON users.id = game.create_users_id where post_id = $1;`,[gameID]);
             // console.log('GCts',rows)
             res.json({isError:false,errMess:"",data:rows[0]})
-            console.log('gts-114',rows[0])    
+            // console.log('gts-114',rows[0])    
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
             res.json({isError:true,errMess:error.message,data:null})
@@ -142,7 +152,8 @@ export class GameController implements IGameController{
 
     async getVideoGameList(req:Request, res:Response):Promise<void> {
         try{
-            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Video Game' ORDER BY game.create_post DESC`);
+            // let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Video Game' ORDER BY game.create_post DESC`);
+            let {rows} = await db.query(`SELECT * FROM (SELECT * FROM game WHERE game_type = 'Video Game') as table1 inner JOIN users ON users.id = table1.create_users_id  ORDER BY table1.create_post DESC`)
             
             res.json({isError:false,errMess:"",data:rows})    
 
@@ -154,7 +165,10 @@ export class GameController implements IGameController{
 
     async getBoardGameList(req: Request, res: Response): Promise<void> {
         try{
-            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Board Game' ORDER BY game.create_post DESC`)
+            //checking
+            // let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Board Game' ORDER BY game.create_post DESC`)
+            let {rows} = await db.query(`SELECT * FROM (SELECT * FROM game WHERE game_type = 'Board Game') as table1 inner JOIN users ON users.id = table1.create_users_id  ORDER BY table1.create_post DESC`)
+            
 
             res.json({isError:false,errMess:"",data:rows})
         } catch (error) {
@@ -165,7 +179,8 @@ export class GameController implements IGameController{
 
     async getVideoRank(req: Request, res: Response): Promise<void>{
         try {
-            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Video Game' ORDER BY game.like_count DESC LIMIT 10`)
+            // let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Video Game' ORDER BY game.like_count DESC LIMIT 10`)
+            let {rows} = await db.query(`SELECT * FROM (SELECT * FROM game WHERE game_type = 'Video Game') as table1 inner JOIN users ON users.id = table1.create_users_id  ORDER BY table1.create_post DESC LIMIT 10`)
 
             res.json({isError:false,errMess:"",data:rows})
         } catch (error){
@@ -176,7 +191,8 @@ export class GameController implements IGameController{
 
     async getBoardRank(req: Request, res: Response): Promise<void>{
         try {
-            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Board Game' ORDER BY game.like_count DESC LIMIT 10`)
+            // let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Board Game' ORDER BY game.like_count DESC LIMIT 10`)
+            let {rows} = await db.query(`SELECT * FROM (SELECT * FROM game WHERE game_type = 'Board Game') as table1 inner JOIN users ON users.id = table1.create_users_id  ORDER BY table1.create_post DESC LIMIT 10`)
 
             res.json({isError:false,errMess:"",data:rows})
         } catch (error){

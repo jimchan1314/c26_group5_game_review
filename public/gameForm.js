@@ -214,7 +214,7 @@ async function fetchVideoGame() {
 
 
 function renderVideoTemplate(obj) {
-  console.log(obj.data)
+  console.log("gf217",obj)
   obj.forEach(obj =>
     document.querySelector('#videoGame').innerHTML +=
     `
@@ -339,6 +339,7 @@ async function renderAllGame(gameList) {
 
   //like game
   document.querySelectorAll('#likeCount1').forEach(i => i.addEventListener("click", async e => {
+    if (!e.target.id){
     let id = e.target.dataset.likeid
     console.log('GF275', id)
     let res = await fetch(`game/likeGame/${id}`, {
@@ -364,7 +365,7 @@ async function renderAllGame(gameList) {
 
       indexCheck()
     }
-
+  }
   }))
 
 }
@@ -509,7 +510,7 @@ async function fetchSingleGame(gameIDD) {
   document.querySelector('#gameType1').textContent = json.data.game_type
   document.querySelector('#description').textContent = json.data.description
   document.querySelector('#createPost1').textContent = json.data.create_post
-  document.querySelector('#likeCount1').innerHTML = `<i data-likeid=${gameIDD} class="fa-regular fa-heart"> like: ${json.data.like_count}</i>`
+  document.querySelector('#likeCount1').innerHTML = `<i data-likeid=${gameIDD} class="fa-regular fa-heart" style="width: 200px;border: 1px solid white"> like: ${json.data.like_count}</i>`
   document.querySelector('#usersName1').textContent = json.data.users_name
   document.querySelector('#curGameCover').innerHTML = `<img src=${json.data.game_cover} />`
 
