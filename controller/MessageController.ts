@@ -51,6 +51,7 @@ export class MessageController implements IMessageController{
         try {
             let messageID = req.params.id
             db.query(`DELETE FROM game_message where message_id=$1`,[messageID])
+            res.json({isError:false,errMess:null,data:"delete successfully"});
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
             res.json({isError:true,errMess:error.message})
