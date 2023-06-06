@@ -379,7 +379,7 @@ async function fetchSingleGame(gameIDD) {
   document.querySelector('#gameType1').textContent = json.data.game_type
   document.querySelector('#description').textContent = json.data.description
   document.querySelector('#createPost1').textContent = json.data.create_post
-  document.querySelector('#likeCount1').textContent = json.data.like_count
+  document.querySelector('#likeCount1').innerHTML = `<i data-likeid=${gameIDD} class="fa-regular fa-heart"> like: ${json.data.like_count}</i>`
   document.querySelector('#usersName1').textContent = json.data.users_name
   document.querySelector('#curGameCover').innerHTML = `<img src=${json.data.game_cover} />`
 
