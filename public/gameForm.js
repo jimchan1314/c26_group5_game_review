@@ -119,8 +119,8 @@ async function renderCreateGame(html) {
 }
 
 function renderAllGameGuest(gameList) {
-console.log(gameList.data)
-  gameList.forEach((obj,i) =>
+// console.log(gameList.data)
+  gameList.forEach(obj =>
     obj.game_type === "Video Game" ? document.querySelector('#videoGame').innerHTML +=
       `
     <div class="gameBox mb-3">
@@ -145,7 +145,7 @@ console.log(gameList.data)
           </div>
       </div>
       <div class="box-content">
-        <div class="visit">Visit Page</div>
+        <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
       </div>
     </div>
   </div>
@@ -176,7 +176,7 @@ console.log(gameList.data)
            </div>
        </div>
       <div class="box-content">
-        <div class="visit">Visit Page</div>
+        <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
       </div>
      </div>
    </div>  
@@ -211,7 +211,7 @@ obj.forEach(obj =>
         </div>
     </div>
     <div class="box-content">
-      <div class="visit">Visit Page</div>
+      <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
     </div>
   </div>
 </div>
@@ -246,7 +246,7 @@ obj.forEach((obj,i) =>
         </div>
     </div>
     <div class="box-content">
-      <div class="visit">Visit Page</div>
+      <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
     </div>
   </div>
 </div>  
@@ -307,9 +307,9 @@ async function renderAllGame(gameList) {
 
 
     //like game
-  document.querySelectorAll('.gBoxCount > i.fa-heart').forEach(i => i.addEventListener("click", async e => {
+  document.querySelectorAll('#likeCount1').forEach(i => i.addEventListener("click", async e => {
     let id = e.target.dataset.likeid
-    // console.log('GF275',e.target.dataset.likeid)
+    console.log('GF275',id)
     let res = await fetch(`game/likeGame/${id}`,{
       method:"POST",
       body:""
@@ -466,6 +466,60 @@ async function renderBoardRankList(obj){
 
 `)
 }
+async function fetchSingleGame(gameIDD) {
+
+  console.log("gf386",gameIDD)
+  // console.log(gf387,user)
+  let res = await fetch(`/game/getSingleGame/${gameIDD}`)
+  let json = await res.json()
+  // console.log("gfjs387",json.data)
+
+  document.querySelector('#gameName1').textContent = json.data.name
+  document.querySelector('#gameType1').textContent = json.data.game_type
+  document.querySelector('#description').textContent = json.data.description
+  document.querySelector('#createPost1').textContent = json.data.create_post
+  document.querySelector('#likeCount1').innerHTML = `<i data-likeid=${gameIDD} class="fa-regular fa-heart"> like: ${json.data.like_count}</i>`
+  document.querySelector('#usersName1').textContent = json.data.users_name
+  document.querySelector('#curGameCover').innerHTML = `<img src=${json.data.game_cover} />`
+
+  let user = localStorage.getItem('user')
+  user = JSON.parse(user)
+  console.log('gfjs402',user.id)
+
+  // checking
+  if(json.data.create_users_id === user.id ){
+    
+    document.querySelector('.userbtnSet').innerHTML =
+    `
+      <i data-id=${gameIDD} class="btn fa-solid fa-square-pen" onclick="renderEditGame('${gameIDD}')" data-bs-toggle="modal" data-bs-target="#editGameModal") > Edit</i>
+      <i data-id=${gameIDD} class="btn fa-solid fa-trash-can"> Delete</i>
+    `
+    document.querySelector('#likeCount1').innerHTML = `<i data-likeid=${gameIDD} class="btn fa-regular fa-heart"> like: ${json.data.like_count}</i>`
+  }else { 
+    ""
+    
+    document.querySelector('#likeCount1').innerHTML = 
+    `<i data-likeid=${gameIDD} class="btn fa-regular fa-heart"> like: ${json.data.like_count}</i>`
+
+  }
+
+  // `<i data-likeid=${gameIDD} class="btn fa-regular fa-heart"> like: ${json.data.like_count}</i>`
+    
+    
+  
+
+
+  if (json.isError) {
+    alert(json.errMess)
+  } else {
+    renderAllGame(json.data)
+    console.log("GF352", json.data)
+  }
+}
+
+
+
+
 
 
 

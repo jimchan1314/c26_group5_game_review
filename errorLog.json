@@ -462,3 +462,153 @@
   "errMess": "relation \"like_game\" does not exist",
   "dateTime": "2023-06-05T08:58:24.279Z"
 }
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T01:56:58.711Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T01:58:30.058Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T02:02:27.183Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T02:04:54.511Z"
+}
+{
+  "route": "/likeGame/9",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T02:05:32.937Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T02:18:04.108Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T02:18:06.703Z"
+}
+{
+  "route": "/likeGame/2",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T02:19:34.871Z"
+}
+{
+  "route": "/likeGame/2",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T02:19:47.517Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T02:20:16.786Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T02:20:19.355Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T02:21:26.214Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T02:22:54.790Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T02:23:26.613Z"
+}
+{
+  "route": "/likeGame/9",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T02:23:37.424Z"
+}
+{
+  "route": "/likeGame/9",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T02:23:39.975Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T02:23:45.444Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T02:24:47.446Z"
+}
+{
+  "route": "/likeGame/9",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T03:11:54.177Z"
+}
+{
+  "route": "/likeGame/9",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T03:11:59.355Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T03:12:13.923Z"
+}
+{
+  "route": "/likeGame/9",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T03:12:26.424Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T03:12:32.342Z"
+}
+{
+  "route": "/likeGame/9",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T03:13:06.509Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T03:13:14.790Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T03:13:41.766Z"
+}
+{
+  "route": "/likeGame/9",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T03:14:49.744Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T03:14:55.715Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T03:26:22.841Z"
+}
+{
+  "route": "/likeGame/9",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T03:26:30.424Z"
+}

@@ -5,10 +5,6 @@ import { db } from "../db";
 import { errorHandler } from "../errorHandler";
 import { IGameController } from "../routes/Routes";
 import moment from "moment";
-// import { ParamsDictionary } from "express-serve-static-core";
-// import { ParsedQs } from "qs";
-// import { ParamsDictionary } from "express-serve-static-core";
-// import { ParsedQs } from "qs";
 
 // import jsonfile from "jsonfile";
 // import { type } from "os";
@@ -108,9 +104,11 @@ export class GameController implements IGameController{
     async getSingleGame(req:Request, res:Response):Promise<void> {
         try {
             let gameID = req.params.id
-            let {rows} = await db.query(`SELECT name, game_type, description, game_cover FROM game where post_id = $1`,[gameID]);
+            console.log("gts-111",gameID)
+            let {rows} = await db.query(`SELECT name, game_type, description, game_cover, create_post, update_post, like_count, create_users_id, id, users_name  FROM game JOIN users ON users.id = game.create_users_id where post_id = $1;`,[gameID]);
             // console.log('GCts',rows)
-            res.json({isError:false,errMess:"",data:rows[0]})    
+            res.json({isError:false,errMess:"",data:rows[0]})
+            console.log('gts-114',rows[0])    
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
             res.json({isError:true,errMess:error.message,data:null})
