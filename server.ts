@@ -81,7 +81,9 @@ let messageController = new MessageController()
 let messageRoutes = new MessageRoute(messageController)
 app.use("/message",messageRoutes.routes)
 
-
+app.use("*",(req, res) => {
+  res.sendFile(path.join(publicFolder,'404.html'))
+});
 
 let port = 8080;
 server.listen(port,()=>{
