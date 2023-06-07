@@ -50,6 +50,8 @@ async function renderAddMessage(postId) {
             await fetchMessage('gamepage.html', renderGetMessage(postId))
         }
         await messageForm.reset()
+        await fetchAllContent('homePage.html', displayContent, fetchBoardRank, fetchVideoRank)
+
     })
 }
 //"add comment" button

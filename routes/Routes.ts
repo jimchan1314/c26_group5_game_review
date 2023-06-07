@@ -67,6 +67,7 @@ export interface IMessageController{
     deleteMessage(req:Request,res:Response):Promise<void>
     getMessage(req:Request,res:Response):Promise<void>
     getCurrentMessage(req:Request,res:Response):Promise<void>
+    getMessageCount(req:Request,res:Response):Promise<void>
 }
 
 export class MessageRoute extends Routes {
@@ -77,5 +78,6 @@ export class MessageRoute extends Routes {
         this.routes.delete('/deleteMessage/:id',isLoggedInAPI,controller.deleteMessage)
         this.routes.get('/getMessage/:id',controller.getMessage)
         this.routes.get('/getCurrMessage/:id',isLoggedInAPI,controller.getCurrentMessage)
+        this.routes.get('/getMessageCount/:id',controller.getMessageCount)
     }
 }

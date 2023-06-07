@@ -79,4 +79,19 @@ export class MessageController implements IMessageController{
             res.json({isError:true,errMess:error.message})
         }
     }
+
+    async getMessageCount(req:Request,res:Response):Promise<void> {
+        try {
+            let postId = req.params.id
+
+            let {rows} = await db.query(`select COUNT(*) from game_message where post_id=$1`,[postId])
+            res.json({isError:false,errMess:null,data:rows});
+        } catch (error) {
+            errorHandler({status:error.status,route:req.path,errMess:error.message})
+            res.json({isError:true,errMess:error.message})
+        }
+    }
+
+
+
 }
