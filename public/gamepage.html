@@ -1,11 +1,11 @@
-<div class="layer0 oneGamePage">
+<div class="layer0 oneGamePage spBorder">
 
     <div class="row layer2 layerdiv">
-        <div class="col-4 l2-left" id="curGameCover">
+        <div class="col-md-4 col-sm-12 l2" id="curGameCover">
             Game Cover
             <!-- <img src="${obj.game_cover}" class="img-fluid rounded-start"> -->
         </div>
-        <div class="col-8 l2-right">
+        <div class="col-md-8 col-sm-12 l2">
             <h2 class="l2r" id="gameName1" name="gameName1">Game Name: ${obj.name}</h2>
 
             <span style="color:#EF9A53">Game Type:</span>
@@ -21,13 +21,13 @@
     <div class="row layer3">
         <div class="col-12" style="color:#EF9A53">Description:</div>
         <!-- <br> -->
-        <div class="col-12 l2r" id="description">${obj.description}</div>
+        <div class="col-12 l2r" id="description" style="white-space: pre-line">${obj.description}</div>
     </div>
     <div class="row layer4 layerdiv">
         <div class="col-6"><i class=" fa-regular fa-comment-dots"> Message: 100</i></div>
         <div class="col-6" id="likeCount1">${obj.like_count}</div>
     </div>
-    <div class="row layer5 userbtnSet">
+    <div class="layer5 userbtnSet">
         <!-- <div class="col-6">Edit</div>
         <div class="col-6">Delete</div> -->
     </div>

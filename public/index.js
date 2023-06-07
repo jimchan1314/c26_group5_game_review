@@ -76,22 +76,41 @@ async function indexGame() {
 
 // indexGame()
 
+// async function fetchGameContentWID(path, cb, game_postID) {
+
+//     let res = await fetch(path)
+//     let html = await res.text()
+
+//     await cb(html)
+
+//     let user = await getCurrentUser()
+//     user = 
+//     //console.log('index75', user)
+
+//     // let gameUserId = json.data.create_users_id 
+//     // console.log('index79',gameIDD)
+
+//     fetchSingleGame(game_postID)
+//     await renderGetMessage(gameIDD)
+// }
+
+
 async function fetchGameContentWID(path, cb, game_postID) {
+ let res = await fetch(path)
+let html = await res.text()
 
-    let res = await fetch(path)
-    let html = await res.text()
+await cb(html)
 
-    await cb(html)
+// let user = await getCurrentUser()
+let user = localStorage.getItem('user')
+user = JSON.parse(user)
+//console.log('index75', user)
 
-    // let user = await getCurrentUser()
-    //console.log('index75', user)
+// let gameUserId = json.data.create_users_id 
+let gameIDD = await game_postID
+// console.log('index79',gameIDD)
 
-    // let gameUserId = json.data.create_users_id 
-    // console.log('index79',gameIDD)
-
-    fetchSingleGame(game_postID)
-    // await renderGetMessage(gameIDD)
+await fetchSingleGame(gameIDD)
+await renderGetMessage(gameIDD)
 }
-
-
 

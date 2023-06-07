@@ -877,3 +877,68 @@
   "errMess": "Please Login before Like memo!",
   "dateTime": "2023-06-06T18:33:15.852Z"
 }
+{
+  "route": "/likeGame/12",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T01:35:37.896Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T01:35:43.086Z"
+}
+{
+  "route": "/likeGame/12",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T01:35:48.701Z"
+}
+{
+  "route": "/likeGame/12",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T01:35:55.744Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T01:36:03.911Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-07T01:37:14.814Z"
+}
+{
+  "route": "/likeGame/12",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-07T01:59:02.179Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-07T02:06:29.354Z"
+}
+{
+  "route": "/getBoardRank/",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-07T04:04:15.264Z"
+}
+{
+  "route": "/getVideoRank/",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-07T04:04:18.152Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-07T04:05:08.787Z"
+}
+{
+  "route": "/likeGame/1",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-07T04:56:05.416Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-07T05:19:28.391Z"
+}

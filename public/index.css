@@ -368,7 +368,8 @@ form>div>.button-flexBox>button {
   overflow: hidden;
   transition: all 0.6s ease 0s;
   padding: 5px;
-  
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .box .box-content{
@@ -962,7 +963,7 @@ form>div>.button-flexBox>button {
 }
 .card-title {
   color:rgb(255, 248, 234);
-  font-family: 'ConnectionRegular';
+  font-family: 'ConnectionRegular','DotGothic16', sans-serif;
   font-weight: normal;
   font-style: normal;
 }

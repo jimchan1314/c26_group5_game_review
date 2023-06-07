@@ -228,8 +228,8 @@ function renderVideoTemplate(obj) {
         <div class="card-body gBoxBody">
         
         <h4 class="card-title gBoxName">${obj.name}</h4>
-        <div class="card-text gBoxType"><span style="color:#EF9A53">Game Type:</span> ${obj.game_type}</div>
-        <p class="card-text gBoxDescription"><span style="color:#EF9A53">Description:</span> <br>${obj.description}</p>
+
+        
         <div class="card-text"><span style="color:#EF9A53">Created by:</span> ${obj.users_name}</div>
         <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${obj.create_post}</div>
         </div>
@@ -264,8 +264,8 @@ function renderBoardGameTemplate(obj) {
         
         
         <h4 class="card-title gBoxName">${obj.name}</h4>
-        <div class="card-text gBoxType"><span style="color:#EF9A53">Game Type:</span> ${obj.game_type}</div>
-        <p class="card-text gBoxDescription"><span style="color:#EF9A53">Description:</span> <br>${obj.description}</p>
+
+        
         <div class="card-text"><span style="color:#EF9A53">Created by:</span> ${obj.users_name}</div>
         <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${obj.create_post}</div>
         </div>
@@ -422,9 +422,11 @@ async function renderEditGame(id) {
         timer: 1500
       })
 
-      await fetchContent('homePage.html', displayContent, fetchAllGame)
+      
     }
     await form.reset();
+    await fetchAllContent('homePage.html', displayContent, fetchBoardRank, fetchVideoRank)
+    document.querySelector('.edit-close').click()
   });
 
 }
@@ -445,8 +447,8 @@ async function renderVideoRankList(obj) {
           <div class="card-body gBoxBody">
           
           <h4 class="card-title gBoxName">${obj.name}</h4>
-          <div class="card-text gBoxType"><span style="color:#EF9A53">Game Type:</span> ${obj.game_type}</div>
-          <p class="card-text gBoxDescription"><span style="color:#EF9A53">Description:</span> <br>${obj.description}</p>
+
+          
           <div class="card-text"><span style="color:#EF9A53">Created by:</span> ${obj.users_name}</div>
           <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${obj.create_post}</div>
           </div>
@@ -480,8 +482,8 @@ async function renderBoardRankList(obj) {
         
         
         <h4 class="card-title gBoxName">${obj.name}</h4>
-        <div class="card-text gBoxType"><span style="color:#EF9A53">Game Type:</span> ${obj.game_type}</div>
-        <p class="card-text gBoxDescription"><span style="color:#EF9A53">Description:</span> <br>${obj.description}</p>
+
+        
         <div class="card-text"><span style="color:#EF9A53">Created by:</span> ${obj.users_name}</div>
         <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${obj.create_post}</div>
         </div>
@@ -528,8 +530,8 @@ async function fetchSingleGame(gameIDD) {
 
       document.querySelector('.userbtnSet').innerHTML =
       `
-      <i data-id=${gameIDD} class="btn fa-solid fa-square-pen" onclick="renderEditGame('${gameIDD}')" data-bs-toggle="modal" data-bs-target="#editGameModal") > Edit</i>
-      <i data-id=${gameIDD} class="btn fa-solid fa-trash-can"> Delete</i>
+      <i data-id=${gameIDD} class="btn col-12 fa-solid fa-square-pen" onclick="renderEditGame('${gameIDD}')" data-bs-toggle="modal" data-bs-target="#editGameModal") > Edit</i>
+      <i data-id=${gameIDD} class="btn col-12 fa-solid fa-trash-can"> Delete</i>
       `;
       document.querySelector('#likeCount1').innerHTML = 
       `<i data-likeid=${gameIDD} class="btn fa-regular fa-heart"> like: ${json.data.like_count}</i>`;
