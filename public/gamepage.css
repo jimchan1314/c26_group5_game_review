@@ -67,5 +67,88 @@
     font-weight: normal;
     font-style: normal;
     background-color: rgb(158, 118, 118);
+    margin: 1% 2%;
 }
-
+.layer6 > .messageTop {
+    margin: 1% 2%;
+}
+.layer6 > div:nth-child(1) {
+    color: #EF9A53;
+}
+.layer6 > div.col-11.messageTop > div:nth-child(1) {
+    font-size: 24px;
+}
+#expandButton {
+    color: #FFC26F;
+    cursor: pointer;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div {
+    display: flex;
+    padding: 10px;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.userInfo {
+    width: 30%;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.userInfo > div {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: rgb(89, 69, 69);
+    font-size: 20px;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody {
+    border: dashed rgb(89, 69, 69);
+    border-width: 5px;
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: rgb(89, 69, 69);
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > .textContainer {
+    font-size: 20px;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > div {
+    width: 100%;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > .messagePanel {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > div.timeStamp {
+    display: flex;
+    align-items: flex-end;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > .buttonPanel {
+    display: flex;
+    justify-content: space-between;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.userInfo > img.resize {
+    width: 200px;
+    height: auto;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > div.messagePanel > div.buttonPanel > i.fa-solid.fa-trash-can {
+    color: rgb(89, 69, 69);
+    cursor: pointer;
+}
+#expandEditMessage {
+    color: rgb(89, 69, 69);
+    cursor: pointer;
+}
+#editMessageForm > div.col-12 > button, #messageForm > div.col-12 > button {
+    color: rgb(89, 69, 69);
+    background-color: rgb(255, 248, 234);
+    border-style: none
+}
+/* hover effects of buttons */
+#expandButton:hover {
+    color:#EF9A53;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > div.messagePanel > div.buttonPanel > i.fa-solid.fa-trash-can:hover {
+    color: #FFC26F;
+}
+#expandEditMessage:hover {
+    color: #FFC26F;
+}
