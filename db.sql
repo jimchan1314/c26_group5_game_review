@@ -34,4 +34,6 @@ CREATE TABLE "users"(
 
 -- mandy testing
 -- SELECT name, game_type, description, game_cover, create_post, update_post, users_name  FROM game JOIN users ON users.id = game.create_users_id where post_id = 5;
--- SELECT message_id,text,post_id,users_id,message_create_at,users_icon,users_name FROM game_message JOIN users ON users_id = users.id where post_id=$1; 
+
+-- van test join table
+-- SELECT message_id,text,post_id,users_id,message_create_at,users_icon,users_name FROM game_message JOIN users ON users_id = users.id where post_id=$1 ORDER BY message_create_at ASC; 

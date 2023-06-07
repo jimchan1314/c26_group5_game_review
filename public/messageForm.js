@@ -1,16 +1,3 @@
-// step 1
-//async function regCardEvent(gameId) {
-//    // document.querySelectorAll('.card.messageCard').forEach(card => {
-//    //     card.addEventListener('click', async (e) => {
-//    await fetchTemplate('messageForm.html', renderContent)
-//    await renderGetMessage(gameId)
-//    // })
-//    // })
-//}
-//function renderContent(html) {
-//    document.querySelector('.content').innerHTML = html
-//}
-
 //get message
 async function renderGetMessage(postId) {
 
@@ -26,9 +13,6 @@ async function renderGetMessage(postId) {
         document.querySelector('.messageContainer').innerHTML = result.data.map(obj => messageTemplate(obj, user.id, postId)).join('')
         document.querySelector('.expandMessageForm').innerHTML =
             `<i class="fa-solid fa-clipboard" id="expandButton" onclick="expandMessageForm(${postId})">Add Comment</i>`
-
-        // deleteMessage()
-        // editMessage()
     }
 }
 
@@ -38,7 +22,6 @@ async function renderAddMessage(postId) {
     let messageForm = document.querySelector("#messageForm")
     messageForm.addEventListener('submit', async (e) => {
         e.preventDefault()
-        //console.log('submit clicked')
 
         const messageData = new FormData(messageForm)
 
@@ -47,7 +30,6 @@ async function renderAddMessage(postId) {
             body: messageData
         })
         const json = await res.json()
-        //console.log(result)
 
         if (json.isError) {
             await sweetAlert.fire({
@@ -70,11 +52,19 @@ async function renderAddMessage(postId) {
         await messageForm.reset()
     })
 }
+//"add comment" button
+async function expandMessageForm(postId) {
+    let res = await fetch('messageForm.html')
+    let html = await res.text()
+
+    document.querySelector('.messageFormContaniner').innerHTML = html
+
+    renderAddMessage(postId)
+}
 
 
-//delete message: not yet finish
+//delete message
 async function deleteMessage(msgId, postId) {
-    console.log(postId)
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -88,26 +78,33 @@ async function deleteMessage(msgId, postId) {
             const res = await fetch(`message/deleteMessage/${msgId}`, {
                 method: "DELETE"
             })
-
-            Swal.fire(
-                'Deleted!',
-                'Your comment has been deleted.',
-                'success'
-            )
+            const json = await res.json()
+            if (json.isError) {
+                await sweetAlert.fire({
+                    icon: 'info',
+                    title: json.errMess,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Your comment has been deleted.',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                await fetchMessage('gamepage.html', renderGetMessage(postId))
+            }
         }
-        await fetchMessage('gamepage.html', renderGetMessage(postId))
     })
 }
 
-//edit message: not yet finish
+//edit message
 async function editMessage(msgId, postId) {
-    console.log(msgId)
-    console.log(postId)
     getCurrentMessage(msgId)
     let editMessageForm = document.querySelector("#editMessageForm")
     editMessageForm.addEventListener('submit', async (e) => {
         e.preventDefault()
-        //console.log('submit clicked')
 
         const editMessageData = new FormData(editMessageForm)
 
@@ -116,7 +113,6 @@ async function editMessage(msgId, postId) {
             body: editMessageData
         })
         const json = await res.json()
-        //console.log(result)
 
         if (json.isError) {
             await sweetAlert.fire({
@@ -136,7 +132,7 @@ async function editMessage(msgId, postId) {
 
             await fetchMessage('gamepage.html', renderGetMessage(postId))
         }
-        //await document.querySelector('.messageFormContaniner').innerHTML = ""
+        document.querySelector('.messageFormContaniner').innerHTML = "";
     })
 
 }
@@ -151,7 +147,7 @@ async function expandEditMessage(msgId, postId) {
 
 }
 
-//get current message: not yet finish
+//get current message
 async function getCurrentMessage(msgId) {
     const res = await fetch(`message/getCurrMessage/${msgId}`, {
         method: "GET"
@@ -160,16 +156,6 @@ async function getCurrentMessage(msgId) {
     //console.log(result)
     let currMsg = result.data[0]["text"]
     document.querySelector("#edittext").defaultValue = currMsg
-}
-
-//"add comment" button
-async function expandMessageForm(postId) {
-    let res = await fetch('messageForm.html')
-    let html = await res.text()
-
-    document.querySelector('.messageFormContaniner').innerHTML = html
-
-    renderAddMessage(postId)
 }
 
 //callback functions
@@ -240,3 +226,15 @@ async function fetchMessage(path, cb) {
     let res = await fetch(path)
 }
 
+// step 1
+//async function regCardEvent(gameId) {
+//    // document.querySelectorAll('.card.messageCard').forEach(card => {
+//    //     card.addEventListener('click', async (e) => {
+//    await fetchTemplate('messageForm.html', renderContent)
+//    await renderGetMessage(gameId)
+//    // })
+//    // })
+//}
+//function renderContent(html) {
+//    document.querySelector('.content').innerHTML = html
+//}
