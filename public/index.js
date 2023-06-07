@@ -84,16 +84,13 @@ async function fetchGameContentWID(path, cb, game_postID) {
     await cb(html)
 
     // let user = await getCurrentUser()
-    let user = localStorage.getItem('user')
-    user = JSON.parse(user)
     //console.log('index75', user)
 
     // let gameUserId = json.data.create_users_id 
-    let gameIDD = await game_postID
     // console.log('index79',gameIDD)
 
-    await fetchSingleGame(gameIDD)
-    await renderGetMessage(gameIDD)
+    fetchSingleGame(game_postID)
+    // await renderGetMessage(gameIDD)
 }
 
 

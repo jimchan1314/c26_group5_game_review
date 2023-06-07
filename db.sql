@@ -1,8 +1,8 @@
 CREATE TABLE "game_message"(
 "message_id" SERIAL primary key,
-"text" TEXT NOT NULL,
-"post_id" VARCHAR (40) references "game"(post_id) not null,
-"users_id" VARCHAR (40) references "users"(id) not null,
+"message_text" TEXT NOT NULL,
+"message_post_id" INTEGER references "game"(post_id) not null,
+"message_users_id" TEXT references "users"(id) not null,
 "message_create_at" VARCHAR(255) not null
 );
 CREATE TABLE "game"(

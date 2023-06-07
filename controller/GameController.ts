@@ -135,7 +135,10 @@ export class GameController implements IGameController{
 
             let {rows} = await db.query(`UPDATE game SET like_count=like_count+1 WHERE post_id=$1 AND create_users_id!=$2 AND post_id NOT IN (SELECT game_id FROM like_game WHERE users_id = $3) RETURNING *`,
             [gameID,req.session.userId,req.session.userId])
-    
+            if(!req.session.isLogin){
+                throw new Error('Please Login before Like memo!') 
+            }
+
             if(rows.length===0){
                 throw new Error('Cannot like memo!') 
             }
