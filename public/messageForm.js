@@ -168,7 +168,7 @@ function messageTemplate(obj, userId, postId) {
                     <div><img src="${obj.users_icon}"></div>
                     <div class="userName">${obj.users_name}</div>
                 </div>
-                <div class="messageCardBody">
+                <div class="col-9 messageCardBody">
                   <div class="textContainer">${obj.text}</div>
                   <div class="messagePanel">
                     <div class="timeStamp">created at: ${obj.message_create_at}</div>
@@ -189,7 +189,7 @@ function messageTemplate(obj, userId, postId) {
                     <div><img src="${obj.users_icon}"></div>
                     <div class="userName">${obj.users_name}</div>
                 </div>
-                <div class="messageCardBody">
+                <div class="col-9 messageCardBody">
                   <div class="textContainer">${obj.text}</div>
                   <div class="messagePanel">
                     <div class="timeStamp">created at: ${obj.message_create_at}</div>
@@ -210,7 +210,7 @@ function messageTemplateGuest(obj) {
                     <div><img src="${obj.users_icon}"></div>
                     <div class="userName">${obj.users_name}</div>
                 </div>
-                <div class="messageCardBody">
+                <div class="col-9 messageCardBody">
                   <div class="textContainer">${obj.text}</div>
                   <div class="messagePanel">
                     <div class="timeStamp">created at: ${obj.message_create_at}</div>

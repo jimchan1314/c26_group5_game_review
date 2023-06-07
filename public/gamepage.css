@@ -68,6 +68,8 @@
     font-style: normal;
     background-color: rgb(158, 118, 118);
     margin: 1% 2%;
+    display: flex;
+    justify-content: space-between;
 }
 .layer6 > .messageTop {
     margin: 1% 2%;
@@ -82,12 +84,14 @@
     color: #FFC26F;
     cursor: pointer;
 }
+/* card-body */
 .layer6 > div.row.layer8.layerdiv.messageContainer > div > div {
     display: flex;
-    padding: 10px;
+    padding: 10px 0;
 }
 .layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.userInfo {
-    width: 30%;
+    /* width: 20%; */
+    margin: 10px;
 }
 .layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.userInfo > div {
     display: flex;
@@ -96,10 +100,14 @@
     color: rgb(89, 69, 69);
     font-size: 20px;
 }
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div {
+    display: flex;
+    justify-content: space-between;
+}
 .layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody {
     border: dashed rgb(89, 69, 69);
     border-width: 5px;
-    width: 70%;
+    /* width: 80%; */
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -151,4 +159,10 @@
 }
 #expandEditMessage:hover {
     color: #FFC26F;
+}
+
+.userInfo > div > img {
+    max-width: 100px;
+    height: auto;
+    object-fit: scale-down;
 }
