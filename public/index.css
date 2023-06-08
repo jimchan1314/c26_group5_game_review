@@ -427,6 +427,7 @@ form>div>.button-flexBox>button {
 .gBoxCount {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .gameCoverDiv {
@@ -974,4 +975,13 @@ form>div>.button-flexBox>button {
 
 .card-body{
   padding-bottom: 10px;
+  padding-top: 10px;
 }
+
+.fa-comment-dots, .fa-heart{
+  color:#FFC26F
+}
+
+/* .fa-heart{
+
+} */

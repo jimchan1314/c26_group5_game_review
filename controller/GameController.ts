@@ -183,7 +183,7 @@ export class GameController implements IGameController{
     async getVideoRank(req: Request, res: Response): Promise<void>{
         try {
             // let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Video Game' ORDER BY game.like_count DESC LIMIT 10`)
-            let {rows} = await db.query(`SELECT * FROM (SELECT * FROM game WHERE game_type = 'Video Game') as table1 inner JOIN users ON users.id = table1.create_users_id  ORDER BY table1.create_post DESC LIMIT 10`)
+            let {rows} = await db.query(`SELECT * FROM (SELECT * FROM game WHERE game_type = 'Video Game') as table1 inner JOIN users ON users.id = table1.create_users_id  ORDER BY table1.like_count DESC LIMIT 10`)
 
             res.json({isError:false,errMess:"",data:rows})
         } catch (error){
@@ -195,7 +195,7 @@ export class GameController implements IGameController{
     async getBoardRank(req: Request, res: Response): Promise<void>{
         try {
             // let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Board Game' ORDER BY game.like_count DESC LIMIT 10`)
-            let {rows} = await db.query(`SELECT * FROM (SELECT * FROM game WHERE game_type = 'Board Game') as table1 inner JOIN users ON users.id = table1.create_users_id  ORDER BY table1.create_post DESC LIMIT 10`)
+            let {rows} = await db.query(`SELECT * FROM (SELECT * FROM game WHERE game_type = 'Board Game') as table1 inner JOIN users ON users.id = table1.create_users_id  ORDER BY table1.like_count DESC LIMIT 10`)
 
             res.json({isError:false,errMess:"",data:rows})
         } catch (error){

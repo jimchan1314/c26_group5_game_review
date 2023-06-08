@@ -247,7 +247,7 @@ async function renderVideoTemplate(obj) {
         </div>
         <div class="card-body gBoxCount">
         <i class="fa-regular fa-comment-dots"> Message:<span id="messageCount-${obj.post_id}"> ${messageJsonCount}</span></i>
-        <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
+        <i data-likeid=${obj.post_id} class="fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
         </div>
     </div>
     <div class="box-content">
@@ -290,7 +290,7 @@ async function renderBoardGameTemplate(obj) {
               </div>
               <div class="card-body gBoxCount">
               <i class="fa-regular fa-comment-dots"> Message:<span id="messageCount-${obj.post_id}"> ${messageJsonCount}</span></i>
-              <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
+              <i data-likeid=${obj.post_id} class="fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
               </div>
           </div>
           <div class="box-content">
@@ -444,17 +444,21 @@ async function renderEditGame(id) {
 
     }
     await form.reset();
-    await fetchAllContent('homePage.html', displayContent, fetchBoardRank, fetchVideoRank)
+    await fetchGameContentWID('gamepage.html',displayContent,`${id}`,fetchSingleGame)
     document.querySelector('.edit-close').click()
   });
 
 }
 
 async function renderVideoRankList(obj) {
+  document.querySelector('#videoGame').innerHTML = ''
+  let data = obj
+  let i = -1
 
-  obj.forEach(async(obj, i) => {
+  for (let d of data) {
+    i++
 
-    let messageRes = await fetch(`message/getMessageCount/${obj.post_id}`)
+    let messageRes = await fetch(`message/getMessageCount/${d.post_id}`)
     let messageJson = await messageRes.json()
     let messageJsonCount = messageJson.data[0].count
 
@@ -466,70 +470,80 @@ async function renderVideoRankList(obj) {
       <div class="row box animate__animated animate__flipInY">
       <div class="col-md-4 gameCoverDiv">
       
-        <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
+        <img src="${d.game_cover}" class="img-fluid rounded-start gBoxCover">
       </div>
       <div class="col-md-8">
           <div class="card-body gBoxBody">
           
-          <h4 class="card-title gBoxName">${obj.name}</h4>
+          <h4 class="card-title gBoxName">${d.name}</h4>
 
           
-          <div class="card-text"><span style="color:#EF9A53">Created by:</span> ${obj.users_name}</div>
-          <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${obj.create_post}</div>
+          <div class="card-text"><span style="color:#EF9A53">Created by:</span> ${d.users_name}</div>
+          <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${d.create_post}</div>
           </div>
           <div class="card-body gBoxCount">
-          <i class="fa-regular fa-comment-dots"> Message:<span id="messageCount-${obj.post_id}"> ${messageJsonCount}</span></i>
-          <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
+          <i class="fa-regular fa-comment-dots"> Message:<span id="messageCount-${d.post_id}"> ${messageJsonCount}</span></i>
+          <i data-likeid=${d.post_id} class="fa-regular fa-heart"> like:<span id="likeCount-${d.post_id}"> ${d.like_count}</span></i>
           </div>
       </div>
       <div class="box-content">
-        <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
+        <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${d.post_id},fetchSingleGame)">Visit Page</div>
       </div>
     </div>
   </div>
   
-  `})
+  `}
 }
 
 async function renderBoardRankList(obj) {
-  obj.forEach(async(obj, i) => {
+  document.querySelector('#boardGame').innerHTML = ''
+  // console.log(obj)
 
-    let messageRes = await fetch(`message/getMessageCount/${obj.post_id}`)
+  let data = obj
+
+  let i = -1
+  for (let d of data) {
+    i++
+
+    console.log(d)
+
+    let messageRes = await fetch(`message/getMessageCount/${d.post_id}`)
     let messageJson = await messageRes.json()
     let messageJsonCount = messageJson.data[0].count
 
     document.querySelector('#boardGame').innerHTML +=
     `
-  <div class="gameBox mb-3">
-  <div id="ranking" class="rank_${i + 1}">NO.${i + 1}</div> 
-  <div class="row box animate__animated animate__flipInY">
-    <div class="col-md-4 gameCoverDiv">
-      
-      <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
-    </div>
-    <div class="col-md-8">
-        <div class="card-body gBoxBody">
-        
-        
-        <h4 class="card-title gBoxName">${obj.name}</h4>
-
-        
-        <div class="card-text"><span style="color:#EF9A53">Created by:</span> ${obj.users_name}</div>
-        <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${obj.create_post}</div>
+    <div class="gameBox mb-3">
+      <div id="ranking" class="rank_${i + 1}">NO.${i + 1}</div> 
+      <div class="row box animate__animated animate__flipInY">
+        <div class="col-md-4 gameCoverDiv">
+          
+          <img src="${d.game_cover}" class="img-fluid rounded-start gBoxCover">
         </div>
-        <div class="card-body gBoxCount">
-        <i class="fa-regular fa-comment-dots"> Message:<span id="messageCount-${obj.post_id}"> ${messageJsonCount}</span></i>
-        <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
-        </div>
-    </div>
-    <div class="box-content">
-      <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
-    </div>
-  </div>
-</div>  
+        <div class="col-md-8">
+            <div class="card-body gBoxBody">
+            
+            
+            <h4 class="card-title gBoxName">${d.name}</h4>
 
-`})
+            
+            <div class="card-text"><span style="color:#EF9A53">Created by:</span> ${d.users_name}</div>
+            <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${d.create_post}</div>
+            </div>
+            <div class="card-body gBoxCount">
+            <i class="fa-regular fa-comment-dots"> Message:<span id="messageCount-${d.post_id}"> ${messageJsonCount}</span></i>
+            <i data-likeid=${d.post_id} class="fa-regular fa-heart"> like:<span id="likeCount-${d.post_id}"> ${d.like_count}</span></i> 
+            </div>
+        </div>
+        <div class="box-content">
+          <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${d.post_id},fetchSingleGame)">Visit Page</div>
+        </div>
+      </div>
+    </div>  
+    `
+  }
 }
+
 async function fetchSingleGame(gameIDD) {
 
   //console.log("gf386", gameIDD)
@@ -550,6 +564,7 @@ async function fetchSingleGame(gameIDD) {
   document.querySelector('#gameType1').textContent = json.data.game_type
   document.querySelector('#description').textContent = json.data.description
   document.querySelector('#createPost1').textContent = json.data.create_post
+  document.querySelector('#updatePost1').textContent = json.data.update_post
   document.querySelector('#likeCount1').innerHTML = `<i data-likeid=${gameIDD} class="fa-regular fa-heart"> like: ${json.data.like_count}</i>`
   document.querySelector('#usersName1').textContent = json.data.users_name
   document.querySelector('#curGameCover').innerHTML = `<img src=${json.data.game_cover} />`

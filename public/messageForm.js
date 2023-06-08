@@ -50,7 +50,7 @@ async function renderAddMessage(postId) {
             await fetchMessage('gamepage.html', renderGetMessage(postId))
         }
         await messageForm.reset()
-        await fetchAllContent('homePage.html', displayContent, fetchBoardRank, fetchVideoRank)
+        await fetchMessage('gamepage.html', renderGetMessage(postId))
 
     })
 }
@@ -164,7 +164,7 @@ async function getCurrentMessage(msgId) {
 function messageTemplate(obj, userId, postId) {
     if (obj.users_id === userId) {
         return `
-        <div class="col-11 messageCard">
+        <div class="col-12 messageCard">
             <div class="card-body">
                 <div class="userInfo">
                     <div><img src="${obj.users_icon}"></div>
@@ -185,7 +185,7 @@ function messageTemplate(obj, userId, postId) {
         `
     } else {
         return `
-        <div class="col-11 messageCard">
+        <div class="col-12 messageCard">
             <div class="card-body">
                 <div class="userInfo">
                     <div><img src="${obj.users_icon}"></div>
@@ -206,7 +206,7 @@ function messageTemplate(obj, userId, postId) {
 
 function messageTemplateGuest(obj) {
     return `
-        <div class="col-11 messageCard">
+        <div class="col-12 messageCard">
             <div class="card-body">
                 <div class="userInfo">
                     <div><img src="${obj.users_icon}"></div>
