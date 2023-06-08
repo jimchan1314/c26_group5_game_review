@@ -108,6 +108,7 @@ export class UserController implements IUserController{
             let userData = {...form}
             let userID = req.session.userId;
             
+            
             if(form.profilePassword !== form.profileConfirmPassword){
                 throw new Error('password not match!')
             }
@@ -117,7 +118,7 @@ export class UserController implements IUserController{
             delete userData.profileConfirmPassword
             userData.profilePassword = await hashPassword(userData.profilePassword)
 
-            await db.query(`UPDATE users SET password = $1 WHERE id = $2`, [form.profilePassword,userID])
+            await db.query(`UPDATE users SET password = $1 WHERE id = $2`, [userData.profilePassword,userID])
             res.json({isError:false,errMess:null,data:userData});    
         }
         catch (error){
