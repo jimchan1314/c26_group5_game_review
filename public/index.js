@@ -96,21 +96,21 @@ async function indexGame() {
 
 
 async function fetchGameContentWID(path, cb, game_postID) {
- let res = await fetch(path)
-let html = await res.text()
+    let res = await fetch(path)
+    let html = await res.text()
 
-await cb(html)
+    await cb(html)
 
-// let user = await getCurrentUser()
-let user = localStorage.getItem('user')
-user = JSON.parse(user)
-//console.log('index75', user)
+    // let user = await getCurrentUser()
+    let user = localStorage.getItem('user')
+    user = JSON.parse(user)
+    //console.log('index75', user)
 
-// let gameUserId = json.data.create_users_id 
-let gameIDD = await game_postID
-// console.log('index79',gameIDD)
+    // let gameUserId = json.data.create_users_id 
+    let gameIDD = await game_postID
+    // console.log('index79',gameIDD)
 
-await fetchSingleGame(gameIDD)
-await renderGetMessage(gameIDD)
+    await fetchSingleGame(gameIDD)
+    await renderGetMessage(gameIDD)
 }
 

@@ -1027,3 +1027,23 @@
   "errMess": "Please Login before Like memo!",
   "dateTime": "2023-06-08T03:31:16.795Z"
 }
+{
+  "route": "/deleteGameList/13",
+  "errMess": "update or delete on table \"game\" violates foreign key constraint \"like_game_game_id_fkey\" on table \"like_game\"",
+  "dateTime": "2023-06-08T05:24:29.975Z"
+}
+{
+  "route": "/deleteGameList/13",
+  "errMess": "update or delete on table \"game\" violates foreign key constraint \"like_game_game_id_fkey\" on table \"like_game\"",
+  "dateTime": "2023-06-08T05:26:15.728Z"
+}
+{
+  "route": "/deleteGameList/13",
+  "errMess": "update or delete on table \"game\" violates foreign key constraint \"like_game_game_id_fkey\" on table \"like_game\"",
+  "dateTime": "2023-06-08T05:29:50.647Z"
+}
+{
+  "route": "/likeGame/1",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-08T08:18:47.269Z"
+}

@@ -56,7 +56,11 @@ export class GameController implements IGameController{
     async deleteGameList(req:Request,res:Response):Promise<void>{
         try {
             let gameID = req.params.id
+
+            await db.query(`DELETE FROM game_message WHERE post_id=$1`,[gameID])
+            await db.query(`DELETE FROM like_game WHERE game_id=$1`,[gameID])
             await db.query(`DELETE FROM game WHERE game.post_id=$1`,[gameID])
+            
             res.json({isError:false,errMess:"",data:"Success delete Game"})
 
         } catch (error) {
