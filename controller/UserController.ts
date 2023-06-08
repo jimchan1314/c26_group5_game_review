@@ -57,7 +57,6 @@ export class UserController implements IUserController{
             }
             req.session.userId = rows[0].id as string
             req.session.isLogin = true
-            console.log(req.session)
             
             res.json({isError:false,errMess:null,data:rows[0]});
       

@@ -1,12 +1,12 @@
-<div class="layer0 oneGamePage">
-    
+<div class="layer0 oneGamePage spBorder animate__animated animate__fadeIn">
+
     <div class="row layer2 layerdiv">
-        <div class="col-4 l2-left" id="curGameCover">
+        <div class="col-md-4 col-sm-12 l2" id="curGameCover">
             Game Cover
             <!-- <img src="${obj.game_cover}" class="img-fluid rounded-start"> -->
         </div>
-        <div class="col-8 l2-right">
-            <h2 class="l2r" id="gameName1" name="gameName1" >Game Name: ${obj.name}</h2>
+        <div class="col-md-8 col-sm-12 l2">
+            <h2 class="l2r" id="gameName1" name="gameName1">Game Name: ${obj.name}</h2>
 
             <span style="color:#EF9A53">Game Type:</span>
             <div class="l2r" id="gameType1"> ${obj.game_type}</div>
@@ -16,27 +16,32 @@
 
             <span style="color:#EF9A53">Create at:</span>
             <div class="l2r" id="createPost1">${obj.create_post}</div>
+
+            <span style="color:#EF9A53">Update at:</span>
+            <div class="l2r" id="updatePost1">${obj.update_post}</div>
         </div>
     </div>
-    <div class="row layer3" >
-        <span style="color:#EF9A53">Description:</span>
-        <br><div class="l2r" id="description">${obj.description}</div> 
+    <div class="row layer3">
+        <div class="col-12" style="color:#EF9A53">Description:</div>
+        <!-- <br> -->
+        <div class="col-12 l2r" id="description" style="white-space: pre-line"></div>
     </div>
     <div class="row layer4 layerdiv">
-        <div class="col-6"><i class=" fa-regular fa-comment-dots"> Message: 100</i></div>
+        <div class="col-6" id="messageCount"><i class=" fa-regular fa-comment-dots" > Message: 100</i></div>
         <div class="col-6" id="likeCount1">${obj.like_count}</div>
-    </div>    
-    <div class="row layer5 userbtnSet">
+    </div>
+    <div class="layer5 userbtnSet">
         <!-- <div class="col-6">Edit</div>
         <div class="col-6">Delete</div> -->
     </div>
-    
+
 </div>
 
-<div class="layer6">
-    Game Message box
-</div>    
-
-
-
- 
+<div class="layer6 animate__animated animate__fadeIn">
+    <div class="messageTop">
+        <div>Game Message box</div>
+        <div class="expandMessageForm"></div>
+        <div class="row layer7 layerdiv messageFormContaniner"></div>
+    </div>
+    <div class="row layer8 layerdiv messageContainer"></div>
+</div>

@@ -464,251 +464,1356 @@
 }
 {
   "route": "/likeGame/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-06T01:56:58.711Z"
+  "errMess": "relation \"like_game\" does not exist",
+  "dateTime": "2023-06-06T04:46:52.769Z"
 }
 {
-  "route": "/likeGame/undefined",
+  "route": "/getSingleGame/undefined",
   "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-06T01:58:30.058Z"
+  "dateTime": "2023-06-06T07:03:01.947Z"
 }
 {
-  "route": "/likeGame/undefined",
+  "route": "/getSingleGame/undefined",
   "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-06T02:02:27.183Z"
+  "dateTime": "2023-06-06T07:10:40.914Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:19:04.115Z"
+}
+{
+  "route": "/getMessage/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:29:00.985Z"
+}
+{
+  "route": "/getMessage/5",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:33:44.326Z"
+}
+{
+  "route": "/getMessage/5",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:34:32.847Z"
 }
 {
   "route": "/likeGame/5",
   "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T02:04:54.511Z"
+  "dateTime": "2023-06-06T07:34:37.311Z"
 }
 {
-  "route": "/likeGame/9",
+  "route": "/getMessage/6",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:34:41.846Z"
+}
+{
+  "route": "/likeGame/6",
   "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T02:05:32.937Z"
+  "dateTime": "2023-06-06T07:34:46.946Z"
+}
+{
+  "route": "/getMessage/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:34:54.307Z"
+}
+{
+  "route": "/getMessage/5",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:35:10.262Z"
+}
+{
+  "route": "/getMessage/5",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:35:24.078Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T07:35:26.217Z"
+}
+{
+  "route": "/getMessage/6",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T07:35:33.807Z"
+}
+{
+  "route": "/likeGame/6",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T07:35:37.375Z"
+}
+{
+  "route": "/getMessage/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:40:26.641Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T13:40:29.907Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:41:05.417Z"
+}
+{
+  "route": "/getMessage/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:41:12.169Z"
+}
+{
+  "route": "/getMessage/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:41:25.664Z"
+}
+{
+  "route": "/getMessage/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:41:30.264Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:41:37.967Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:41:49.462Z"
+}
+{
+  "route": "/getMessage/5",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:41:52.995Z"
+}
+{
+  "route": "/getMessage/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:41:56.957Z"
+}
+{
+  "route": "/getMessage/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:42:03.615Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:42:06.368Z"
+}
+{
+  "route": "/getMessage/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:42:08.816Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-06T13:45:06.904Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "column \"users_id\" does not exist",
+  "dateTime": "2023-06-06T14:16:04.619Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "column \"users_id\" does not exist",
+  "dateTime": "2023-06-06T14:17:43.834Z"
+}
+{
+  "route": "/getMessage/10",
+  "errMess": "column \"users_id\" does not exist",
+  "dateTime": "2023-06-06T14:17:53.394Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T14:18:28.946Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T14:28:00.939Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T14:55:01.274Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T16:08:51.314Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T16:23:20.370Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T16:31:40.558Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T16:31:43.614Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T16:36:45.949Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T16:36:48.527Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T16:36:52.385Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T16:36:55.794Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-06T16:44:26.372Z"
+}
+{
+  "route": "/likeGame/6",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T16:46:28.102Z"
+}
+{
+  "route": "/likeGame/12",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T16:55:32.859Z"
 }
 {
   "route": "/likeGame/undefined",
   "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-06T02:18:04.108Z"
+  "dateTime": "2023-06-06T17:19:12.368Z"
 }
 {
   "route": "/likeGame/undefined",
   "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-06T02:18:06.703Z"
+  "dateTime": "2023-06-06T17:19:14.698Z"
+}
+{
+  "route": "/likeGame/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-06T17:19:17.114Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:20:13.780Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:20:16.186Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:20:17.770Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:20:19.789Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:22:25.933Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:22:37.974Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:26:12.371Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:26:14.864Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:26:44.534Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:27:00.120Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:27:49.592Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:30:40.107Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-06T17:31:20.133Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-06T17:31:24.165Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-06T17:31:26.881Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:31:58.216Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:32:01.078Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-06T17:38:25.662Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:38:49.824Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:39:41.355Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:40:13.258Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-06T17:40:27.660Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:40:53.127Z"
+}
+{
+  "route": "/likeGame/13",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:42:43.624Z"
+}
+{
+  "route": "/likeGame/13",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-06T17:45:52.038Z"
+}
+{
+  "route": "/likeGame/13",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:48:56.344Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-06T17:57:51.484Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-06T17:57:54.184Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-06T17:58:07.327Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-06T17:58:13.229Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-06T17:58:44.437Z"
+}
+{
+  "route": "/likeGame/12",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-06T18:32:48.832Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-06T18:33:15.852Z"
+}
+{
+  "route": "/likeGame/12",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T01:35:37.896Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T01:35:43.086Z"
+}
+{
+  "route": "/likeGame/12",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T01:35:48.701Z"
+}
+{
+  "route": "/likeGame/12",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T01:35:55.744Z"
+}
+{
+  "route": "/likeGame/5",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T01:36:03.911Z"
+}
+{
+  "route": "/likeGame/10",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-07T01:37:14.814Z"
+}
+{
+  "route": "/likeGame/12",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-07T01:59:02.179Z"
+}
+{
+  "route": "/likeGame/11",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-07T02:06:29.354Z"
+}
+{
+  "route": "/getBoardRank/",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-07T04:04:15.264Z"
+}
+{
+  "route": "/getVideoRank/",
+  "errMess": "relation \"game\" does not exist",
+  "dateTime": "2023-06-07T04:04:18.152Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-07T04:05:08.787Z"
+}
+{
+  "route": "/likeGame/1",
+  "errMess": "Cannot like memo!",
+  "dateTime": "2023-06-07T04:56:05.416Z"
+}
+{
+  "route": "/login",
+  "errMess": "password does not match",
+  "dateTime": "2023-06-07T05:19:28.391Z"
+}
+{
+  "route": "/likeGame/1",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T08:39:22.090Z"
+}
+{
+  "route": "/getMessageCount/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-07T10:11:54.277Z"
+}
+{
+  "route": "/getMessageCount/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-07T10:16:26.805Z"
+}
+{
+  "route": "/getMessageCount/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-07T10:17:06.273Z"
+}
+{
+  "route": "/getMessageCount/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-07T10:19:45.678Z"
+}
+{
+  "route": "/getMessageCount/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-07T10:19:55.306Z"
+}
+{
+  "route": "/getMessageCount/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-07T10:20:01.333Z"
+}
+{
+  "route": "/getMessageCount/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-07T10:23:37.296Z"
+}
+{
+  "route": "/getMessageCount/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-07T10:23:41.718Z"
+}
+{
+  "route": "/getMessageCount/undefined",
+  "errMess": "invalid input syntax for type integer: \"undefined\"",
+  "dateTime": "2023-06-07T10:27:21.489Z"
+}
+{
+  "route": "/likeGame/13",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T10:46:56.867Z"
+}
+{
+  "route": "/likeGame/13",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-07T10:51:27.453Z"
 }
 {
   "route": "/likeGame/2",
   "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T02:19:34.871Z"
+  "dateTime": "2023-06-07T16:50:42.779Z"
 }
 {
   "route": "/likeGame/2",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-08T00:20:34.012Z"
+}
+{
+  "route": "/likeGame/8",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-08T03:09:26.990Z"
+}
+{
+  "route": "/likeGame/8",
   "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T02:19:47.517Z"
+  "dateTime": "2023-06-08T03:28:38.990Z"
 }
 {
-  "route": "/likeGame/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-06T02:20:16.786Z"
+  "route": "/likeGame/1",
+  "errMess": "Please Login before Like memo!",
+  "dateTime": "2023-06-08T03:31:16.795Z"
 }
 {
-  "route": "/likeGame/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-06T02:20:19.355Z"
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:10.580Z"
 }
 {
-  "route": "/likeGame/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-06T02:21:26.214Z"
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:10.596Z"
 }
 {
-  "route": "/likeGame/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-06T02:22:54.790Z"
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:15.572Z"
 }
 {
-  "route": "/likeGame/5",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T02:23:26.613Z"
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:15.579Z"
 }
 {
-  "route": "/likeGame/9",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T02:23:37.424Z"
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:29.375Z"
 }
 {
-  "route": "/likeGame/9",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T02:23:39.975Z"
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:29.392Z"
 }
 {
-  "route": "/likeGame/5",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T02:23:45.444Z"
+  "route": "/getMessageCount/24",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.169Z"
 }
 {
-  "route": "/likeGame/5",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T02:24:47.446Z"
+  "route": "/getMessageCount/23",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.177Z"
 }
 {
-  "route": "/likeGame/9",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T03:11:54.177Z"
+  "route": "/getMessageCount/22",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.181Z"
 }
 {
-  "route": "/likeGame/9",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T03:11:59.355Z"
+  "route": "/getMessageCount/21",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.182Z"
 }
 {
-  "route": "/likeGame/5",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T03:12:13.923Z"
+  "route": "/getMessageCount/20",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.183Z"
 }
 {
-  "route": "/likeGame/9",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T03:12:26.424Z"
+  "route": "/getMessageCount/19",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.187Z"
 }
 {
-  "route": "/likeGame/5",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T03:12:32.342Z"
+  "route": "/getMessageCount/17",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.188Z"
 }
 {
-  "route": "/likeGame/9",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T03:13:06.509Z"
+  "route": "/getMessageCount/13",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.193Z"
 }
 {
-  "route": "/likeGame/5",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T03:13:14.790Z"
+  "route": "/getMessageCount/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.197Z"
 }
 {
-  "route": "/likeGame/10",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T03:13:41.766Z"
+  "route": "/getMessageCount/12",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.196Z"
 }
 {
-  "route": "/likeGame/9",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T03:14:49.744Z"
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.198Z"
 }
 {
-  "route": "/likeGame/10",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T03:14:55.715Z"
+  "route": "/getMessageCount/25",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.469Z"
 }
 {
-  "route": "/likeGame/10",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T03:26:22.841Z"
+  "route": "/getMessageCount/18",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.469Z"
 }
 {
-  "route": "/likeGame/9",
-  "errMess": "Cannot like memo!",
-  "dateTime": "2023-06-06T03:26:30.424Z"
+  "route": "/getMessageCount/16",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.471Z"
 }
 {
-  "route": "/createGroup",
-  "errMess": "syntax error at or near \"group\"",
-  "dateTime": "2023-06-07T02:08:42.740Z"
+  "route": "/getMessageCount/15",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.473Z"
 }
 {
-  "route": "/createGroup",
-  "errMess": "syntax error at or near \"group\"",
-  "dateTime": "2023-06-07T02:11:04.797Z"
+  "route": "/getMessageCount/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.476Z"
 }
 {
-  "route": "/createGroup",
-  "errMess": "syntax error at or near \"group\"",
-  "dateTime": "2023-06-07T02:13:16.695Z"
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.475Z"
 }
 {
-  "route": "/createGroup",
-  "errMess": "syntax error at or near \"group\"",
-  "dateTime": "2023-06-07T02:16:08.040Z"
+  "route": "/getMessageCount/8",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.478Z"
 }
 {
-  "route": "/createGroup",
-  "errMess": "syntax error at or near \"group\"",
-  "dateTime": "2023-06-07T02:16:10.057Z"
+  "route": "/getMessageCount/24",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.839Z"
 }
 {
-  "route": "/createGroup",
-  "errMess": "syntax error at or near \"group\"",
-  "dateTime": "2023-06-07T02:16:38.360Z"
+  "route": "/getMessageCount/23",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.844Z"
 }
 {
-  "route": "/getGroupList/",
-  "errMess": "invalid input syntax for type integer: \"f8c2129e-3d53-4c8e-b210-7ae1a5e4e447\"",
-  "dateTime": "2023-06-07T07:58:09.638Z"
+  "route": "/getMessageCount/22",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.846Z"
 }
 {
-  "route": "/getGroupList/",
-  "errMess": "invalid input syntax for type integer: \"c8fef13c-401b-489b-946e-c904be575714\"",
-  "dateTime": "2023-06-07T08:00:09.733Z"
+  "route": "/getMessageCount/21",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.850Z"
 }
 {
-  "route": "/getGroupList/",
-  "errMess": "invalid input syntax for type integer: \"c8fef13c-401b-489b-946e-c904be575714\"",
-  "dateTime": "2023-06-07T08:00:12.492Z"
+  "route": "/getMessageCount/20",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.851Z"
 }
 {
-  "route": "/getChatGroup/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-07T11:05:50.800Z"
+  "route": "/getMessageCount/19",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.853Z"
 }
 {
-  "route": "/getChatGroup/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-07T11:06:37.294Z"
+  "route": "/getMessageCount/17",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.854Z"
 }
 {
-  "route": "/getChatGroup/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-07T11:07:08.165Z"
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.859Z"
 }
 {
-  "route": "/getChatGroup/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-07T11:10:30.421Z"
+  "route": "/getMessageCount/13",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.860Z"
 }
 {
-  "route": "/getChatGroup/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-07T11:10:46.623Z"
+  "route": "/getMessageCount/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.863Z"
 }
 {
-  "route": "/getChatGroup/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-07T11:13:11.379Z"
+  "route": "/getMessageCount/12",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:30.862Z"
 }
 {
-  "route": "/getChatGroup/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-07T11:16:04.077Z"
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.144Z"
 }
 {
-  "route": "/getChatGroup/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-07T11:17:36.946Z"
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.151Z"
 }
 {
-  "route": "/getChatGroup/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-07T11:18:59.713Z"
+  "route": "/getMessageCount/24",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.678Z"
 }
 {
-  "route": "/getChatGroup/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-07T11:19:31.739Z"
+  "route": "/getMessageCount/23",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.683Z"
 }
 {
-  "route": "/getChatGroup/undefined",
-  "errMess": "invalid input syntax for type integer: \"undefined\"",
-  "dateTime": "2023-06-07T11:20:14.519Z"
+  "route": "/getMessageCount/22",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.683Z"
+}
+{
+  "route": "/getMessageCount/20",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.686Z"
+}
+{
+  "route": "/getMessageCount/21",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.685Z"
+}
+{
+  "route": "/getMessageCount/19",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.689Z"
+}
+{
+  "route": "/getMessageCount/17",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.690Z"
+}
+{
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.694Z"
+}
+{
+  "route": "/getMessageCount/13",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.695Z"
+}
+{
+  "route": "/getMessageCount/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.698Z"
+}
+{
+  "route": "/getMessageCount/12",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.696Z"
+}
+{
+  "route": "/getMessageCount/25",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.937Z"
+}
+{
+  "route": "/getMessageCount/15",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.939Z"
+}
+{
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.940Z"
+}
+{
+  "route": "/getMessageCount/18",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.937Z"
+}
+{
+  "route": "/getMessageCount/16",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.939Z"
+}
+{
+  "route": "/getMessageCount/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.941Z"
+}
+{
+  "route": "/getMessageCount/8",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:31.944Z"
+}
+{
+  "route": "/getMessageCount/24",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.172Z"
+}
+{
+  "route": "/getMessageCount/23",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.172Z"
+}
+{
+  "route": "/getMessageCount/22",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.176Z"
+}
+{
+  "route": "/getMessageCount/20",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.177Z"
+}
+{
+  "route": "/getMessageCount/21",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.176Z"
+}
+{
+  "route": "/getMessageCount/19",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.178Z"
+}
+{
+  "route": "/getMessageCount/17",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.184Z"
+}
+{
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.184Z"
+}
+{
+  "route": "/getMessageCount/13",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.186Z"
+}
+{
+  "route": "/getMessageCount/12",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.188Z"
+}
+{
+  "route": "/getMessageCount/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.188Z"
+}
+{
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.486Z"
+}
+{
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.492Z"
+}
+{
+  "route": "/getMessageCount/24",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.794Z"
+}
+{
+  "route": "/getMessageCount/23",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.795Z"
+}
+{
+  "route": "/getMessageCount/22",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.800Z"
+}
+{
+  "route": "/getMessageCount/21",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.802Z"
+}
+{
+  "route": "/getMessageCount/20",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.803Z"
+}
+{
+  "route": "/getMessageCount/19",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.806Z"
+}
+{
+  "route": "/getMessageCount/17",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.809Z"
+}
+{
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.810Z"
+}
+{
+  "route": "/getMessageCount/13",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.813Z"
+}
+{
+  "route": "/getMessageCount/12",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.815Z"
+}
+{
+  "route": "/getMessageCount/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:32.815Z"
+}
+{
+  "route": "/getMessageCount/25",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.011Z"
+}
+{
+  "route": "/getMessageCount/18",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.016Z"
+}
+{
+  "route": "/getMessageCount/16",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.017Z"
+}
+{
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.018Z"
+}
+{
+  "route": "/getMessageCount/15",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.018Z"
+}
+{
+  "route": "/getMessageCount/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.020Z"
+}
+{
+  "route": "/getMessageCount/8",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.023Z"
+}
+{
+  "route": "/getMessageCount/24",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.219Z"
+}
+{
+  "route": "/getMessageCount/23",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.220Z"
+}
+{
+  "route": "/getMessageCount/22",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.224Z"
+}
+{
+  "route": "/getMessageCount/21",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.225Z"
+}
+{
+  "route": "/getMessageCount/20",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.225Z"
+}
+{
+  "route": "/getMessageCount/19",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.227Z"
+}
+{
+  "route": "/getMessageCount/17",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.231Z"
+}
+{
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.232Z"
+}
+{
+  "route": "/getMessageCount/13",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.235Z"
+}
+{
+  "route": "/getMessageCount/12",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.236Z"
+}
+{
+  "route": "/getMessageCount/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.237Z"
+}
+{
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.624Z"
+}
+{
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.631Z"
+}
+{
+  "route": "/getMessageCount/24",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.845Z"
+}
+{
+  "route": "/getMessageCount/23",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.846Z"
+}
+{
+  "route": "/getMessageCount/22",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.851Z"
+}
+{
+  "route": "/getMessageCount/21",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.851Z"
+}
+{
+  "route": "/getMessageCount/19",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.853Z"
+}
+{
+  "route": "/getMessageCount/20",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.852Z"
+}
+{
+  "route": "/getMessageCount/17",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.857Z"
+}
+{
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.857Z"
+}
+{
+  "route": "/getMessageCount/12",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.861Z"
+}
+{
+  "route": "/getMessageCount/13",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.860Z"
+}
+{
+  "route": "/getMessageCount/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:33.862Z"
+}
+{
+  "route": "/getMessageCount/25",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.026Z"
+}
+{
+  "route": "/getMessageCount/18",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.027Z"
+}
+{
+  "route": "/getMessageCount/15",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.029Z"
+}
+{
+  "route": "/getMessageCount/16",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.028Z"
+}
+{
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.030Z"
+}
+{
+  "route": "/getMessageCount/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.033Z"
+}
+{
+  "route": "/getMessageCount/8",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.036Z"
+}
+{
+  "route": "/getMessageCount/25",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.180Z"
+}
+{
+  "route": "/getMessageCount/16",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.181Z"
+}
+{
+  "route": "/getMessageCount/18",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.181Z"
+}
+{
+  "route": "/getMessageCount/15",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.182Z"
+}
+{
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.184Z"
+}
+{
+  "route": "/getMessageCount/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.184Z"
+}
+{
+  "route": "/getMessageCount/8",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:34.189Z"
+}
+{
+  "route": "/getMessageCount/25",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:35.108Z"
+}
+{
+  "route": "/getMessageCount/18",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:35.109Z"
+}
+{
+  "route": "/getMessageCount/16",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:35.111Z"
+}
+{
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:35.113Z"
+}
+{
+  "route": "/getMessageCount/15",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:35.112Z"
+}
+{
+  "route": "/getMessageCount/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:35.117Z"
+}
+{
+  "route": "/getMessageCount/8",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:35.120Z"
+}
+{
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.885Z"
+}
+{
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.890Z"
+}
+{
+  "route": "/getMessageCount/12",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.891Z"
+}
+{
+  "route": "/getMessageCount/13",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.893Z"
+}
+{
+  "route": "/getMessageCount/10",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.894Z"
+}
+{
+  "route": "/getMessageCount/9",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.895Z"
+}
+{
+  "route": "/getMessageCount/8",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.899Z"
+}
+{
+  "route": "/getMessageCount/21",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.904Z"
+}
+{
+  "route": "/getMessageCount/22",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.905Z"
+}
+{
+  "route": "/getMessageCount/23",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.906Z"
+}
+{
+  "route": "/getMessageCount/25",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.908Z"
+}
+{
+  "route": "/getMessageCount/24",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.907Z"
+}
+{
+  "route": "/getMessageCount/15",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.910Z"
+}
+{
+  "route": "/getMessageCount/16",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.915Z"
+}
+{
+  "route": "/getMessageCount/17",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.916Z"
+}
+{
+  "route": "/getMessageCount/19",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.917Z"
+}
+{
+  "route": "/getMessageCount/18",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.917Z"
+}
+{
+  "route": "/getMessageCount/20",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:38.919Z"
+}
+{
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:44.658Z"
+}
+{
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:44.668Z"
+}
+{
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:47.874Z"
+}
+{
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:47.883Z"
+}
+{
+  "route": "/getMessageCount/14",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:56.072Z"
+}
+{
+  "route": "/getMessageCount/11",
+  "errMess": "relation \"game_message\" does not exist",
+  "dateTime": "2023-06-08T05:21:56.079Z"
+}
+{
+  "route": "/login",
+  "errMess": "email does not exist",
+  "dateTime": "2023-06-08T05:24:52.861Z"
+}
+{
+  "route": "/deleteGameList/1",
+  "errMess": "update or delete on table \"game\" violates foreign key constraint \"game_message_post_id_fkey\" on table \"game_message\"",
+  "dateTime": "2023-06-08T08:45:45.328Z"
+}
+{
+  "route": "/deleteGameList/1",
+  "errMess": "update or delete on table \"game\" violates foreign key constraint \"game_message_post_id_fkey\" on table \"game_message\"",
+  "dateTime": "2023-06-08T08:45:48.255Z"
 }

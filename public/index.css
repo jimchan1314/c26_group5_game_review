@@ -14,152 +14,6 @@
   cursor: pointer;
 }
 
-.collapsebtn{
-  font-family: 'ConnectionRegular';
-  font-weight: normal;
-  font-style: normal;
-  color: rgb(255, 248, 234);
-}
-
-.groupList{
-  height: 50px;
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  border: rgb(255, 248, 234);
-  border-style: dashed;
-  border-radius: 20px;
-  margin-left: 5px;
-  font-family: 'ConnectionRegular';
-  font-weight: normal;
-  font-style: normal;
-  color: rgb(255, 248, 234);
-  background-color: rgb(195, 129, 84);
-}
-
-.msgbox{
-  border-radius: 0% !important;
-  border: 0px !important;
-  background-color: #C38154;
-  color: rgb(255, 248, 234) !important;
-  padding: 5px;
-  font-family: 'ConnectionRegular';
-  font-weight: normal;
-  font-style: normal;
-  width: 100%;
-  margin-bottom:3px;
-}
-
-.joinGroupList{
-  height: 50px;
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  border: rgb(255, 248, 234);
-  border-style: dashed;
-  border-radius: 20px;
-  margin-left: 5px;
-  font-family: 'ConnectionRegular';
-  font-weight: normal;
-  font-style: normal;
-  color: rgb(255, 248, 234);
-  background-color: rgb(129, 91, 91);
-}
-
-
-.messageBox {
-  display: none;
-  width: 40px;
-  height: 40px;
-  background-color: rgb(255, 248, 234);
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 20px;
-}
-
-.inputMessage{
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left:0;
-  /* margin: 16px; */
-}
-
-/* .submitMsg{
-  display:none;
-} */
-.chatbox{
-  display:flex;
-  align-items: center;
-}
-
-.send{
-  flex-direction: row-reverse;
-}
-
-.chatbox > img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.chat{
-  width: fit-content;
-  
-  padding: 6px;
-  background-color: rgb(255, 255, 255, 0.8);
-  border-radius: 10px;
-
-}
-
-.offcanvas-body{
-  /* position: relative; */
-  background-color: rgb(158, 118, 118) ;
-  padding: 7px!important;
-}
-
-.msgContainer{
-  width: 100%;
-  height: 100%;
-  /* border: 2px solid #ffffff; */
-}
-
-.offcanvas-header {
-  border-bottom:1px solid #594545;
-  background-color: rgb(129, 91, 91);
-  color: rgb(255, 248, 234);
-  font-family: 'ConnectionRegular';
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-.disable{
-  display:none;
-}
-
-.flex{
-  height: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: rgb(158, 118, 118);
-  font-family: 'ConnectionRegular';
-  font-weight: normal;
-  font-style: normal;
-  color: rgb(255, 248, 234);
-}
-
-
-
-
 
 
 #navbar {
@@ -222,6 +76,7 @@ form>div>.button-flexBox>button {
   height: 30px;
   margin-right: 4px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .dropdown {
@@ -514,7 +369,8 @@ form>div>.button-flexBox>button {
   overflow: hidden;
   transition: all 0.6s ease 0s;
   padding: 5px;
-  
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .box .box-content{
@@ -551,14 +407,13 @@ form>div>.button-flexBox>button {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   margin: 0 0 10px;
   display: block;
-  cursor: pointer;
 }
 
 .gBoxName {
   font-family: 'ConnectionRegular';
   font-weight: normal;
   font-style: normal;
-  font-size: 35px;
+  font-size: 30px;
 
 }
 
@@ -573,6 +428,7 @@ form>div>.button-flexBox>button {
 .gBoxCount {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .gameCoverDiv {
@@ -599,7 +455,7 @@ form>div>.button-flexBox>button {
   
 }
 #profile {
-  max-width: 1200px;
+  
   margin: 0px auto;
 }
 #videoGameRank{
@@ -619,7 +475,11 @@ form>div>.button-flexBox>button {
 .profileForm {
   width: 500px
 }
-
+.profilePostContent{
+  margin-left: 15vw;
+  display: flex;
+  flex-wrap: wrap;
+}
 .profileContent {
   padding-top: 100px;
   width: 500px;
@@ -641,6 +501,8 @@ form>div>.button-flexBox>button {
   text-align: center;
 }
 
+
+
 #userIcon {
   display: none;
 }
@@ -650,7 +512,7 @@ form>div>.button-flexBox>button {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-
+  object-fit: cover;
 }
 
 .input-group {
@@ -739,7 +601,7 @@ form>div>.button-flexBox>button {
 }
 
 .inputEmail {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .modal-title {
@@ -767,7 +629,7 @@ form>div>.button-flexBox>button {
   border: 0px !important;
   background-color: #C38154;
   color: rgb(255, 248, 234) !important;
-  padding: 5px;
+  ;
   font-family: 'ConnectionRegular';
   font-weight: normal;
   font-style: normal;
@@ -929,9 +791,6 @@ form>div>.button-flexBox>button {
 }
 
 /* gameForm */
-.likeButton{
-  color: rgb(255, 248, 234);
-}
 
 #ranking {
   color: rgb(255, 248, 234);
@@ -1112,7 +971,7 @@ form>div>.button-flexBox>button {
 }
 .card-title {
   color:rgb(255, 248, 234);
-  font-family: 'ConnectionRegular';
+  font-family: 'ConnectionRegular','DotGothic16', sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -1123,4 +982,13 @@ form>div>.button-flexBox>button {
 
 .card-body{
   padding-bottom: 10px;
+  padding-top: 10px;
 }
+
+.fa-comment-dots, .fa-heart{
+  color:#FFC26F
+}
+
+/* .fa-heart{
+
+} */

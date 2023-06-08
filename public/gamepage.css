@@ -3,10 +3,14 @@
     font-weight: normal;
     font-style: normal;
     background-color: rgb(89, 69, 69);
-    border: 4px dashed rgb(158, 118, 118);
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
+    /* border: 4px dashed rgb(158, 118, 118); */
+    width: 95%;
+    padding: 10px 10px 0px 10px;
+    /* margin-top: 10px; */
+    margin: 10px auto;
+    position: 10%;
+
+    position: relative;
 }
 
 /* .layer1{
@@ -16,8 +20,9 @@
 
 } */
 
-.layer2{
-    width: 500px;
+.layer2 {
+    display: flex;
+    align-items: center;
 }
 
 
@@ -25,6 +30,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
+}
+
+#curGameCover > img{
+    height: 300px;
+    /* height:; */
 }
 
 .layer2 > .col-8{
@@ -36,18 +47,50 @@
 .l2r {
     color: bisque;
     background-color: rgb(129, 91, 91);
+    padding-left: 12px;
+    display: flex;
+    align-items: center;
 }
 
-
-/* .layer3{
-    background-color:cadetblue;
+.userbtnSet{
+    position:absolute;
+    left: -5px;
+    top: 0px;
 }
 
-.layer4{
-    background-color: darkolivegreen;
+.userbtnSet > .fa-solid{
+    display: -webkit-box;
 }
 
-.layer5{
+.gameName1{
+    font-family: 'ConnectionRegular','DotGothic16', sans-serif;
+    
+}
+
+#gameName1{
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    padding-top: 5px;
+    font-family: 'ConnectionRegular','DotGothic16', sans-serif;
+    color: rgb(255, 248, 234);
+    background-color:unset;
+}
+
+.layer3{
+    padding-right: 22px;
+}
+.layer3 > #description {
+    margin-left: 12px;
+}
+
+.layer4 > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .layer5{
     background-color: darkseagreen;
 } */
 
@@ -57,8 +100,182 @@
     font-style: normal;
     background-color: rgb(89, 69, 69);
     border: thick double rgb(158, 118, 118);
-    width: 100%;
+    width: 95%;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 20px !important;
     /* border-radius: 0,0,0,10%; */
+    margin: 10px auto;
+    
 }
+
+.layer8{
+    margin-right: 32px;
+}
+.layer8 > .messageCard {
+    font-family: 'ConnectionRegular';
+    font-weight: normal;
+    font-style: normal;
+    background-color: rgb(158, 118, 118);
+    margin: 1% 2%;
+    display: flex;
+    justify-content: space-between;
+}
+.layer6 > .messageTop {
+    margin: 1% 2%;
+}
+.layer6 > div:nth-child(1) {
+    color: #EF9A53;
+}
+.layer6 > div.col-11.messageTop > div:nth-child(1) {
+    font-size: 24px;
+}
+#expandButton {
+    color: #FFC26F;
+    cursor: pointer;
+}
+/* card-body */
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div {
+    display: flex;
+    padding: 10px 0;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.userInfo {
+    /* width: 20%; */
+    margin: 10px;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.userInfo > div {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: rgb(89, 69, 69);
+    font-size: 20px;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div {
+    display: flex;
+    justify-content: space-between;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody {
+    border: dashed rgb(89, 69, 69);
+    border-width: 5px;
+    /* width: 80%; */
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: rgb(89, 69, 69);
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > .textContainer {
+    font-size: 20px;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > div {
+    width: 100%;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > .messagePanel {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > div.timeStamp {
+    display: flex;
+    align-items: flex-end;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > .buttonPanel {
+    display: flex;
+    justify-content: space-between;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.userInfo > img.resize {
+    width: 200px;
+    height: auto;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > div.messagePanel > div.buttonPanel > i.fa-solid.fa-trash-can {
+    color: rgb(89, 69, 69);
+    cursor: pointer;
+}
+#expandEditMessage {
+    color: rgb(89, 69, 69);
+    cursor: pointer;
+}
+#editMessageForm > div.col-12 > button, #messageForm > div.col-12 > button {
+    color: rgb(89, 69, 69);
+    background-color: rgb(255, 248, 234);
+    border-style: none
+}
+
+#messageForm > .mb-3 > .form-control {
+    background-color: rgb(129, 91, 91);
+}
+/* hover effects of buttons */
+#expandButton:hover {
+    color:#EF9A53;
+}
+.layer6 > div.row.layer8.layerdiv.messageContainer > div > div > div.messageCardBody > div.messagePanel > div.buttonPanel > i.fa-solid.fa-trash-can:hover {
+    color: #FFC26F;
+}
+#expandEditMessage:hover {
+    color: #FFC26F;
+}
+
+.userInfo > div > img {
+    max-width: 100px;
+    height: auto;
+    object-fit: scale-down;
+}
+.spBorder {
+    --pixel-bg: rgb(89, 69, 69);
+    box-shadow:
+      0 calc(var(--pixel) * -3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+      0 calc(var(--pixel) * 3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+      0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+      0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+      0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+      0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+      0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+      0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+  
+  
+      calc(var(--pixel) * -1) 0 0 0 var(--pixel-border),
+      var(--pixel) 0 0 0 var(--pixel-border),
+      0 calc(var(--pixel) * -2) 0 0 var(--pixel-border),
+      0 calc(var(--pixel) * 2) 0 0 var(--pixel-border),
+      0 calc(var(--pixel) * -5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+      0 calc(var(--pixel) * 5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+      0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+      0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+      0 calc(var(--pixel) * -10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+      0 calc(var(--pixel) * 10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+      0 calc(var(--pixel) * -13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+      0 calc(var(--pixel) * 13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+  
+    /* border */
+      calc(var(--pixel) * -2) 0 0 0 var(--pixel-border-2),
+      calc(var(--pixel) * 2) 0 0 0 var(--pixel-border-2),
+      0 calc(var(--pixel) * -1) 0 var(--pixel) var(--pixel-border-2),
+      0 var(--pixel) 0 var(--pixel) var(--pixel-border-2),
+      0 calc(var(--pixel) * -4) 0 0 var(--pixel-border-2),
+      0 calc(var(--pixel) * 4) 0 0 var(--pixel-border-2),
+      0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+      0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+      0 calc(var(--pixel) * -8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+      0 calc(var(--pixel) * 8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+      0 calc(var(--pixel) * -11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+      0 calc(var(--pixel) * 11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+      0 calc(var(--pixel) * -14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+      0 calc(var(--pixel) * 14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+  
+  
+      calc(var(--pixel) * -3) 0 0 0 var(--pixel-border-3),
+      calc(var(--pixel) * 3) 0 0 0 var(--pixel-border-3),
+      0 0 0 calc(var(--pixel) * 2) var(--pixel-border-3),
+      0 calc(var(--pixel) * -3) 0 var(--pixel) var(--pixel-border-3),
+      0 calc(var(--pixel) * 3) 0 var(--pixel) var(--pixel-border-3),
+      0 calc(var(--pixel) * -5) 0 0 var(--pixel-border-3),
+      0 calc(var(--pixel) * 5) 0 0 var(--pixel-border-3),
+      0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+      0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+      0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+      0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+      0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+      0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+      0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3),
+      0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
+  
+  }

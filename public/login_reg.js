@@ -1,12 +1,10 @@
 
 async function displayNotLogin(html) {
     document.querySelector('.collapse').innerHTML = html;
-    document.querySelector('.messageBox').style = 'display: none;'
 }
 
 async function displayLogin(html) {
     document.querySelector('.collapse').innerHTML = html;
-    document.querySelector('.messageBox').style = 'display: flex;'
 
     let user = await localStorage.getItem('user')
     user = JSON.parse(user)
@@ -185,7 +183,7 @@ async function renderProfile(html) {
 
     profileIcon.addEventListener('click', async (e) => {
         e.target = inputImg.click()
-        
+        console.log(e.target)
 
     })
     inputImg.addEventListener('change', async (e) => {

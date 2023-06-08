@@ -3,20 +3,14 @@ import express from "express"
 import path from 'path'
 import expressSession from "express-session";
 import { UserController } from "./controller/UserController";
-import { GameRoute, GroupRoute, MessageRoute, UserRoute } from "./routes/Routes";
+import { GameRoute, MessageRoute, UserRoute } from "./routes/Routes";
 import * as yup from 'yup';
 import { GameController } from "./controller/GameController";
 import { MessageController } from "./controller/MessageController";
-import { GroupController } from "./controller/GroupController";
-import { Server as SocketIO } from "socket.io";
-import { Socket } from "dgram";
 
 
 const app = express();
 const server = new http.Server(app)
-const io = new SocketIO(server)
-
-
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -87,23 +81,8 @@ let messageController = new MessageController()
 let messageRoutes = new MessageRoute(messageController)
 app.use("/message",messageRoutes.routes)
 
-let groupController = new GroupController()
-let groupRoutes = new GroupRoute(groupController)
-app.use("/group",groupRoutes.routes)
-
-
 app.use("*",(req, res) => {
   res.sendFile(path.join(publicFolder,'404.html'))
-});
-
-io.use((socket, next) => {
-  let req = socket.request as express.Request;
-  let res = req.res as express.Response;
-  sessionMiddleware(req, res, next as express.NextFunction);
-})
-
-io.on("connection", function (socket) {
-  console.log(socket.id)
 });
 
 let port = 8080;
