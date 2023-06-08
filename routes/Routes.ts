@@ -4,6 +4,7 @@ import { GameController } from "../controller/GameController";
 import { UserController } from "../controller/UserController";
 import { MessageController } from "../controller/MessageController";
 import { isLoggedInAPI } from "../guard";
+import { GroupController } from "../controller/GroupController";
 
 class Routes{
     routes:express.Router = express.Router();
@@ -76,4 +77,26 @@ export class MessageRoute extends Routes {
         this.routes.delete('/deleteMessage/:id',isLoggedInAPI,controller.deleteMessage)
         this.routes.get('/getMessage/:id',controller.getMessage)
     }
+}
+export interface IGroupController{
+    createGroup(req:Request,res:Response):Promise<void>
+    getGroupList(req:Request,res:Response):Promise<void>
+    joinGroup(req:Request,res:Response):Promise<void>
+    getJoinGroupList(req:Request,res:Response):Promise<void>
+    getChatGroup(req:Request,res:Response):Promise<void>
+    addGroupMsg(req:Request,res:Response):Promise<void>
+}
+
+export  class GroupRoute extends Routes {
+    constructor(controller: GroupController) {
+        super();
+        this.routes.post('/createGroup',isLoggedInAPI,controller.createGroup)
+        this.routes.get('/getGroupList',isLoggedInAPI,controller.getGroupList)
+        this.routes.post('/joinGroup/:id',isLoggedInAPI,controller.joinGroup)
+        this.routes.get('/getJoinGroupList',isLoggedInAPI,controller.getJoinGroupList)
+        this.routes.get('/getChatGroup/:id',isLoggedInAPI,controller.getChatGroup)
+        this.routes.post('/addGroupMsg/',isLoggedInAPI,controller.addGroupMsg)
+    }
+    
+   
 }

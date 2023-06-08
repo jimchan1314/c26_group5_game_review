@@ -5,6 +5,29 @@ CREATE TABLE "game_message"(
 "users_id" VARCHAR (40) references "users"(id) not null,
 "create_at" VARCHAR(255) not null
 );
+
+CREATE TABLE "chat_group" (
+    "id" SERIAL primary key,
+    "group_name" VARCHAR(255) not null
+);
+
+
+CREATE TABLE ref_group_users (
+    "group_id" INTEGER references "chat_group"(id) not null,
+    "users_id" VARCHAR(100) references "users"(id) not null
+);
+
+
+
+CREATE TABLE "group_message" (
+    "group_id" INTEGER references "chat_group"(id) not null,
+    "message" VARCHAR(255) not null,
+    "users_id" VARCHAR(100) references "users"(id) not null
+);
+
+
+
+
 CREATE TABLE "game"(
 "post_id" SERIAL primary key,
 "name" VARCHAR(100) NOT NULL,

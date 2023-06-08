@@ -12,19 +12,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/mill" type="text/css"/>
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/medievalsharp" type="text/css"/>
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/stop-motion--" type="text/css"/>
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/brush-lettering-one" type="text/css"/>
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/connection" type="text/css"/>
-    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="gamepage.css" />
-    <link rel="icon" href="gamelogo.png"/>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/mill" type="text/css" />
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/medievalsharp" type="text/css" />
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/stop-motion--" type="text/css" />
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/brush-lettering-one" type="text/css" />
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/connection" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="gamepage.css" />
+  <link rel="icon" href="gamelogo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
@@ -57,9 +54,9 @@
       <div class="modal-dialog">
         <div class="modal-content" id="editGameFormModal">
           <!-- <div class="form-modal-body1"> -->
-            <div class="editGameForm">
+          <div class="editGameForm">
 
-            </div>
+          </div>
           <!-- </div> -->
         </div>
       </div>
@@ -69,10 +66,30 @@
 
     </section> -->
     <session class="content">
-      
+
     </session>
 
+    <button class="disable btn btn-primary" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable both scrolling &
+      backdrop</button>
 
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+      id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      
+      <div class="offcanvas-body">
+        
+      </div>
+
+    </div>
+
+
+    <div class="messageBox">
+      <i class="messageIcon fa-solid fa-message"></i>
+    </div>
 
   </main>
 
@@ -88,8 +105,8 @@
   <script src="login_reg.js"></script>
   <script src="gameForm.js"></script>
 
-  
-  
+
+
 
 </body>
 

@@ -172,7 +172,7 @@ function renderAllGameGuest(gameList) {
            </div>
            <div class="card-body gBoxCount">
            <i class="fa-regular fa-comment-dots"> Message: 100</i>
-           <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
+           <i data-likeid=${obj.post_id} class="fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
            </div>
        </div>
       <div class="box-content">
@@ -207,7 +207,7 @@ obj.forEach(obj =>
         </div>
         <div class="card-body gBoxCount">
         <i class="fa-regular fa-comment-dots"> Message: 100</i>
-        <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
+        <i data-likeid=${obj.post_id} class="fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
         </div>
     </div>
     <div class="box-content">
@@ -419,8 +419,8 @@ async function renderVideoRankList(obj){
           <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${obj.create_post}</div>
           </div>
           <div class="card-body gBoxCount">
-          <i class="fa-regular fa-comment-dots"> Message: 100</i>
-          <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
+          <i class="likeButton fa-regular fa-comment-dots"> Message: 100</i>
+          <i data-likeid=${obj.post_id} class="likeButton fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
           </div>
       </div>
       <div class="box-content">
@@ -454,8 +454,8 @@ async function renderBoardRankList(obj){
         <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${obj.create_post}</div>
         </div>
         <div class="card-body gBoxCount">
-        <i class="fa-regular fa-comment-dots"> Message: 100</i>
-        <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
+        <i class="likeButton fa-regular fa-comment-dots"> Message: 100</i>
+        <i data-likeid=${obj.post_id} class="likeButton fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
         </div>
     </div>
     <div class="box-content">

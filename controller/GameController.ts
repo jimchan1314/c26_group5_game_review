@@ -165,7 +165,7 @@ export class GameController implements IGameController{
 
     async getVideoRank(req: Request, res: Response): Promise<void>{
         try {
-            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Video Game' ORDER BY game.like_count DESC LIMIT 10`)
+            let {rows} = await db.query(`SELECT * FROM game JOIN users ON users.id = game.create_users_id WHERE game_type = 'Video Game' ORDER BY game.like_count DESC LIMIT 10`)
 
             res.json({isError:false,errMess:"",data:rows})
         } catch (error){
@@ -176,7 +176,7 @@ export class GameController implements IGameController{
 
     async getBoardRank(req: Request, res: Response): Promise<void>{
         try {
-            let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Board Game' ORDER BY game.like_count DESC LIMIT 10`)
+            let {rows} = await db.query(`SELECT * FROM game JOIN users ON users.id = game.create_users_id WHERE game_type = 'Board Game' ORDER BY game.like_count DESC LIMIT 10`)
 
             res.json({isError:false,errMess:"",data:rows})
         } catch (error){
