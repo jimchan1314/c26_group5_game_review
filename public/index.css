@@ -342,7 +342,7 @@ form>div>.button-flexBox>button {
 /* game section */
 
 .curGameCover > img{
-  
+
 }
 .gameSession {
   padding: 10px;
@@ -487,7 +487,11 @@ form>div>.button-flexBox>button {
 .profileContent {
   padding-top: 100px;
   width: 500px;
-  margin-left: 50%;
+  /* margin-left: 50%; */
+}
+
+.likebtn{
+  cursor: pointer;
 }
 
 .profile_PrivateForm {

@@ -207,4 +207,15 @@ export class GameController implements IGameController{
             res.json({isError:true,errMess:error.message,data:null})
         }
     }
+
+    async getOwnPost(req: Request, res: Response):Promise<void> {
+        try{
+            let {rows} = await db.query(`SELECT * FROM game WHERE create_users_id = $1`,[req.session.userId])
+
+            res.json({isError:false,errMess:"",data:rows})
+        } catch (error){
+            errorHandler({status:error.status,route:req.path,errMess:error.message})
+            res.json({isError:true,errMess:error.message,data:null})
+        }
+    }
 }

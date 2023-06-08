@@ -82,6 +82,7 @@
 }
 .layer3 > #description {
     margin-left: 12px;
+    margin-bottom: 5px;
 }
 
 .layer4 > div{
@@ -116,7 +117,7 @@
     font-weight: normal;
     font-style: normal;
     background-color: rgb(158, 118, 118);
-    margin: 1% 2%;
+    margin: 1%;
     display: flex;
     justify-content: space-between;
 }
@@ -201,9 +202,9 @@
 }
 
 #messageForm > .mb-3 > .form-control {
-    background-color: rgb(129, 91, 91);
+    /* background-color: rgb(129, 91, 91); */
 }
-/* hover effects of buttons */
+/* hover effects of buttons */ 
 #expandButton:hover {
     color:#EF9A53;
 }

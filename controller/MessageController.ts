@@ -14,6 +14,7 @@ type EditedMessage = {
 }
 
 export class MessageController implements IMessageController{
+
     async addMessage(req:Request,res:Response):Promise<void> {
         try {
             let form = await parseFormDataGame(req) as Message;

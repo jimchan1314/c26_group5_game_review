@@ -580,7 +580,7 @@ async function fetchSingleGame(gameIDD) {
   document.querySelector('div#description').innerHTML = json.data.description
   document.querySelector('#createPost1').textContent = json.data.create_post
   document.querySelector('#updatePost1').textContent = json.data.update_post
-  document.querySelector('#likeCount1').innerHTML = `<i data-likeid=${gameIDD} class="fa-regular fa-heart"> like: ${json.data.like_count}</i>`
+  document.querySelector('#likeCount1').innerHTML = `<i data-likeid=${gameIDD} class="fa-regular fa-heart likebtn"> like: ${json.data.like_count}</i>`
   document.querySelector('#usersName1').textContent = json.data.users_name
   document.querySelector('#curGameCover').innerHTML = `<img src=${json.data.game_cover} />`
   document.querySelector('#messageCount').innerHTML = `<i class=" fa-regular fa-comment-dots" > Message: ${messageJsonCount}</i>`
@@ -603,7 +603,7 @@ async function fetchSingleGame(gameIDD) {
       <i data-id=${gameIDD} class="btn col-12 fa-solid fa-trash-can"> Delete</i>
       `;
       document.querySelector('#likeCount1').innerHTML =
-        `<i data-likeid=${gameIDD} class="btn fa-regular fa-heart"> like: ${json.data.like_count}</i>`;
+        `<i data-likeid=${gameIDD} class="btn fa-regular fa-heart likebtn"> like: ${json.data.like_count}</i>`;
     }
     else {
       // ""
