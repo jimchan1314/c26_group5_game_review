@@ -340,6 +340,10 @@ form>div>.button-flexBox>button {
 
 
 /* game section */
+
+.curGameCover > img{
+  
+}
 .gameSession {
   padding: 10px;
   display: flex;

@@ -37,3 +37,7 @@ CREATE TABLE "users"(
 
 -- van test join table
 -- SELECT message_id,text,post_id,users_id,message_create_at,users_icon,users_name FROM game_message JOIN users ON users_id = users.id where post_id=$1 ORDER BY message_create_at ASC; 
+
+SELECT * FROM game_message;
+-- DELETE * FROM game_message WHERE post_id=$1`,[gameID];
+DELETE FROM game_message WHERE post_id=$1`,[gameID];

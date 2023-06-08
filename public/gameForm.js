@@ -131,7 +131,7 @@ async function renderCreateGame(html) {
 async function renderAllGameGuest(gameList) {
   // console.log(gameList.data)
 
-  gameList.forEach(async(obj) => {
+  gameList.forEach(async (obj) => {
 
     let messageRes = await fetch(`message/getMessageCount/${obj.post_id}`)
     let messageJson = await messageRes.json()
@@ -232,14 +232,14 @@ async function fetchVideoGame() {
 async function renderVideoTemplate(obj) {
   console.log("gf217", obj)
 
-  obj.forEach(async(obj) => {
+  obj.forEach(async (obj) => {
 
     let messageRes = await fetch(`message/getMessageCount/${obj.post_id}`)
     let messageJson = await messageRes.json()
     let messageJsonCount = messageJson.data[0].count
 
     document.querySelector('#videoGame').innerHTML +=
-    `
+      `
   <div class="gameBox mb-3">
     <div class="row box animate__animated animate__flipInY">
     <div class="col-md-4 gameCoverDiv">
@@ -425,6 +425,7 @@ async function renderEditGame(id) {
     event.preventDefault();
 
 
+
     const formData = new FormData(form);
 
     let res = await fetch(`game/editGameList/${id}`, {
@@ -450,18 +451,19 @@ async function renderEditGame(id) {
         showConfirmButton: false,
         timer: 1500
       })
+      await form.reset();
+      document.querySelector('.edit-close').click()
+      await fetchGameContentWID('gamepage.html', displayContent, id)
 
 
     }
-    await indexCheck();
-    document.querySelector('.edit-close').click()
-    await form.reset();
-    
-    fetchGameContentWID('gamepage.html',displayContent,`${json.data.post_id}`)
-    
+
+
+
   });
-  await indexCheck();
+
 }
+    
 
 async function renderVideoRankList(obj) {
   document.querySelector('#videoGame').innerHTML = ''
@@ -518,14 +520,14 @@ async function renderBoardRankList(obj) {
   for (let d of data) {
     i++
 
-    
+
 
     let messageRes = await fetch(`message/getMessageCount/${d.post_id}`)
     let messageJson = await messageRes.json()
     let messageJsonCount = messageJson.data[0].count
 
     document.querySelector('#boardGame').innerHTML +=
-    `
+      `
     <div class="gameBox mb-3">
       <div id="ranking" class="rank_${i + 1}">NO.${i + 1}</div> 
       <div class="row box animate__animated animate__flipInY">
@@ -558,7 +560,7 @@ async function renderBoardRankList(obj) {
 }
 
 async function fetchSingleGame(gameIDD) {
-
+  console.log(gameIDD)
   //console.log("gf386", gameIDD)
   // console.log(gf387,user)
   let res = await fetch(`/game/getSingleGame/${gameIDD}`)
@@ -575,7 +577,7 @@ async function fetchSingleGame(gameIDD) {
 
   document.querySelector('#gameName1').textContent = json.data.name
   document.querySelector('#gameType1').textContent = json.data.game_type
-  document.querySelector('#description').textContent = json.data.description
+  document.querySelector('div#description').innerHTML = json.data.description
   document.querySelector('#createPost1').textContent = json.data.create_post
   document.querySelector('#updatePost1').textContent = json.data.update_post
   document.querySelector('#likeCount1').innerHTML = `<i data-likeid=${gameIDD} class="fa-regular fa-heart"> like: ${json.data.like_count}</i>`

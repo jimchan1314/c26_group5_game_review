@@ -56,7 +56,11 @@ export class GameController implements IGameController{
     async deleteGameList(req:Request,res:Response):Promise<void>{
         try {
             let gameID = req.params.id
+
+            await db.query(`DELETE FROM game_message WHERE post_id=$1`,[gameID])
+            await db.query(`DELETE FROM like_game WHERE game_id=$1`,[gameID])
             await db.query(`DELETE FROM game WHERE game.post_id=$1`,[gameID])
+            
             res.json({isError:false,errMess:"",data:"Success delete Game"})
 
         } catch (error) {
@@ -91,12 +95,12 @@ export class GameController implements IGameController{
             let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');
 
             if(!gameData.gameCover){
-                let {rows} = await db.query(`UPDATE game SET name = $1, game_type = $2, description = $3, update_post = $4 WHERE post_id = $5 RETURNING post_id`,
+                let {rows} = await db.query(`UPDATE game SET name = $1, game_type = $2, description = $3, update_post = $4 WHERE post_id = $5`,
                 [gameData.gameName, gameData.game_type, gameData.description, currTime, gameID]);
                 res.json({isError:false,errMess:"",data:rows[0]})
 
             }else{
-                let {rows} = await db.query(`UPDATE game SET name = $1, game_type = $2, description = $3, game_cover = $4, update_post = $5 WHERE post_id = $6 RETURNING post_id`,
+                let {rows} = await db.query(`UPDATE game SET name = $1, game_type = $2, description = $3, game_cover = $4, update_post = $5 WHERE post_id = $6`,
                 [gameData.gameName, gameData.game_type, gameData.description, gameData.gameCover, currTime, gameID]);
                 res.json({isError:false,errMess:"",data:rows[0]})
             }
@@ -196,17 +200,6 @@ export class GameController implements IGameController{
         try {
             // let {rows} = await db.query(`SELECT * FROM game WHERE game_type = 'Board Game' ORDER BY game.like_count DESC LIMIT 10`)
             let {rows} = await db.query(`SELECT * FROM (SELECT * FROM game WHERE game_type = 'Board Game') as table1 inner JOIN users ON users.id = table1.create_users_id  ORDER BY table1.like_count DESC LIMIT 10`)
-
-            res.json({isError:false,errMess:"",data:rows})
-        } catch (error){
-            errorHandler({status:error.status,route:req.path,errMess:error.message})
-            res.json({isError:true,errMess:error.message,data:null})
-        }
-    }
-
-    async getOwnPost(req: Request, res: Response):Promise<void> {
-        try{
-            let {rows} = await db.query(`SELECT * FROM game WHERE create_users_id = $1`,[req.session.userId])
 
             res.json({isError:false,errMess:"",data:rows})
         } catch (error){
