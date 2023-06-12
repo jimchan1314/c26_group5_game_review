@@ -35,7 +35,8 @@
 
 #curGameCover > img{
     height: 300px;
-    /* height:; */
+    width: 100%;
+    object-fit: contain;
 }
 
 .layer2 > .col-8{

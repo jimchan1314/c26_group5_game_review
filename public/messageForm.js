@@ -47,10 +47,10 @@ async function renderAddMessage(postId) {
                 timer: 1500
             })
 
-            await fetchMessage('gamepage.html', renderGetMessage(postId))
+            
         }
         await messageForm.reset()
-        await fetchMessage('gamepage.html', renderGetMessage(postId))
+        await fetchGameContentWID('gamepage.html', displayContent, postId)
 
     })
 }
@@ -95,8 +95,9 @@ async function deleteMessage(msgId, postId) {
                     showConfirmButton: false,
                     timer: 1500
                 })
-                await fetchMessage('gamepage.html', renderGetMessage(postId))
+                
             }
+            await fetchGameContentWID('gamepage.html', displayContent, postId)
         }
     })
 }

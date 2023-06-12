@@ -48,9 +48,9 @@ export interface IGameController{
 export class GameRoute  extends Routes{
     constructor(controller:GameController){
         super()
-        this.routes.post('/addGameList',controller.addGameList)
-        this.routes.put('/editGameList/:id',controller.editGameList)
-        this.routes.delete('/deleteGameList/:id',controller.deleteGameList)
+        this.routes.post('/addGameList',isLoggedInAPI,controller.addGameList)
+        this.routes.put('/editGameList/:id',isLoggedInAPI,controller.editGameList)
+        this.routes.delete('/deleteGameList/:id',isLoggedInAPI,controller.deleteGameList)
         this.routes.get('/getGameList',controller.getGameList)
         this.routes.get('/getSingleGame/:id',controller.getSingleGame)
         this.routes.post('/likeGame/:id',controller.likeGame)

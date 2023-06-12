@@ -240,33 +240,33 @@ async function renderVideoTemplate(obj) {
 
     document.querySelector('#videoGame').innerHTML +=
       `
-  <div class="gameBox mb-3">
-    <div class="row box animate__animated animate__flipInY">
-    <div class="col-md-4 gameCoverDiv">
-    
-      <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
-    </div>
-    <div class="col-md-8">
-        <div class="card-body gBoxBody">
-        
-        <h4 class="card-title gBoxName">${obj.name}</h4>
+      <div class="gameBox mb-3">
+        <div class="row box animate__animated animate__flipInY">
+          <div class="col-md-4 gameCoverDiv">
+          
+            <img src="${obj.game_cover}" class="img-fluid rounded-start gBoxCover">
+          </div>
+          <div class="col-md-8">
+              <div class="card-body gBoxBody">
+              
+              <h4 class="card-title gBoxName">${obj.name}</h4>
 
-        
-        <div class="card-text"><span style="color:#EF9A53">Created by:</span> ${obj.users_name}</div>
-        <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${obj.create_post}</div>
+              
+              <div class="card-text"><span style="color:#EF9A53">Created by:</span> ${obj.users_name}</div>
+              <div class="card-text"><span style="color:#EF9A53">Create at:</span> ${obj.create_post}</div>
+              </div>
+              <div class="card-body gBoxCount">
+              <i class="fa-regular fa-comment-dots"> Message:<span id="messageCount-${obj.post_id}"> ${messageJsonCount}</span></i>
+              <i data-likeid=${obj.post_id} class="fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
+              </div>
+          </div>
+          <div class="box-content">
+            <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
+          </div>
         </div>
-        <div class="card-body gBoxCount">
-        <i class="fa-regular fa-comment-dots"> Message:<span id="messageCount-${obj.post_id}"> ${messageJsonCount}</span></i>
-        <i data-likeid=${obj.post_id} class="fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i>
-        </div>
-    </div>
-    <div class="box-content">
-      <div class="btn visit" onclick="fetchGameContentWID('gamepage.html',displayContent,${obj.post_id},fetchSingleGame)">Visit Page</div>
-    </div>
-  </div>
-</div>
+      </div>
 
-`})
+  `})
 
 
 
@@ -630,6 +630,7 @@ async function fetchSingleGame(gameIDD) {
 
 async function renderOwnPostList(obj){
   obj.forEach(async obj => {
+    console.log("11",obj)
     let messageRes = await fetch(`message/getMessageCount/${obj.post_id}`)
     let messageJson = await messageRes.json()
     let messageJsonCount = messageJson.data[0].count
@@ -644,15 +645,15 @@ async function renderOwnPostList(obj){
           <div class="card-body gBoxBody">
         
           <h4 class="card-title gBoxName">${obj.name}</h4>
-          <div class="card-text gBoxType"><span style="color:#EF9A53">Game Type:</span> ${obj.game_type}</div>
-          <p class="card-text gBoxDescription"><span style="color:#EF9A53">Description:</span><br>${obj.description}</p>
-          <div class="card-text"><span style="color:#EF9A53">Created by:</span>${obj.users_name}</div>
-          <div class="card-text"><span style="color:#EF9A53">Create at:</span>${obj.create_post}</div>
+          <div class="card-text gBoxType"><span style="color:#EF9A53">Game Type: </span> ${obj.game_type}</div>
+          
+          <div class="card-text"><span style="color:#EF9A53">Created by: </span>${obj.users_name}</div>
+          <div class="card-text"><span style="color:#EF9A53">Create at: </span>${obj.create_post}</div>
           </div>
           <div class="card-body gBoxCount">
           
           <i class="fa-regular fa-comment-dots"> Message:<span id="messageCount-${obj.post_id}"> ${messageJsonCount}</span></i>
-          <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart">like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
+          <i data-likeid=${obj.post_id} class="btn fa-regular fa-heart"> like:<span id="likeCount-${obj.post_id}"> ${obj.like_count}</span></i> 
           </div>
       </div>
       <div class="box-content">
@@ -670,7 +671,7 @@ async function renderOwnPostList(obj){
 
 }
 
-
+{/* <p class="card-text gBoxDescription"><span style="color:#EF9A53">Description: </span><br>${obj.description}</p> */}
 
 // document.querySelectorAll('#likeCount1').forEach
 // async function renderMessageCount(gameID){
