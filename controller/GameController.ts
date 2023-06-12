@@ -5,30 +5,10 @@ import { db } from "../db";
 import { errorHandler } from "../errorHandler";
 import { IGameController } from "../routes/Routes";
 import moment from "moment";
-
-// import jsonfile from "jsonfile";
-// import { type } from "os";
-
-type Game = {
-    gameName:string,
-    game_type:string,
-    description:string,
-    gameCover?:string,
-}
-
-type EditGame = {
-    gameName:string,
-    game_type:string,
-    description:string,
-    gameCover?:string,
-}
-
+import { Game, EditGame } from "../types";
 
 export class GameController implements IGameController{
-
-    
     async addGameList(req:Request,res:Response):Promise<void>{
-
         try {
             
             let form = await parseFormDataGame(req) as Game; 

@@ -77,11 +77,11 @@ async function fetchBoardRank() {
   }
 }
 
-async function fetchOwnPost(){
+async function fetchOwnPost() {
   let res = await fetch('game/getOwnPost/')
   let json = await res.json()
 
-  if(json.isError) {
+  if (json.isError) {
     alert(json.errMess)
   } else {
     renderOwnPostList(json.data)
@@ -360,7 +360,7 @@ async function renderAllGame(gameList) {
         timer: 1500
       })
 
-      indexCheck()
+      await indexCheck()
     }
 
   }))
@@ -392,7 +392,7 @@ async function renderAllGame(gameList) {
           timer: 1500
         })
 
-        indexCheck()
+        await indexCheck()
       }
     }
   }))
@@ -463,7 +463,7 @@ async function renderEditGame(id) {
   });
 
 }
-    
+
 
 async function renderVideoRankList(obj) {
   document.querySelector('#videoGame').innerHTML = ''
@@ -478,9 +478,7 @@ async function renderVideoRankList(obj) {
     let messageJsonCount = messageJson.data[0].count
 
     document.querySelector('#videoGame').innerHTML +=
-    `
-    
-    <div class="gameBox mb-3">
+      `<div class="gameBox mb-3">
     <div id="ranking" class="rank_${i + 1}">NO.${i + 1}</div> 
       <div class="row box animate__animated animate__flipInY">
       <div class="col-md-4 gameCoverDiv">
@@ -517,6 +515,7 @@ async function renderBoardRankList(obj) {
   let data = obj
 
   let i = -1
+  const template = document.querySelector("#gameBox-template");
   for (let d of data) {
     i++
 
@@ -526,7 +525,15 @@ async function renderBoardRankList(obj) {
     let messageJson = await messageRes.json()
     let messageJsonCount = messageJson.data[0].count
 
-    document.querySelector('#boardGame').innerHTML +=
+
+    const newElement = template.cloneNode(true);
+    const visitBtn = newElement.querySelector("button#visitBtn");
+    newElement.removeAttribute("hidden");
+    visitBtn.addEventListener("click", () => {
+      fetchGameContentWID('gamepage.html', displayContent, ${ d.post_id }, fetchSingleGame)
+    })
+
+    /*document.querySelector('#boardGame').innerHTML +=
       `
     <div class="gameBox mb-3">
       <div id="ranking" class="rank_${i + 1}">NO.${i + 1}</div> 
@@ -555,7 +562,9 @@ async function renderBoardRankList(obj) {
         </div>
       </div>
     </div>  
-    `
+    `*/
+    document.querySelector('#boardGame').appendChild(newElement);
+
   }
 }
 
@@ -628,9 +637,9 @@ async function fetchSingleGame(gameIDD) {
   }
 }
 
-async function renderOwnPostList(obj){
+async function renderOwnPostList(obj) {
   obj.forEach(async obj => {
-    console.log("11",obj)
+    console.log("11", obj)
     let messageRes = await fetch(`message/getMessageCount/${obj.post_id}`)
     let messageJson = await messageRes.json()
     let messageJsonCount = messageJson.data[0].count
@@ -667,11 +676,11 @@ async function renderOwnPostList(obj){
     
     `
   })
-  
+
 
 }
 
-{/* <p class="card-text gBoxDescription"><span style="color:#EF9A53">Description: </span><br>${obj.description}</p> */}
+{/* <p class="card-text gBoxDescription"><span style="color:#EF9A53">Description: </span><br>${obj.description}</p> */ }
 
 // document.querySelectorAll('#likeCount1').forEach
 // async function renderMessageCount(gameID){

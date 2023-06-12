@@ -23,7 +23,7 @@ export class UserRoute extends Routes{
         super()
         this.routes.post('/register',controller.register)
         this.routes.post('/login',controller.login)
-        this.routes.post('/logout',controller.logout)
+        this.routes.post('/logout',isLoggedInAPI,controller.logout)
         this.routes.get('/getCurrentUser',isLoggedInAPI,controller.getCurrentUser)
         this.routes.put('/editProfile',isLoggedInAPI,controller.editProfile)
         this.routes.put('/changePassword',isLoggedInAPI,controller.changePassword)
@@ -85,3 +85,12 @@ export class MessageRoute extends Routes {
         
     }
 }
+
+let userController = new UserController()
+export const userRoutes = new UserRoute(userController)
+
+let gameController = new GameController()
+export const gameRoutes = new GameRoute(gameController)
+
+let messageController = new MessageController()
+export const messageRoutes = new MessageRoute(messageController)

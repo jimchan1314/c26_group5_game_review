@@ -47,7 +47,7 @@ async function renderAddMessage(postId) {
                 timer: 1500
             })
 
-            
+
         }
         await messageForm.reset()
         await fetchGameContentWID('gamepage.html', displayContent, postId)
@@ -58,10 +58,8 @@ async function renderAddMessage(postId) {
 async function expandMessageForm(postId) {
     let res = await fetch('messageForm.html')
     let html = await res.text()
-
+    await renderAddMessage(postId)
     document.querySelector('.messageFormContaniner').innerHTML = html
-
-    renderAddMessage(postId)
 }
 
 
@@ -95,7 +93,7 @@ async function deleteMessage(msgId, postId) {
                     showConfirmButton: false,
                     timer: 1500
                 })
-                
+
             }
             await fetchGameContentWID('gamepage.html', displayContent, postId)
         }

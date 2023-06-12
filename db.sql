@@ -1,17 +1,17 @@
 CREATE TABLE "game_message"(
     "message_id" SERIAL primary key,
     "text" TEXT NOT NULL,
-    "post_id" INTEGER references "game"(post_id) not null,
-    "users_id" TEXT references "users"(id) not null,
-    "message_create_at" VARCHAR(255) not null
+    "post_id" INTEGER references "game"(post_id),
+    "users_id" TEXT references "users"(id),
+    "message_create_at" DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 CREATE TABLE "game"(
     "post_id" SERIAL primary key,
     "name" VARCHAR(100) NOT NULL,
     "game_type" VARCHAR(20) NOT NULL,
     "like_count" INTEGER NOT NULL, 
-    "create_post" VARCHAR(255) not null,
-    "update_post" VARCHAR(255),
+    "create_post" DATETIME DEFAULT CURRENT_TIMESTAMP,
+    "update_post" DATETIME DEFAULT CURRENT_TIMESTAMP,
     "description" TEXT NOT NULL,
     "create_users_id" VARCHAR(255), 
     FOREIGN KEY (create_users_id) references "users"(id),
@@ -29,7 +29,7 @@ CREATE TABLE "users"(
     password VARCHAR(255) NOT NULL,
     "users_icon" VARCHAR(255),
     "users_name" VARCHAR(255) NOT NULL,
-    "create_at" VARCHAR(255) NOT NULL
+    "create_at" DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 

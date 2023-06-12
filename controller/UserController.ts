@@ -1,40 +1,27 @@
 import { parseFormData } from "../formidable";
 import { Request, Response } from "express";
-import { Profile, User, changePasswordSchema, loginUserSchema, registerUserSchema } from "../server";
+import {User,Profile, NewUser} from "../types";
+import {changePasswordSchema, loginUserSchema, registerUserSchema } from "../schema";
 import { checkPassword, hashPassword } from "../bcrypt";
 import { v4 as uuid } from 'uuid';
 import { db } from "../db";
 import { IUserController } from "../routes/Routes";
 import { errorHandler } from "../errorHandler";
 import moment from "moment";
+import { UserService } from "../services/UserService";
+
 
 export class UserController implements IUserController{
+    private userService:UserService;
+    constructor(){
+        this.userService = new UserService();
+    }
     async register(req:Request,res:Response):Promise<void>{
         try {
-        
-            let form = await parseFormData(req) as User; 
-            if(form.password !== form.confirmPassword){
-                throw new Error('password not match!')
-            }
-            let userData = {...form}
-            let time = new Date();
-            let currTime = moment(time).format('MMMM Do YYYY, h:mm:ss a');   
-            
-            await registerUserSchema.validate(userData);
-            
-
-            delete userData.confirmPassword
-            userData.password = await hashPassword(userData.password)
-            req.session.userId = uuid() as string
-            req.session.isLogin = true
-
-            
-            
-            await db.query(`INSERT INTO users (id,email,users_name,password,create_at) VALUES ($1,$2,$3,$4,$5)`,
-            [req.session.userId,userData.email,userData.username,userData.password,currTime])
-            
-            
-            res.json({isError:false,errMess:null,data:userData});    
+            let form = await parseFormData(req) as User;
+            const user:NewUser = this.userService.register(form);
+            req.session.userId = user.id;
+            res.json({isError:false,errMess:null,data:user});    
         } catch (error) {
             
             errorHandler({status:error.status,route:req.path,errMess:error.message})
@@ -68,9 +55,11 @@ export class UserController implements IUserController{
 
     async logout(req:Request,res:Response):Promise<void>{ 
         try {
-            req.session.userId = ""
-            req.session.isLogin = false
-            res.json({isError:false,errMess:null,data:null});    
+            req.session.destroy(()=>{
+                req.session.userId = ""
+                req.session.isLogin = false
+                res.json({isError:false,errMess:null,data:null});  
+            });  
         } catch (error) {
             errorHandler({status:error.status,route:req.path,errMess:error.message})
             res.json({isError:true,errMess:error.message})
@@ -105,21 +94,15 @@ export class UserController implements IUserController{
     async changePassword(req: Request, res: Response):Promise<void>{
         try{
             let form = await parseFormData(req) as Profile
-            let userData = {...form}
-            let userID = req.session.userId;
-            
-            
+            let userID = req.session.userId;            
             if(form.profilePassword !== form.profileConfirmPassword){
                 throw new Error('password not match!')
             }
-            await changePasswordSchema.validate(userData)
+            await changePasswordSchema.validate(form)
+            const updated_hashed_password = await hashPassword(form.profilePassword)
 
-
-            delete userData.profileConfirmPassword
-            userData.profilePassword = await hashPassword(userData.profilePassword)
-
-            await db.query(`UPDATE users SET password = $1 WHERE id = $2`, [userData.profilePassword,userID])
-            res.json({isError:false,errMess:null,data:userData});    
+            await db.query(`UPDATE users SET password = $1 WHERE id = $2`, [updated_hashed_password,userID])
+            res.json({isError:false,errMess:null,data:form});    
         }
         catch (error){
             errorHandler({status:error.status,route:req.path,errMess:error.message})

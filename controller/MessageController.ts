@@ -4,14 +4,9 @@ import { db } from "../db";
 import { IMessageController } from "../routes/Routes";
 import { errorHandler } from "../errorHandler";
 import moment from "moment";
+import { EditedMessage, Message } from "../types";
 
-type Message = {
-    text: string
-}
 
-type EditedMessage = {
-    edittext: string
-}
 
 export class MessageController implements IMessageController{
 

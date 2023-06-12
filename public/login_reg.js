@@ -30,7 +30,7 @@ async function displayLogin(html) {
                     timer: 1500
                 })
             } else {
-                await localStorage.removeItem('user');
+                localStorage.removeItem('user');
                 indexCheck()
 
             }
@@ -146,7 +146,7 @@ async function changePassword(html) {
                 body: formData
             })
             let json = await res.json()
-            
+
             if (json.isError) {
                 await sweetAlert.fire({
                     icon: 'info',
